@@ -1033,3 +1033,31 @@
         align-self: flex-end;
     }
 }
+
+/* =========================================================
+   HOME NEWS CARD TEXT
+   ========================================================= */
+
+.home-news-section .news-card {
+    color: #111111;
+}
+
+.home-news-section .news-card .news-content {
+    color: #111111;
+}
+
+.home-news-section .news-card small {
+    color: #111111;
+}
+
+.home-news-section .news-card h3 {
+    color: #111111;
+}
+
+.home-news-section .news-card p {
+    color: #111111;
+}
+
+.home-news-section .news-card .read-more {
+    color: var(--orange);
+}
