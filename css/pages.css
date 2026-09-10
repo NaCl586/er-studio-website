@@ -1,808 +1,1279 @@
 /* =========================================================
-   GLOBAL & HERO COMPONENTS
+   1. GLOBAL & HERO COMPONENTS
    ========================================================= */
 
 .about-hero {
-    min-height: 500px;
-    background:
-        linear-gradient(rgba(0, 0, 0, 0.25), rgba(0, 0, 0, 0.25)),
-        url("../images/Banner/About Us.png") center / cover no-repeat;
+  min-height: 500px;
+  background:
+    linear-gradient(rgba(0, 0, 0, 0.25), rgba(0, 0, 0, 0.25)),
+    url("../images/Banner/About Us.png") center / cover no-repeat;
 }
 
 .video-hero {
-    position: relative;
-    min-height: 470px;
-    overflow: hidden;
+  position: relative;
+  min-height: 470px;
+  overflow: hidden;
 }
 
-.video-hero .services-video,
-.services-video {
-    position: absolute;
-    inset: 0;
-    display: block;
-    width: 100%;
-    height: 100%;
-    object-fit: cover;
+.services-video,
+.video-hero .services-video {
+  position: absolute;
+  inset: 0;
+  display: block;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
 }
 
 
 /* =========================================================
-   ABOUT SECTION
+   2. ABOUT SECTION
    ========================================================= */
 
 .about-content {
-    position: relative;
-    overflow: hidden;
-    padding: 32px 5% 75px;
-    background: url("../images/Background.png") center top / cover no-repeat;
+  position: relative;
+  padding: 32px 5% 75px;
+  background: url("../images/Background.png") center top / cover no-repeat;
+  overflow: hidden;
 }
 
 .about-dots {
-    position: absolute;
-    width: 260px;
-    height: 160px;
-    right: 5%;
-    top: 8px;
-    opacity: 0.55;
-    background: radial-gradient(circle, #ffffff 0 3px, transparent 4px) 0 0 / 28px 28px;
-    pointer-events: none;
+  position: absolute;
+  top: 8px;
+  right: 5%;
+  width: 260px;
+  height: 160px;
+  background: radial-gradient(circle, #ffffff 0 3px, transparent 4px) 0 0 / 28px 28px;
+  opacity: 0.55;
+  pointer-events: none;
 }
 
-/* Common Dark Panel */
 .dark-panel {
-    position: relative;
-    z-index: 1;
-    color: #ffffff;
-    background-color: transparent;
-    border: 0;
-    box-shadow: none;
-    overflow: hidden;
+  position: relative;
+  z-index: 1;
+  color: #ffffff;
+  background-color: transparent;
+  border: 0;
+  box-shadow: none;
+  overflow: hidden;
 }
 
 .dark-panel > * {
-    position: relative;
-    z-index: 1;
+  position: relative;
+  z-index: 1;
 }
 
 
 /* =========================================================
-   WHO ARE WE
+   3. WHO ARE WE
    ========================================================= */
 
 .who-panel {
-    position: relative;
-    width: 100%;
-    max-width: 1125px;
-    min-height: 0;
-    margin: 0 auto 42px;
-    padding: 28px 45px 30px;
-    display: grid;
-    grid-template-columns: minmax(0, 1fr) 280px;
-    gap: 25px;
-    align-items: start;
-    box-sizing: border-box;
-    background: url("../images/Asset panel 2.png") center / 100% 100% no-repeat;
-    opacity: 0.9;
+  position: relative;
+  display: grid;
+  grid-template-columns: minmax(0, 1fr) 280px;
+  gap: 25px;
+  align-items: start;
+  width: 100%;
+  max-width: 1125px;
+  min-height: 0;
+  margin: 0 auto 42px;
+  padding: 28px 45px 30px;
+  box-sizing: border-box;
+  background: url("../images/Asset panel 2.png") center / 100% 100% no-repeat;
+  opacity: 0.9;
 }
 
 .who-panel > div:first-child,
 .who-panel .who-copy {
-    grid-column: 1;
-    grid-row: 1;
-    position: relative;
-    z-index: 2;
+  grid-column: 1;
+  grid-row: 1;
+  position: relative;
+  z-index: 2;
 }
 
 .who-panel .who-character {
-    grid-column: 2;
-    grid-row: 1;
+  grid-column: 2;
+  grid-row: 1;
 }
 
 .who-copy {
-    min-width: 0;
-    width: 100%;
-    padding: 0;
+  width: 100%;
+  min-width: 0;
+  padding: 0;
 }
 
 .who-panel h2 {
-    margin: 0 0 22px;
-    color: #ffffff;
-    font-size: clamp(27px, 3vw, 35px);
-    line-height: 1.2;
-    text-align: center;
+  margin: 0 0 22px;
+  color: #ffffff;
+  font-size: clamp(27px, 3vw, 35px);
+  line-height: 1.2;
+  text-align: center;
 }
 
 .who-panel h2 span,
 .highlight {
-    color: var(--orange);
+  color: var(--orange);
 }
 
 .who-panel p {
-    margin: 0 0 20px;
-    color: #ffffff;
-    font-size: 15px;
-    line-height: 1.75;
+  margin: 0 0 20px;
+  color: #ffffff;
+  font-size: 15px;
+  line-height: 1.75;
 }
 
 .who-panel p:last-child {
-    margin-bottom: 0;
+  margin-bottom: 0;
 }
 
 .who-character {
-    width: 250px;
-    height: 250px;
-    margin: 0 auto;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    background: transparent;
-    color: transparent;
-    border: 0;
-    pointer-events: none;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 250px;
+  height: 250px;
+  margin: 0 auto;
+  color: transparent;
+  background: transparent;
+  border: 0;
+  pointer-events: none;
 }
 
 .who-character img {
-    display: block;
-    width: 100%;
-    height: 100%;
-    object-fit: contain;
+  display: block;
+  width: 100%;
+  height: 100%;
+  object-fit: contain;
 }
 
 
 /* =========================================================
-   VISION & MISSION
+   4. VISION & MISSION
    ========================================================= */
 
 .vision-mission {
-    position: relative;
-    z-index: 1;
-    width: 100%;
-    max-width: 1120px;
-    margin: 0 auto 55px;
-    display: grid;
-    grid-template-columns: repeat(2, minmax(0, 1fr));
-    gap: 70px;
+  position: relative;
+  z-index: 1;
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 70px;
+  width: 100%;
+  max-width: 1120px;
+  margin: 0 auto 55px;
 }
 
 .vision-mission .angled-panel {
-    position: relative;
-    min-height: 390px;
-    width: 100%;
-    padding: 32px 38px 42px;
-    display: grid;
-    grid-template-columns: 145px minmax(0, 1fr);
-    grid-template-rows: auto auto;
-    column-gap: 20px;
-    row-gap: 28px;
-    align-items: start;
-    box-sizing: border-box;
-    background-position: center;
-    background-repeat: no-repeat;
-    background-size: 100% 100%;
-    color: #ffffff;
-    overflow: hidden;
+  position: relative;
+  display: grid;
+  grid-template-columns: 145px minmax(0, 1fr);
+  grid-template-rows: auto auto;
+  column-gap: 20px;
+  row-gap: 28px;
+  align-items: start;
+  width: 100%;
+  min-height: 390px;
+  padding: 32px 38px 42px;
+  box-sizing: border-box;
+  color: #ffffff;
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: 100% 100%;
+  overflow: hidden;
 }
 
 .vision-mission .angled-panel:first-child,
 .vision-mission .angled-panel:last-child {
-    background-image: url("../images/Asset panel 3.png");
-    opacity: 0.9;
+  background-image: url("../images/Asset panel 3.png");
+  opacity: 0.9;
 }
 
 .angled-panel::after {
-    display: none;
-    content: none;
+  display: none;
+  content: none;
 }
 
 .vision-mission .feature-symbol {
-    grid-column: 1;
-    grid-row: 1;
-    width: 145px;
-    height: 145px;
-    margin: 0;
-    display: flex;
-    align-items: flex-start;
-    justify-content: center;
-    align-self: start;
-    position: relative;
-    z-index: 2;
-    background: transparent;
-    border: 0;
-    border-radius: 0;
-    opacity: 1;
-    font-size: 100px;
-    line-height: 1;
+  grid-column: 1;
+  grid-row: 1;
+  position: relative;
+  z-index: 2;
+  display: flex;
+  align-items: flex-start;
+  justify-content: center;
+  align-self: start;
+  width: 145px;
+  height: 145px;
+  margin: 0;
+  font-size: 100px;
+  line-height: 1;
+  background: transparent;
+  border: 0;
+  border-radius: 0;
+  opacity: 1;
 }
 
 .vision-mission .feature-symbol img {
-    display: block;
-    width: 145px;
-    height: 145px;
-    object-fit: contain;
-    opacity: 1;
+  display: block;
+  width: 145px;
+  height: 145px;
+  object-fit: contain;
+  opacity: 1;
 }
 
 .vision-mission .angled-panel > div:not(.feature-symbol) {
-    display: contents;
+  display: contents;
 }
 
 .vision-mission .angled-panel h2 {
-    grid-column: 2;
-    grid-row: 1;
-    margin: 0;
-    align-self: center;
-    font-size: 38px;
-    line-height: 1.15;
-    font-weight: 700;
-    white-space: nowrap;
-    color: #ffffff;
+  grid-column: 2;
+  grid-row: 1;
+  align-self: center;
+  margin: 0;
+  color: #ffffff;
+  font-size: 38px;
+  font-weight: 700;
+  line-height: 1.15;
+  white-space: nowrap;
 }
 
 .vision-mission .angled-panel h2 span {
-    color: var(--orange);
+  color: var(--orange);
 }
 
 .vision-mission .angled-panel p {
-    grid-column: 1 / -1;
-    grid-row: 2;
-    margin: 0;
-    font-size: 18px;
-    line-height: 1.6;
-    color: #ffffff;
+  grid-column: 1 / -1;
+  grid-row: 2;
+  margin: 0;
+  color: #ffffff;
+  font-size: 18px;
+  line-height: 1.6;
 }
 
 
 /* =========================================================
-   OUR TEAM
+   5. OUR TEAM
    ========================================================= */
 
 .about-team {
-    position: relative;
-    z-index: 1;
-    max-width: 1120px;
-    margin: 0 auto;
-    padding: 24px 45px 48px;
-    background: rgba(44, 70, 89, 0.91);
-    color: #ffffff;
-    border-radius: 30px;
+  position: relative;
+  z-index: 1;
+  max-width: 1120px;
+  margin: 0 auto;
+  padding: 24px 45px 48px;
+  color: #ffffff;
+  background: rgba(44, 70, 89, 0.91);
+  border-radius: 30px;
 }
 
 .about-team .section-heading {
-    margin-bottom: 70px;
+  margin-bottom: 70px;
 }
 
 .about-team .section-heading h2 {
-    margin: 0;
-    text-align: center;
-    font-size: clamp(28px, 3vw, 36px);
+  margin: 0;
+  font-size: clamp(28px, 3vw, 36px);
+  text-align: center;
 }
 
 .about-team .section-heading h2 span {
-    color: var(--orange);
+  color: var(--orange);
 }
 
 .about-team-grid {
-    max-width: 900px;
-    margin: auto;
-    display: grid;
-    grid-template-columns: repeat(3, 1fr);
-    gap: 65px;
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 65px;
+  max-width: 900px;
+  margin: auto;
 }
 
 .team-member {
-    position: relative;
-    min-height: 145px;
-    padding: 60px 15px 18px;
-    background: var(--orange);
-    color: #ffffff;
-    border: 2px solid #111111;
-    border-radius: 25px;
-    text-align: center;
-    box-sizing: border-box;
+  position: relative;
+  min-height: 145px;
+  padding: 60px 15px 18px;
+  box-sizing: border-box;
+  color: #ffffff;
+  background: var(--orange);
+  border: 2px solid #111111;
+  border-radius: 25px;
+  text-align: center;
 }
 
 .team-avatar {
-    position: absolute;
-    z-index: 3;
-    top: -70px;
-    left: 50%;
-    transform: translateX(-50%);
-    width: 135px;
-    height: 135px;
-    margin: 0;
-    display: flex;
-    align-items: flex-end;
-    justify-content: center;
-    background: transparent;
-    border: 0;
-    border-radius: 0;
-    overflow: visible;
+  position: absolute;
+  top: -80px;
+  left: 50%;
+  z-index: 3;
+  display: flex;
+  align-items: flex-end;
+  justify-content: center;
+  width: 135px;
+  height: 135px;
+  margin: 0;
+  background: transparent;
+  border: 0;
+  border-radius: 0;
+  transform: translateX(-50%);
+  overflow: visible;
 }
 
 .team-avatar img {
-    display: block;
-    width: 135px;
-    height: 135px;
-    object-fit: contain;
+  display: block;
+  width: 135px;
+  height: 135px;
+  object-fit: contain;
 }
 
 .team-name {
-    position: relative;
-    z-index: 1;
-    display: block;
-    min-width: 0;
-    padding: 0;
-    background: transparent;
-    border: 0;
-    border-radius: 0;
-    color: #ffffff;
-    font-size: 15px;
-    font-weight: 600;
-    line-height: 1.3;
-    text-align: center;
+  position: relative;
+  z-index: 1;
+  display: block;
+  min-width: 0;
+  margin-top: 10px;
+  padding: 0;
+  color: #ffffff;
+  font-size: 15px;
+  font-weight: 600;
+  line-height: 1.3;
+  text-align: center;
+  background: transparent;
+  border: 0;
+  border-radius: 0;
 }
 
 .team-role {
-    position: relative;
-    z-index: 1;
-    margin-top: 6px;
-    color: #ffffff;
-    font-size: 15px;
-    line-height: 1.45;
-    text-align: center;
+  position: relative;
+  z-index: 1;
+  margin-top: 6px;
+  color: #ffffff;
+  font-size: 15px;
+  line-height: 1.45;
+  text-align: center;
 }
 
 
 /* =========================================================
-   SERVICES PAGE & CARDS
+   6. SERVICES PAGE & CARDS
    ========================================================= */
 
 .services-page-section {
-    position: relative;
-    padding-top: 70px;
-    padding-bottom: 70px;
-    background: url("../images/Background.png") center top / cover no-repeat;
+  position: relative;
+  padding-top: 70px;
+  padding-bottom: 70px;
+  background: url("../images/Background.png") center top / cover no-repeat;
 }
 
 .services-actions {
-    position: relative;
-    z-index: 2;
-    max-width: 1120px;
-    margin: 0 auto 40px;
-    padding-top: 0;
+  position: relative;
+  z-index: 2;
+  max-width: 1120px;
+  margin: 0 auto 40px;
+  padding-top: 0;
 }
 
 .services-page-section .service-list {
-    position: relative;
-    z-index: 0;
-    width: 100%;
-    max-width: 1120px;
-    margin: 0 auto;
-    display: flex;
-    flex-direction: column;
-    gap: 25px;
-    overflow: visible;
+  position: relative;
+  z-index: 0;
+  display: flex;
+  flex-direction: column;
+  gap: 25px;
+  width: 100%;
+  max-width: 1120px;
+  margin: 0 auto;
+  overflow: visible;
 }
 
 /* Dotted background path */
 .services-page-section .service-list::before {
-    content: "";
-    position: absolute;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100%;
-    pointer-events: none;
-    z-index: 0;
-    background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 1120 850' preserveAspectRatio='none'%3E%3Cpath d='M0 105 H650 Q720 105 720 175 V285' fill='none' stroke='%23ffe05b' stroke-width='2' stroke-dasharray='6 5'/%3E%3Cpath d='M1120 410 H200 Q130 410 130 480 V615' fill='none' stroke='%23ffe05b' stroke-width='2' stroke-dasharray='6 5'/%3E%3C/svg%3E");
-    background-repeat: no-repeat;
-    background-position: center top;
-    background-size: 100% 100%;
-    transform: translateX(100px);
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  z-index: 0;
+  width: 100%;
+  height: 100%;
+  background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 1120 850' preserveAspectRatio='none'%3E%3Cpath d='M0 105 H650 Q720 105 720 175 V285' fill='none' stroke='%23ffe05b' stroke-width='2' stroke-dasharray='6 5'/%3E%3Cpath d='M1120 410 H200 Q130 410 130 480 V615' fill='none' stroke='%23ffe05b' stroke-width='2' stroke-dasharray='6 5'/%3E%3C/svg%3E");
+  background-repeat: no-repeat;
+  background-position: center top;
+  background-size: 100% 100%;
+  transform: translateX(100px);
+  pointer-events: none;
 }
 
 /* Service Card Frame */
 .services-page-section .service-feature,
 .services-page-section .service-feature.reverse {
-    position: relative;
-    z-index: 1;
-    width: 560px;
-    max-width: 560px;
-    min-height: 185px;
-    padding: 25px 30px;
-    display: grid;
-    grid-template-columns: minmax(0, 1fr) 120px;
-    gap: 25px;
-    align-items: center;
-    background: rgba(48, 72, 92, 0.90);
-    color: #ffffff;
-    border-radius: 25px;
-    box-sizing: border-box;
+  position: relative;
+  z-index: 1;
+  display: grid;
+  grid-template-columns: minmax(0, 1fr) 120px;
+  gap: 25px;
+  align-items: center;
+  width: 560px;
+  max-width: 560px;
+  min-height: 185px;
+  padding: 25px 30px;
+  box-sizing: border-box;
+  color: #ffffff;
+  background: rgba(48, 72, 92, 0.90);
+  border-radius: 25px;
 }
 
 .services-page-section .service-feature > * {
-    position: relative;
-    z-index: 2;
+  position: relative;
+  z-index: 2;
 }
 
 .services-page-section .service-feature:not(.reverse) {
-    align-self: flex-start;
-    margin-left: 0;
+  align-self: flex-start;
+  margin-left: 0;
 }
 
 .services-page-section .service-feature.reverse {
-    align-self: flex-end;
-    margin-left: 0;
+  align-self: flex-end;
+  margin-left: 0;
 }
 
 .services-page-section .service-copy {
-    order: 1;
-    min-width: 0;
+  order: 1;
+  min-width: 0;
 }
 
 .services-page-section .service-copy h2 {
-    margin: 0 0 10px;
-    font-size: 24px;
-    line-height: 1.15;
-    font-weight: 600;
-    color: #ffffff;
+  margin: 0 0 10px;
+  color: #ffffff;
+  font-size: 24px;
+  font-weight: 600;
+  line-height: 1.15;
 }
 
 .services-page-section .service-copy h2 span {
-    color: var(--orange);
+  color: var(--orange);
 }
 
 .services-page-section .service-copy p {
-    margin: 0;
-    font-size: 14px;
-    line-height: 1.55;
-    color: #ffffff;
+  margin: 0;
+  color: #ffffff;
+  font-size: 14px;
+  line-height: 1.55;
 }
 
 .services-page-section .card-icon {
-    order: 2;
-    width: 120px;
-    height: 120px;
-    margin: 0;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    justify-self: end;
-    font-size: 0;
+  order: 2;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  justify-self: end;
+  width: 120px;
+  height: 120px;
+  margin: 0;
+  font-size: 0;
 }
 
 .services-page-section .card-icon img {
-    display: block;
-    width: 100%;
-    height: 100%;
-    object-fit: contain;
+  display: block;
+  width: 100%;
+  height: 100%;
+  object-fit: contain;
 }
 
 
 /* =========================================================
-   CLIENTS & PARTNERS
+   7. CLIENTS & PARTNERS
    ========================================================= */
 
 .services-page-section .section-heading {
-    position: relative;
-    z-index: 1;
-    margin-top: 65px;
-    margin-bottom: 30px;
+  position: relative;
+  z-index: 1;
+  margin-top: 65px;
+  margin-bottom: 30px;
 }
 
 .services-page-section .section-heading h2 {
-    margin: 0;
-    font-size: 28px;
-    font-weight: 500;
+  margin: 0;
+  font-size: 28px;
+  font-weight: 500;
 }
 
 .services-page-section .section-heading h2 span {
-    color: var(--orange);
+  color: var(--orange);
 }
 
 .services-page-section .partner-row {
-    position: relative;
-    z-index: 1;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    flex-wrap: wrap;
-    gap: 18px;
+  position: relative;
+  z-index: 1;
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  justify-content: center;
+  gap: 18px;
 }
 
 .services-page-section .partner-row span {
-    width: 175px;
-    height: 175px;
-    flex: 0 0 175px;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    border-radius: 50%;
-    background: rgba(255, 153, 56, 0.8);
-    overflow: hidden;
+  display: flex;
+  flex: 0 0 175px;
+  align-items: center;
+  justify-content: center;
+  width: 175px;
+  height: 175px;
+  background: rgba(255, 153, 56, 0.8);
+  border-radius: 50%;
+  overflow: hidden;
 }
 
 .services-page-section .partner-row span img {
-    display: block;
-    width: 100px;
-    height: 100px;
-    max-width: 100%;
-    max-height: 100%;
-    object-fit: contain;
+  display: block;
+  width: 100px;
+  height: 100px;
+  max-width: 100%;
+  max-height: 100%;
+  object-fit: contain;
 }
 
 
 /* =========================================================
-   FOOTER
+   8. GAMES PAGE - LAYOUT & HERO
+   ========================================================= */
+
+.games-page {
+  position: relative;
+  width: 100%;
+  overflow-x: hidden;
+}
+
+.games-page .video-hero {
+  position: relative;
+  width: 100%;
+  height: 470px;
+  min-height: 470px;
+  background: #555555;
+  overflow: hidden;
+}
+
+.games-page .video-hero .services-video {
+  position: absolute;
+  inset: 0;
+  display: block;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+/* Watch / Contact Bar */
+.games-action-bar {
+  position: relative;
+  display: flex;
+  align-items: flex-start;
+  justify-content: space-between;
+  width: 100%;
+  height: 100px;
+  padding: 50px 7.5% 0;
+  box-sizing: border-box;
+  background: url("../images/Background.png") center center / cover no-repeat;
+}
+
+.games-action-bar::after {
+  content: "";
+  position: absolute;
+  right: 0;
+  bottom: 0;
+  left: 0;
+  height: 2px;
+  background-image: repeating-linear-gradient(
+    to right,
+    #111111 0,
+    #111111 2px,
+    transparent 2px,
+    transparent 5px
+  );
+  pointer-events: none;
+}
+
+.games-watch-button {
+  position: relative;
+  z-index: 2;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 82px;
+  height: 30px;
+  color: #ffffff;
+  font-size: 11px;
+  font-weight: 500;
+  text-decoration: none;
+  background: var(--orange);
+  border-radius: 20px;
+}
+
+.games-contact-button {
+  position: relative;
+  z-index: 2;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 88px;
+  height: 30px;
+  color: #ffffff;
+  font-size: 10px;
+  font-weight: 600;
+  text-decoration: none;
+  background: #000000;
+  border-radius: 20px;
+}
+
+/* Container & Full-Width Background */
+.games-page .games-content {
+  position: relative;
+  z-index: 0;
+  width: min(86%, 1180px);
+  max-width: 1180px;
+  margin: 0 auto;
+  padding: 75px 0 55px;
+  box-sizing: border-box;
+  background: transparent;
+  overflow: visible;
+}
+
+.games-page .games-content::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  left: 50%;
+  z-index: -1;
+  width: 100vw;
+  background: url("../images/Background.png") center top / cover no-repeat;
+  transform: translateX(-50%);
+  pointer-events: none;
+}
+
+.games-page .games-content > * {
+  position: relative;
+  z-index: 1;
+}
+
+
+/* =========================================================
+   9. GAMES PAGE - HEADINGS & TYPOGRAPHY
+   ========================================================= */
+
+.games-page .games-section-heading {
+  position: relative;
+  z-index: 2;
+  width: 100%;
+  margin: 0 0 30px;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+.games-page .games-section-heading h1,
+.games-page .games-section-heading h2 {
+  margin: 0;
+  color: var(--black, #111111);
+  font-size: clamp(32px, 4vw, 48px);
+  font-weight: 500;
+  line-height: 1.2;
+}
+
+.games-page .games-section-heading span {
+  color: var(--orange);
+}
+
+
+/* =========================================================
+   10. GAMES PAGE - FEATURED SHOWCASE
+   ========================================================= */
+
+.games-page #fun-games {
+  position: relative;
+  z-index: 2;
+  width: 100%;
+  max-width: 865px;
+  margin: 0 auto 45px;
+  padding: 0;
+  background: transparent;
+}
+
+.games-page .featured-game {
+  width: 100%;
+  margin: 0;
+  padding: 10px 0 0;
+  box-sizing: border-box;
+  background: transparent;
+}
+
+.games-page .featured-game-banner {
+  display: block;
+  width: 100%;
+  aspect-ratio: 1000 / 259;
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  background: url("../images/Banner Dice on Delivery.png") center center / 100% 100% no-repeat;
+}
+
+.games-page .featured-game-content {
+  display: grid;
+  grid-template-columns: 35% 65%;
+  gap: 0;
+  width: 100%;
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  background: transparent;
+}
+
+.games-page .featured-game-description {
+  width: 100%;
+  margin: 0;
+  padding: 0 20px 0 0;
+  box-sizing: border-box;
+  background: transparent;
+}
+
+.games-page .featured-game-description p {
+  margin: 0 0 20px;
+  padding: 0;
+  color: var(--black, #111111);
+  font-size: 14px;
+  font-weight: 400;
+  line-height: 1.8;
+  text-indent: 0;
+}
+
+.games-page .games-play-button {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: auto;
+  min-width: 90px;
+  height: auto;
+  margin: 0;
+  padding: 11px 24px;
+  box-sizing: border-box;
+  color: #ffffff;
+  font-size: 14px;
+  font-weight: 600;
+  text-decoration: none;
+  background: var(--orange);
+  border-radius: 24px;
+}
+
+/* Featured Screenshots Area */
+.games-page .featured-game-screenshots {
+  display: grid;
+  grid-template-columns: 3fr 1fr;
+  grid-template-rows: 1fr 1fr;
+  gap: 8px;
+  width: 100%;
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  background: transparent;
+}
+
+.games-page .featured-screenshot-big {
+  grid-column: 1;
+  grid-row: 1 / 3;
+  width: 100%;
+  height: 100%;
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  background: transparent;
+  overflow: hidden;
+}
+
+.games-page .featured-screenshot-small:nth-child(2) {
+  grid-column: 2;
+  grid-row: 1;
+  width: 100%;
+  height: 100%;
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  background: transparent;
+  overflow: hidden;
+}
+
+.games-page .featured-screenshot-small:nth-child(3) {
+  grid-column: 2;
+  grid-row: 2;
+  width: 100%;
+  height: 100%;
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  background: transparent;
+  overflow: hidden;
+}
+
+.games-page .featured-screenshot-big img,
+.games-page .featured-screenshot-small img {
+  display: block;
+  width: 100%;
+  height: 100%;
+  margin: 0;
+  padding: 0;
+  object-fit: cover;
+}
+
+
+/* =========================================================
+   11. GAMES PAGE - GALLERIES & PAGINATION
+   ========================================================= */
+
+.game-gallery {
+  position: relative;
+  z-index: 2;
+  display: grid;
+  grid-template-columns: minmax(0, 0.62fr) minmax(0, 1fr);
+  column-gap: 35px;
+  align-items: start;
+  width: 100%;
+  max-width: 770px;
+  margin: 0 auto 38px;
+}
+
+.games-content .games-section-heading + .game-gallery {
+  margin-bottom: 42px;
+}
+
+.game-gallery-feature,
+.game-gallery-side {
+  min-width: 0;
+}
+
+.game-gallery-feature .game-tile {
+  width: 100%;
+}
+
+.game-gallery-feature .game-tile img {
+  display: block;
+  width: 100%;
+  height: auto;
+  aspect-ratio: 1 / 1;
+  object-fit: cover;
+}
+
+.game-gallery-description {
+  margin-top: 8px;
+}
+
+.game-gallery-description p {
+  margin: 0 0 15px;
+  color: #111111;
+  font-size: 10px;
+  line-height: 1.4;
+}
+
+.game-gallery-grid {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 14px;
+}
+
+.game-tile,
+.games-page .game-tile {
+  position: relative;
+  width: 100%;
+  font-size: 14px;
+  background: transparent;
+  overflow: hidden;
+}
+
+.game-tile-image,
+.game-gallery-grid .game-tile img {
+  display: block;
+  width: 100%;
+  height: auto;
+  aspect-ratio: 1 / 1;
+  object-fit: cover;
+  transition: transform 0.2s ease, filter 0.2s ease;
+}
+
+.game-tile:hover .game-tile-image {
+  transform: scale(1.03);
+}
+
+.games-page .game-name {
+  color: #111111;
+  font-size: 14px;
+  font-weight: 600;
+  line-height: 1.3;
+}
+
+/* Pagination */
+.game-pagination {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 4px;
+  margin-top: 12px;
+}
+
+.game-pagination button {
+  width: 14px;
+  height: 14px;
+  padding: 0;
+  color: #0069b5;
+  font-size: 8px;
+  line-height: 14px;
+  background: transparent;
+  border: 0;
+  border-radius: 50%;
+  cursor: pointer;
+}
+
+.game-pagination button.active {
+  color: #ffffff;
+  background: #0069b5;
+}
+
+
+/* =========================================================
+   12. FOOTER
    ========================================================= */
 
 .site-footer {
-    position: relative;
-    background: #ff9938;
-    color: #ffffff;
-    padding: 55px 7% 22px;
+  position: relative;
+  padding: 55px 7% 22px;
+  color: #ffffff;
+  background: #ff9938;
 }
 
 .footer-contact h2 {
-    color: #111111;
+  color: #111111;
 }
 
 .footer-logo {
-    width: 190px;
-    max-height: 105px;
-    object-fit: contain;
-    margin-left: auto;
-    display: block;
+  display: block;
+  width: 190px;
+  max-height: 105px;
+  margin-left: auto;
+  object-fit: contain;
 }
 
 .footer-bottom {
-    margin-top: 35px;
-    text-align: center;
+  margin-top: 35px;
+  text-align: center;
 }
 
 .socials {
-    display: flex;
-    justify-content: center;
-    gap: 16px;
+  display: flex;
+  justify-content: center;
+  gap: 16px;
 }
 
 .socials a {
-    display: inline-flex;
-    width: 42px;
-    height: 42px;
-    align-items: center;
-    justify-content: center;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 42px;
+  height: 42px;
 }
 
 .socials img {
-    width: 32px;
-    height: 32px;
-    object-fit: contain;
+  width: 32px;
+  height: 32px;
+  object-fit: contain;
 }
 
 .footer-line {
-    width: min(420px, 80%);
-    height: 2px;
-    margin: 15px auto;
-    background: rgba(255, 255, 255, 0.9);
+  width: min(420px, 80%);
+  height: 2px;
+  margin: 15px auto;
+  background: rgba(255, 255, 255, 0.9);
 }
 
 
 /* =========================================================
-   RESPONSIVE STYLES
+   13. RESPONSIVE MEDIA QUERIES
    ========================================================= */
 
+@media (min-width: 801px) {
+  .game-gallery {
+    max-width: 770px;
+  }
+}
+
 @media (max-width: 900px) {
-    .about-hero {
-        min-height: 430px;
-    }
+  .about-hero {
+    min-height: 430px;
+  }
 
-    .who-panel {
-        min-height: 320px;
-        grid-template-columns: minmax(0, 1fr) 200px;
-        padding: 25px 30px;
-    }
+  .who-panel {
+    grid-template-columns: minmax(0, 1fr) 200px;
+    min-height: 320px;
+    padding: 25px 30px;
+  }
 
-    .who-character {
-        width: 200px;
-        height: 200px;
-    }
+  .who-character {
+    width: 200px;
+    height: 200px;
+  }
 
-    .vision-mission {
-        grid-template-columns: 1fr;
-        gap: 45px;
-        max-width: 700px;
-    }
+  .vision-mission {
+    grid-template-columns: 1fr;
+    gap: 45px;
+    max-width: 700px;
+  }
 
-    .vision-mission .angled-panel {
-        min-height: 390px;
-        grid-template-columns: 75px minmax(0, 1fr);
-        padding: 25px;
-    }
+  .vision-mission .angled-panel {
+    grid-template-columns: 75px minmax(0, 1fr);
+    min-height: 390px;
+    padding: 25px;
+  }
 
-    .about-team {
-        padding: 28px 25px 40px;
-    }
+  .about-team {
+    padding: 28px 25px 40px;
+  }
 
-    .about-team-grid {
-        gap: 25px;
-    }
+  .about-team-grid {
+    gap: 25px;
+  }
 }
 
 @media (max-width: 800px) {
-    .services-page-section {
-        padding-bottom: 55px;
-    }
+  .services-page-section {
+    padding-bottom: 55px;
+  }
 
-    .services-actions {
-        padding-left: 5%;
-        padding-right: 5%;
-    }
+  .services-actions {
+    padding-left: 5%;
+    padding-right: 5%;
+  }
 
-    .services-page-section .service-list {
-        padding: 0 20px;
-        box-sizing: border-box;
-    }
+  .services-page-section .service-list {
+    padding: 0 20px;
+    box-sizing: border-box;
+  }
 
-    .services-page-section .service-list::before {
-        display: none;
-    }
+  .services-page-section .service-list::before {
+    display: none;
+  }
 
-    .services-page-section .service-feature,
-    .services-page-section .service-feature.reverse {
-        width: 100%;
-        max-width: 560px;
-        align-self: center;
-    }
+  .services-page-section .service-feature,
+  .services-page-section .service-feature.reverse {
+    align-self: center;
+    width: 100%;
+    max-width: 560px;
+  }
+
+  .games-page .video-hero {
+    height: 350px;
+    min-height: 350px;
+  }
+
+  .games-action-bar {
+    height: 85px;
+    padding: 40px 5% 0;
+  }
+
+  .games-page .games-content {
+    padding: 25px 5% 50px;
+  }
+
+  .game-gallery {
+    grid-template-columns: minmax(0, 0.62fr) minmax(0, 1fr);
+    column-gap: 20px;
+  }
 }
 
 @media (max-width: 700px) {
-    .about-content {
-        padding: 25px 5% 55px;
-    }
+  .about-content {
+    padding: 25px 5% 55px;
+  }
 
-    .who-panel {
-        aspect-ratio: auto;
-        min-height: 0;
-        grid-template-columns: 1fr;
-        padding: 30px 25px;
-        background-size: 100% 100%;
-    }
+  .who-panel {
+    grid-template-columns: 1fr;
+    min-height: 0;
+    padding: 30px 25px;
+    background-size: 100% 100%;
+    aspect-ratio: auto;
+  }
 
-    .who-panel > div:first-child,
-    .who-panel .who-copy {
-        grid-column: 1;
-        grid-row: 1;
-    }
+  .who-panel > div:first-child,
+  .who-panel .who-copy {
+    grid-column: 1;
+    grid-row: 1;
+  }
 
-    .who-panel .who-character {
-        grid-column: 1;
-        grid-row: 2;
-        margin: 15px auto 0;
-        width: 190px;
-        height: 190px;
-    }
+  .who-panel .who-character {
+    grid-column: 1;
+    grid-row: 2;
+    width: 190px;
+    height: 190px;
+    margin: 15px auto 0;
+  }
 
-    .who-panel h2 {
-        text-align: center;
-    }
+  .who-panel h2 {
+    text-align: center;
+  }
 
-    .about-team-grid {
-        grid-template-columns: 1fr;
-        gap: 80px;
-    }
+  .about-team-grid {
+    grid-template-columns: 1fr;
+    gap: 80px;
+  }
 
-    .about-team .section-heading {
-        margin-bottom: 70px;
-    }
+  .about-team .section-heading {
+    margin-bottom: 70px;
+  }
 }
 
 @media (max-width: 600px) {
-    .vision-mission {
-        gap: 30px;
-        padding: 0 15px;
-    }
+  .vision-mission {
+    gap: 30px;
+    padding: 0 15px;
+  }
 
-    .vision-mission .angled-panel {
-        min-height: 0;
-        padding: 28px 25px 35px;
-        grid-template-columns: 90px minmax(0, 1fr);
-        column-gap: 15px;
-        row-gap: 25px;
-    }
+  .vision-mission .angled-panel {
+    grid-template-columns: 90px minmax(0, 1fr);
+    column-gap: 15px;
+    row-gap: 25px;
+    min-height: 0;
+    padding: 28px 25px 35px;
+  }
 
-    .vision-mission .feature-symbol,
-    .vision-mission .feature-symbol img {
-        width: 90px;
-        height: 90px;
-    }
+  .vision-mission .feature-symbol,
+  .vision-mission .feature-symbol img {
+    width: 90px;
+    height: 90px;
+  }
 
-    .vision-mission .angled-panel h2 {
-        font-size: 30px;
-        white-space: normal;
-    }
+  .vision-mission .angled-panel h2 {
+    font-size: 30px;
+    white-space: normal;
+  }
 
-    .vision-mission .angled-panel p {
-        font-size: 16px;
-        line-height: 1.55;
-    }
+  .vision-mission .angled-panel p {
+    font-size: 16px;
+    line-height: 1.55;
+  }
+}
+
+@media (max-width: 560px) {
+  .games-page .video-hero {
+    height: 270px;
+    min-height: 270px;
+  }
+
+  .games-action-bar {
+    height: 75px;
+    padding: 35px 20px 0;
+  }
+
+  .games-page .games-content {
+    padding: 25px 20px 45px;
+  }
+
+  .games-page .featured-game-content {
+    grid-template-columns: 1fr;
+    row-gap: 18px;
+  }
+
+  .game-gallery {
+    grid-template-columns: 1fr;
+    row-gap: 18px;
+  }
+
+  .game-gallery-grid {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    gap: 10px;
+  }
 }
 
 @media (max-width: 500px) {
-    .about-hero {
-        min-height: 350px;
-    }
+  .about-hero {
+    min-height: 350px;
+  }
 
-    .about-hero h1 {
-        font-size: 28px;
-    }
+  .about-hero h1 {
+    font-size: 28px;
+  }
 
-    .who-panel {
-        min-height: 520px;
-        padding: 22px 18px 25px;
-    }
+  .who-panel {
+    min-height: 520px;
+    padding: 22px 18px 25px;
+  }
 
-    .who-panel p {
-        font-size: 14px;
-        line-height: 1.65;
-    }
+  .who-panel p {
+    font-size: 14px;
+    line-height: 1.65;
+  }
 
-    .who-character {
-        width: 170px;
-        height: 170px;
-    }
+  .who-character {
+    width: 170px;
+    height: 170px;
+  }
 
-    .about-team {
-        border-radius: 24px;
-        padding: 25px 15px 40px;
-    }
+  .about-team {
+    padding: 25px 15px 40px;
+    border-radius: 24px;
+  }
 
-    .team-name {
-        min-width: 170px;
-        font-size: 14px;
-    }
+  .team-name {
+    min-width: 170px;
+    font-size: 14px;
+  }
 }
 
 @media (max-width: 480px) {
-    .services-page-section .service-feature,
-    .services-page-section .service-feature.reverse {
-        width: calc(100vw - 40px);
-        min-height: 175px;
-        padding: 22px;
-        grid-template-columns: minmax(0, 1fr) 90px;
-        gap: 15px;
-    }
+  .services-page-section .service-feature,
+  .services-page-section .service-feature.reverse {
+    grid-template-columns: minmax(0, 1fr) 90px;
+    gap: 15px;
+    width: calc(100vw - 40px);
+    min-height: 175px;
+    padding: 22px;
+  }
 
-    .services-page-section .card-icon {
-        width: 90px;
-        height: 90px;
-    }
+  .services-page-section .card-icon {
+    width: 90px;
+    height: 90px;
+  }
 
-    .services-page-section .service-copy h2 {
-        font-size: 21px;
-        margin-bottom: 20px;
-    }
+  .services-page-section .service-copy h2 {
+    margin-bottom: 20px;
+    font-size: 21px;
+  }
 
-    .services-page-section .service-copy p {
-        font-size: 13px;
-    }
+  .services-page-section .service-copy p {
+    font-size: 13px;
+  }
 
-    .services-page-section .section-heading h2 {
-        font-size: 24px;
-    }
+  .services-page-section .section-heading h2 {
+    font-size: 24px;
+  }
 
-    .services-page-section .partner-row {
-        gap: 12px;
-    }
+  .services-page-section .partner-row {
+    gap: 12px;
+  }
 
-    .services-page-section .partner-row span {
-        width: 70px;
-        height: 70px;
-        flex-basis: 70px;
-    }
+  .services-page-section .partner-row span {
+    flex-basis: 70px;
+    width: 70px;
+    height: 70px;
+  }
 
-    .services-page-section .partner-row span img {
-        width: 55px;
-        height: 55px;
-    }
+  .services-page-section .partner-row span img {
+    width: 55px;
+    height: 55px;
+  }
+
+  .games-page .games-section-heading h1,
+  .games-page .games-section-heading h2 {
+    font-size: 24px;
+  }
+}
+
+.games-page .featured-game {
+    margin-top: -50px !important;
+    margin-bottom: 50px;
+    padding-top: 0 !important;
+}
+
+.games-page .featured-game-content {
+    margin-top: 0 !important;
 }
