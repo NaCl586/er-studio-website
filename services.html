@@ -8,34 +8,135 @@
   <link rel="stylesheet" href="css/pages.css">
 </head>
 <body>
-<header class="site-header">
-  <a class="brand" href="index.html" aria-label="ER Studio home"><span class="brand-mark">ER</span><span>Studio</span></a>
-  <button class="nav-toggle" aria-label="Open navigation" aria-expanded="false">☰</button>
-  <nav class="site-nav"><a class="" href="index.html">Home</a>
-<a class="" href="games.html">Games</a>
-<a class="active" href="services.html">Services</a>
-<a class="" href="about.html">About Us</a>
-<a class="" href="news.html">News</a></nav>
-</header>
-<main>
-<section class="hero video-hero"><div class="video-placeholder"><span class="play-icon">▶</span><small>Profile looping video</small></div></section>
-<section class="page-section">
-  <div class="section-actions"><a class="btn" href="#">Watch Now</a><a class="btn btn-dark" href="#contact">Contact Us</a></div>
-  <div class="service-list">
-    <article class="service-feature"><div class="card-icon">🧠</div><div><h2>Gamific<span>ation</span></h2><p>We create interactive educational games using gamification to make learning more engaging and enjoyable.</p></div></article>
-    <article class="service-feature reverse"><div class="card-icon">🎲</div><div><h2>Fun Game <span>Development</span></h2><p>We create fun and entertaining games designed to provide enjoyable experiences for players.</p></div></article>
-    <article class="service-feature"><div class="card-icon">🎮</div><div><h2>Hypercasual Game <span>Development</span></h2><p>We also develop engaging hypercasual games that are simple, accessible, and fun to play.</p></div></article>
-  </div>
-  <div class="section-heading centered"><h2>Our Clients & <span>Partners</span></h2></div>
-  <div class="partner-row"><span></span><span></span><span></span><span></span><span></span><span></span></div>
-</section>
-</main>
-<footer id="contact" class="site-footer">
-  <div><h2>Contact Us!</h2><p>Email:</p><p>education.reinvented.studio@gmail.com<br>gerson.natanael@outlook.com</p></div>
-  <div class="footer-brand"><span class="brand-mark">ER</span><strong>Studio</strong></div>
-  <div class="footer-bottom"><div class="socials"><a href="#">◉</a><a href="#">▶</a><a href="#">◎</a></div><small>© 2026 ER STUDIO. ALL RIGHTS RESERVED.</small></div>
-</footer>
-<a class="floating-contact" href="#contact">Contact Us</a>
-<script src="js/main.js"></script>
+
+  <!-- HEADER -->
+  <header class="site-header">
+    <a class="brand" href="index.html" aria-label="ER Studio home">
+      <img src="images/Logo/Logo + Nama Horizontal Putih.png" alt="ER Studio" class="brand-logo">
+    </a>
+    <button class="nav-toggle" aria-label="Open navigation" aria-expanded="false">☰</button>
+    <nav class="site-nav">
+      <a href="index.html">Home</a>
+      <a href="games.html">Games</a>
+      <a href="services.html" class="active">Services</a>
+      <a href="about.html">About Us</a>
+      <a href="news.html">News</a>
+    </nav>
+  </header>
+
+  <!-- MAIN CONTENT -->
+  <main>
+    <section class="hero video-hero">
+      <video class="services-video" autoplay muted loop playsinline>
+        <source src="videos/Hypercasual.mp4" type="video/mp4">
+      </video>
+    </section>
+
+    <section class="services-page-section">
+      <div class="service-list">
+
+        <!-- Service Item 1 -->
+        <article class="service-feature">
+          <div class="card-icon">
+            <img src="images/Icon Services/Icon otak.png" alt="Gamification">
+          </div>
+          <div class="service-copy">
+            <h2>Gamific<span>ation</span></h2>
+            <p>
+              We create interactive educational games using gamification to make
+              learning more engaging and enjoyable.
+            </p>
+          </div>
+        </article>
+
+        <!-- Service Item 2 -->
+        <article class="service-feature reverse">
+          <div class="card-icon">
+            <img src="images/Icon Services/Dadu icon.png" alt="Fun Game Development">
+          </div>
+          <div class="service-copy">
+            <h2>Fun Game <span>Development</span></h2>
+            <p>
+              We create fun and entertaining games designed to provide
+              enjoyable experiences for players.
+            </p>
+          </div>
+        </article>
+
+        <!-- Service Item 3 -->
+        <article class="service-feature">
+          <div class="card-icon">
+            <img src="images/Icon Services/Game icon.png" alt="Hypercasual Game Development">
+          </div>
+          <div class="service-copy">
+            <h2>Hypercasual<br><span>Game Development</span></h2>
+            <p>
+              We also develop engaging hypercasual games that are simple,
+              accessible, and fun to play.
+            </p>
+          </div>
+        </article>
+
+      </div>
+
+      <!-- Partners -->
+      <div class="section-heading centered">
+        <h2>Our Clients & <span>Partners</span></h2>
+      </div>
+      <div class="partner-row">
+    <span>
+        <img src="images/partners/DFC.png" alt="Dream Forge Creation">
+    </span>
+
+    <span>
+        <img src="images/partners/smak3.png" alt="SMAK 3 Penabur Jakarta">
+    </span>
+</div>
+    </section>
+  </main>
+
+  <!-- FOOTER -->
+  <footer id="contact" class="site-footer">
+    <div class="footer-contact">
+      <h2>Contact Us!</h2>
+      <p>Email:</p>
+      <p>
+        <a href="mailto:education.reinvented.studio@gmail.com">education.reinvented.studio@gmail.com</a>
+      </p>
+      <p>
+        <a href="mailto:gerson.natanael@outlook.com">gerson.natanael@outlook.com</a>
+      </p>
+    </div>
+
+    <img src="images/Logo/Logo + Nama Horizontal Putih.png" alt="ER Studio" class="footer-logo">
+
+    <div class="footer-bottom">
+      <div class="socials">
+        <!-- WhatsApp -->
+        <a href="http://wa.me/6287888633468" target="_blank" rel="noopener noreferrer" aria-label="WhatsApp">
+          <img src="images/Icon Sosmed/Whatsapp.png" alt="WhatsApp">
+        </a>
+
+        <!-- YouTube -->
+        <a href="https://www.youtube.com/channel/UCxSBws73TBzKOpwoqveHt7w" target="_blank" rel="noopener noreferrer" aria-label="YouTube">
+          <img src="images/Icon Sosmed/Youtube.png" alt="YouTube">
+        </a>
+
+        <!-- Instagram -->
+        <a href="https://www.instagram.com/educationreinventedstudio" target="_blank" rel="noopener noreferrer" aria-label="Instagram">
+          <img src="images/Icon Sosmed/Instagram.png" alt="Instagram">
+        </a>
+      </div>
+
+      <div class="footer-line"></div>
+
+      <small>© 2026 ER STUDIO. ALL RIGHTS RESERVED.</small>
+    </div>
+  </footer>
+
+  <!-- FLOATING ACTION BUTTON -->
+  <a class="floating-contact" href="#contact">Contact Us</a>
+
+  <script src="js/main.js"></script>
 </body>
 </html>

@@ -854,3 +854,734 @@
 
     opacity: 1;
 }
+
+/* =========================================================
+   SERVICES PAGE
+   ========================================================= */
+
+.services-page-section {
+    position: relative;
+
+    padding-top: 70px;
+    padding-bottom: 70px;
+
+    background:
+        url("../images/Background.png")
+        center top / cover
+        no-repeat;
+}
+
+
+/* ---------------------------------------------------------
+   BUTTONS
+   --------------------------------------------------------- */
+
+.services-actions {
+    position: relative;
+    z-index: 2;
+
+    max-width: 1120px;
+    margin: 0 auto 40px;
+
+    padding-top: 0;
+}
+
+
+/* ---------------------------------------------------------
+   SERVICE LIST
+   --------------------------------------------------------- */
+
+.services-page-section .service-list {
+    position: relative;
+    z-index: 1;
+
+    max-width: 1020px;
+    margin: 0 auto;
+
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+}
+
+
+/* ---------------------------------------------------------
+   SERVICE CARD
+   --------------------------------------------------------- */
+
+.services-page-section .service-feature {
+    position: relative;
+
+    width: 405px;
+    min-height: 185px;
+
+    padding: 25px 28px;
+
+    display: grid;
+    grid-template-columns: minmax(0, 1fr) 105px;
+    align-items: center;
+    gap: 15px;
+
+    background: rgba(48, 72, 92, 0.90);
+    color: #fff;
+
+    border-radius: 25px;
+
+    box-sizing: border-box;
+}
+
+
+/* Left cards */
+.services-page-section .service-feature:not(.reverse) {
+    align-self: flex-start;
+}
+
+
+/* Right cards */
+.services-page-section .service-feature.reverse {
+    align-self: flex-end;
+
+    margin-left: 0;
+}
+
+
+/* ---------------------------------------------------------
+   SERVICE COPY
+   --------------------------------------------------------- */
+
+.services-page-section .service-copy {
+    min-width: 0;
+}
+
+.services-page-section .service-copy h2 {
+    margin: 0 0 px;
+
+    font-size: 24px;
+    line-height: 1.15;
+    font-weight: 600;
+
+    color: #fff;
+}
+
+.services-page-section .service-copy h2 span {
+    color: var(--orange);
+}
+
+.services-page-section .service-copy p {
+    margin: 0;
+
+    font-size: 14px;
+    line-height: 1.55;
+
+    color: #fff;
+}
+
+
+/* ---------------------------------------------------------
+   SERVICE ICON
+   --------------------------------------------------------- */
+
+.services-page-section .card-icon {
+    width: 105px;
+    height: 105px;
+
+    margin: 0;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    font-size: 0;
+}
+
+.services-page-section .card-icon img {
+    display: block;
+
+    width: 100%;
+    height: 100%;
+
+    object-fit: contain;
+}
+
+
+/* ---------------------------------------------------------
+   CLIENTS & PARTNERS
+   --------------------------------------------------------- */
+
+.services-page-section .section-heading {
+    position: relative;
+    z-index: 1;
+
+    margin-top: 65px;
+    margin-bottom: 30px;
+}
+
+.services-page-section .section-heading h2 {
+    margin: 0;
+
+    font-size: 28px;
+    font-weight: 500;
+}
+
+.services-page-section .section-heading h2 span {
+    color: var(--orange);
+}
+
+
+/* Partner circles */
+.services-page-section .partner-row {
+    position: relative;
+    z-index: 1;
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-wrap: wrap;
+
+    gap: 18px;
+}
+
+.services-page-section .partner-row span {
+    width: 62px;
+    height: 62px;
+
+    flex: 0 0 62px;
+
+    border-radius: 50%;
+
+    background: rgba(255, 153, 56, 0.8);
+}
+
+
+/* ---------------------------------------------------------
+   SERVICES HERO
+   --------------------------------------------------------- */
+
+.video-hero {
+    min-height: 470px;
+}
+
+.video-hero .video-placeholder {
+    min-height: 470px;
+}
+
+
+/* ---------------------------------------------------------
+   RESPONSIVE
+   --------------------------------------------------------- */
+
+@media (max-width: 800px) {
+
+    .services-page-section {
+        padding-bottom: 55px;
+    }
+
+    .services-actions {
+        padding-left: 5%;
+        padding-right: 5%;
+    }
+
+    .services-page-section .service-list {
+        width: 100%;
+        padding: 0 5%;
+        box-sizing: border-box;
+    }
+
+    .services-page-section .service-feature,
+    .services-page-section .service-feature.reverse {
+        width: min(100%, 450px);
+
+        align-self: center;
+
+        margin-left: 0;
+    }
+}
+
+
+@media (max-width: 480px) {
+
+    .services-page-section .service-feature {
+        grid-template-columns: minmax(0, 1fr) 80px;
+
+        min-height: 175px;
+
+        padding: 22px;
+    }
+
+    .services-page-section .card-icon {
+        width: 80px;
+        height: 80px;
+    }
+
+    .services-page-section .service-copy h2 {
+        font-size: 21px;
+        margin-bottom: 20px;
+    }
+
+    .services-page-section .service-copy p {
+        font-size: 13px;
+    }
+
+    .services-page-section .section-heading h2 {
+        font-size: 24px;
+    }
+
+    .services-page-section .partner-row {
+        gap: 12px;
+    }
+
+    .services-page-section .partner-row span {
+        width: 52px;
+        height: 52px;
+
+        flex-basis: 52px;
+    }
+}
+
+.services-video {
+    display: block;
+    width: 100%;
+    height: 470px;
+    object-fit: cover;
+}
+
+/* =========================================================
+   SERVICES - WIDER CARDS
+   ========================================================= */
+
+.services-page-section .service-list {
+    width: 100%;
+    max-width: 1125px;
+    gap: 25px;
+}
+
+.services-page-section .service-feature,
+.services-page-section .service-feature.reverse {
+    width: 560px;
+    max-width: 1560px;
+    min-height: 185px;
+
+    padding: 25px 30px;
+
+    grid-template-columns: minmax(0, 1fr) 120px;
+    gap: 20px;
+}
+
+
+/* Larger icons */
+.services-page-section .card-icon {
+    width: 120px;
+    height: 120px;
+}
+
+.services-page-section .card-icon img {
+    width: 100%;
+    height: 100%;
+    object-fit: contain;
+}
+
+
+/* Keep left/right staggering */
+.services-page-section .service-feature:not(.reverse) {
+    align-self: flex-start;
+}
+
+.services-page-section .service-feature.reverse {
+    align-self: flex-end;
+    margin-left: 0;
+}
+
+
+/* =========================================================
+   RESPONSIVE
+   ========================================================= */
+
+@media (max-width: 800px) {
+
+    .services-page-section .service-list {
+        width: 100%;
+        padding: 0 20px;
+        box-sizing: border-box;
+    }
+
+    .services-page-section .service-feature,
+    .services-page-section .service-feature.reverse {
+        width: 100%;
+        max-width: 560px;
+    }
+}
+
+
+@media (max-width: 480px) {
+
+    .services-page-section .service-feature,
+    .services-page-section .service-feature.reverse {
+        width: 100%;
+        min-height: 175px;
+        padding: 22px;
+    }
+
+    .services-page-section .service-feature {
+        grid-template-columns: minmax(0, 1fr) 90px;
+        gap: 15px;
+    }
+
+    .services-page-section .card-icon {
+        width: 90px;
+        height: 90px;
+    }
+
+    .services-page-section .card-icon img {
+        width: 100%;
+        height: 100%;
+    }
+}
+
+/* =========================================================
+   SERVICES CARD WIDTH - FINAL OVERRIDE
+   ========================================================= */
+
+.services-page-section .service-list {
+    width: 100% !important;
+    max-width: 1120px !important;
+}
+
+.services-page-section .service-feature,
+.services-page-section .service-feature.reverse {
+    width: 560px !important;
+    max-width: 560px !important;
+    min-width: 560px !important;
+
+    min-height: 185px;
+
+    padding: 25px 30px;
+
+    grid-template-columns: minmax(0, 1fr) 120px;
+    gap: 20px;
+}
+
+
+/* Left cards */
+.services-page-section .service-feature:not(.reverse) {
+    align-self: flex-start !important;
+    margin-left: 0 !important;
+}
+
+
+/* Right cards */
+.services-page-section .service-feature.reverse {
+    align-self: flex-end !important;
+    margin-left: 0 !important;
+}
+
+
+/* Icons */
+.services-page-section .card-icon {
+    width: 120px !important;
+    height: 120px !important;
+    min-width: 120px !important;
+}
+
+.services-page-section .card-icon img {
+    width: 100% !important;
+    height: 100% !important;
+    object-fit: contain;
+}
+
+
+/* =========================================================
+   MOBILE
+   ========================================================= */
+
+@media (max-width: 800px) {
+    .services-page-section .service-list {
+        width: 100% !important;
+        padding-left: 20px !important;
+        padding-right: 20px !important;
+        box-sizing: border-box;
+    }
+
+    .services-page-section .service-feature,
+    .services-page-section .service-feature.reverse {
+        width: calc(100vw - 40px) !important;
+        max-width: 560px !important;
+        min-width: 0 !important;
+    }
+}
+
+
+@media (max-width: 480px) {
+    .services-page-section .service-feature,
+    .services-page-section .service-feature.reverse {
+        width: calc(100vw - 40px) !important;
+        min-height: 175px;
+        padding: 22px;
+    }
+
+    .services-page-section .service-feature {
+        grid-template-columns: minmax(0, 1fr) 90px;
+        gap: 15px;
+    }
+
+    .services-page-section .card-icon {
+        width: 90px !important;
+        height: 90px !important;
+        min-width: 90px !important;
+    }
+}
+
+/* =========================================================
+   SERVICES - FIX ICON / TEXT SPACING
+   ========================================================= */
+
+.services-page-section .service-feature,
+.services-page-section .service-feature.reverse {
+    grid-template-columns: 120px minmax(0, 1fr) !important;
+    gap: 25px !important;
+}
+
+
+/* Keep the icon at the left */
+.services-page-section .card-icon {
+    width: 120px !important;
+    height: 120px !important;
+    justify-self: start;
+}
+
+
+/* Text gets the remaining space */
+.services-page-section .service-copy {
+    min-width: 0;
+}
+
+
+/* =========================================================
+   MOBILE
+   ========================================================= */
+
+@media (max-width: 480px) {
+    .services-page-section .service-feature,
+    .services-page-section .service-feature.reverse {
+        grid-template-columns: 90px minmax(0, 1fr) !important;
+        gap: 15px !important;
+    }
+
+    .services-page-section .card-icon {
+        width: 90px !important;
+        height: 90px !important;
+    }
+}
+
+/* =========================================================
+   SERVICES - TEXT LEFT / IMAGE RIGHT
+   ========================================================= */
+
+.services-page-section .service-feature,
+.services-page-section .service-feature.reverse {
+    width: 560px !important;
+    max-width: 560px !important;
+
+    grid-template-columns: minmax(0, 1fr) 120px !important;
+    gap: 25px !important;
+}
+
+
+/* Text on the LEFT */
+.services-page-section .service-copy {
+    order: 1;
+}
+
+
+/* Icon on the RIGHT */
+.services-page-section .card-icon {
+    order: 2;
+
+    width: 120px !important;
+    height: 120px !important;
+
+    justify-self: end;
+}
+
+
+/* Make sure the image fills the icon area */
+.services-page-section .card-icon img {
+    width: 100%;
+    height: 100%;
+    object-fit: contain;
+}
+
+
+/* Keep the staggered cards */
+.services-page-section .service-feature:not(.reverse) {
+    align-self: flex-start;
+}
+
+.services-page-section .service-feature.reverse {
+    align-self: flex-end;
+}
+
+
+/* =========================================================
+   MOBILE
+   ========================================================= */
+
+@media (max-width: 800px) {
+    .services-page-section .service-feature,
+    .services-page-section .service-feature.reverse {
+        width: 100% !important;
+        max-width: 560px !important;
+    }
+}
+
+@media (max-width: 480px) {
+    .services-page-section .service-feature,
+    .services-page-section .service-feature.reverse {
+        grid-template-columns: minmax(0, 1fr) 90px !important;
+        gap: 15px !important;
+    }
+
+    .services-page-section .card-icon {
+        width: 90px !important;
+        height: 90px !important;
+    }
+}
+
+/* =========================================================
+   SERVICES - CLIENTS & PARTNERS ICONS
+   ========================================================= */
+
+.services-page-section .partner-row span {
+    width: 175px;
+    height: 175px;
+    flex: 0 0 175px;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    border-radius: 50%;
+    background: rgba(255, 153, 56, 0.8);
+
+    overflow: hidden;
+}
+
+.services-page-section .partner-row span img {
+    display: block;
+
+    width: 100px;
+    height: 100px;
+
+    max-width: 100%;
+    max-height: 100%;
+
+    object-fit: contain;
+}
+
+
+/* Mobile */
+@media (max-width: 480px) {
+    .services-page-section .partner-row span {
+        width: 70px;
+        height: 70px;
+        flex-basis: 70px;
+    }
+
+    .services-page-section .partner-row span img {
+        width: 55px;
+        height: 55px;
+    }
+}
+
+/* =========================================================
+   SERVICES - DECORATIVE DOTTED PATH
+   ========================================================= */
+
+.services-page-section .service-list {
+    position: relative;
+    z-index: 0;
+    overflow: visible;
+}
+
+
+/* Dotted path behind the cards */
+.services-page-section .service-list::before {
+    content: "";
+    position: absolute;
+
+    top: 0;
+    left: 0;
+
+    width: 100%;
+    height: 100%;
+
+    pointer-events: none;
+    z-index: 0;
+
+    background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 1120 850' preserveAspectRatio='none'%3E%3Cpath d='M0 105 H650 Q720 105 720 175 V285' fill='none' stroke='%23ffe05b' stroke-width='2' stroke-dasharray='6 5'/%3E%3Cpath d='M200 410 Q130 410 130 480 V610' fill='none' stroke='%23ffe05b' stroke-width='2' stroke-dasharray='6 5'/%3E%3C/svg%3E");
+
+    background-repeat: no-repeat;
+    background-position: center top;
+    background-size: 100% 100%;
+}
+
+
+/* Cards stay above the path */
+.services-page-section .service-feature,
+.services-page-section .service-feature.reverse {
+    position: ab;
+    z-index: 1;
+}
+
+
+/* =========================================================
+   MOVE ONLY THE PATH
+   ========================================================= */
+
+.services-page-section .service-list {
+    position: relative;
+    z-index: 0;
+    overflow: visible;
+}
+
+.services-page-section .service-list::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    pointer-events: none;
+    z-index: 0;
+
+    background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 1120 850' preserveAspectRatio='none'%3E%3Cpath d='M0 105 H650 Q720 105 720 175 V285' fill='none' stroke='%23ffe05b' stroke-width='2' stroke-dasharray='6 5'/%3E%3Cpath d='M1120 410 H200 Q130 410 130 480 V615' fill='none' stroke='%23ffe05b' stroke-width='2' stroke-dasharray='6 5'/%3E%3C/svg%3E");
+
+    background-repeat: no-repeat;
+    background-position: center top;
+    background-size: 100% 100%;
+
+    transform: translateX(100px);
+}
+
+.services-page-section .service-feature,
+.services-page-section .service-feature.reverse {
+    position: relative;
+    z-index: 1;
+}
+
+.services-page-section .service-feature > * {
+    position: relative;
+    z-index: 2;
+}
+
+@media (max-width: 800px) {
+    .services-page-section .service-list::before {
+        display: none;
+    }
+}
+
+
+/* Mobile */
+@media (max-width: 800px) {
+    .services-page-section .service-list::before {
+        display: none;
+    }
+}
