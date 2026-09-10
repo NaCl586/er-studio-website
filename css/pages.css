@@ -34,7 +34,7 @@
 
 
 /* =========================================================
-   2. ABOUT SECTION
+   2. ABOUT SECTION & WHO WE ARE
    ========================================================= */
 
 .about-content {
@@ -69,11 +69,6 @@
   position: relative;
   z-index: 1;
 }
-
-
-/* =========================================================
-   3. WHO ARE WE
-   ========================================================= */
 
 .who-panel {
   position: relative;
@@ -156,7 +151,7 @@
 
 
 /* =========================================================
-   4. VISION & MISSION
+   3. VISION & MISSION
    ========================================================= */
 
 .vision-mission {
@@ -259,7 +254,7 @@
 
 
 /* =========================================================
-   5. OUR TEAM
+   4. OUR TEAM
    ========================================================= */
 
 .about-team {
@@ -361,7 +356,7 @@
 
 
 /* =========================================================
-   6. SERVICES PAGE & CARDS
+   5. SERVICES PAGE & CARDS
    ========================================================= */
 
 .services-page-section {
@@ -487,7 +482,7 @@
 
 
 /* =========================================================
-   7. CLIENTS & PARTNERS
+   6. CLIENTS & PARTNERS
    ========================================================= */
 
 .services-page-section .section-heading {
@@ -540,7 +535,7 @@
 
 
 /* =========================================================
-   8. GAMES PAGE - LAYOUT & HERO
+   7. GAMES PAGE - LAYOUT & ACTION BAR
    ========================================================= */
 
 .games-page {
@@ -567,17 +562,11 @@
   object-fit: cover;
 }
 
-/* Watch / Contact Bar */
 .games-action-bar {
   position: relative;
-  display: flex;
-  align-items: flex-start;
-  justify-content: space-between;
-  width: 100%;
-  height: 100px;
-  padding: 50px 7.5% 0;
-  box-sizing: border-box;
-  background: url("../images/Background.png") center center / cover no-repeat;
+  padding-top: 70px;
+  padding-bottom: 70px;
+  background: url("../images/Background.png") center top / cover no-repeat;
 }
 
 .games-action-bar::after {
@@ -597,79 +586,70 @@
   pointer-events: none;
 }
 
-.games-watch-button {
-  position: relative;
-  z-index: 2;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  width: 82px;
-  height: 30px;
-  color: #ffffff;
-  font-size: 11px;
-  font-weight: 500;
-  text-decoration: none;
-  background: var(--orange);
-  border-radius: 20px;
-}
-
+.games-watch-button,
 .games-contact-button {
   position: relative;
   z-index: 2;
   display: flex;
   align-items: center;
   justify-content: center;
-  width: 88px;
   height: 30px;
   color: #ffffff;
-  font-size: 10px;
-  font-weight: 600;
   text-decoration: none;
-  background: #000000;
   border-radius: 20px;
 }
 
-/* Container & Full-Width Background */
+.games-watch-button {
+  width: 82px;
+  font-size: 11px;
+  font-weight: 500;
+  background: var(--orange);
+}
+
+.games-contact-button {
+  width: 88px;
+  font-size: 10px;
+  font-weight: 600;
+  background: #000000;
+}
+
 .games-page .games-content {
   position: relative;
-  z-index: 0;
-  width: min(86%, 1180px);
-  max-width: 1180px;
-  margin: 0 auto;
-  padding: 75px 0 55px;
-  box-sizing: border-box;
-  background: transparent;
-  overflow: visible;
-}
-
-.games-page .games-content::before {
-  content: "";
-  position: absolute;
-  top: 0;
-  bottom: 0;
-  left: 50%;
-  z-index: -1;
-  width: 100vw;
+  padding: 32px 10% 75px;
   background: url("../images/Background.png") center top / cover no-repeat;
-  transform: translateX(-50%);
-  pointer-events: none;
+  overflow: hidden;
 }
 
-.games-page .games-content > * {
-  position: relative;
-  z-index: 1;
+.games-page .games-content-box {
+  width: 100%;
+  margin: 0 auto 55px;
+  padding: 45px 55px;
+  box-sizing: border-box;
+  background: rgba(255, 255, 255, 0.88);
+  border-radius: 18px;
+  box-shadow: 0 12px 35px rgba(0, 0, 0, 0.18);
+}
+
+.games-page .games-content-box:last-child {
+  margin-bottom: 0;
+}
+
+.games-page .games-content-box .game-showcase,
+.games-page .games-content-box .game-gallery {
+  width: 100%;
 }
 
 
 /* =========================================================
-   9. GAMES PAGE - HEADINGS & TYPOGRAPHY
+   8. GAMES PAGE - HEADINGS & FEATURED SHOWCASE
    ========================================================= */
 
 .games-page .games-section-heading {
   position: relative;
-  z-index: 2;
+  z-index: 5;
   width: 100%;
-  margin: 0 0 30px;
+  max-width: 1150px;
+  margin: 0 auto 16px;
   padding: 0;
   box-sizing: border-box;
 }
@@ -678,46 +658,57 @@
 .games-page .games-section-heading h2 {
   margin: 0;
   color: var(--black, #111111);
-  font-size: clamp(32px, 4vw, 48px);
+  font-size: clamp(30px, 4vw, 42px);
   font-weight: 500;
   line-height: 1.2;
 }
 
-.games-page .games-section-heading span {
+.games-page .games-section-heading span,
+.games-page .games-section-heading h1 span,
+.games-page .games-section-heading h2 span {
   color: var(--orange);
 }
-
-
-/* =========================================================
-   10. GAMES PAGE - FEATURED SHOWCASE
-   ========================================================= */
 
 .games-page #fun-games {
   position: relative;
   z-index: 2;
   width: 100%;
-  max-width: 865px;
-  margin: 0 auto 45px;
+  max-width: 1150px;
+  margin: 0 auto 40px;
   padding: 0;
+  box-sizing: border-box;
   background: transparent;
 }
 
-.games-page .featured-game {
+.games-page #fun-games .featured-game {
   width: 100%;
   margin: 0;
-  padding: 10px 0 0;
+  padding: 10px;
   box-sizing: border-box;
-  background: transparent;
+  background: rgba(255, 255, 255, 0.94);
+  border-radius: 14px;
+  box-shadow: 0 8px 25px rgba(0, 0, 0, 0.15);
 }
 
 .games-page .featured-game-banner {
   display: block;
   width: 100%;
   aspect-ratio: 1000 / 259;
-  margin: 0;
+  margin: 0 0 10px;
   padding: 0;
   box-sizing: border-box;
-  background: url("../images/Banner Dice on Delivery.png") center center / 100% 100% no-repeat;
+  overflow: hidden;
+  border-radius: 8px;
+  background: transparent;
+}
+
+.games-page .featured-game-banner img {
+  display: block;
+  width: 100%;
+  height: 100%;
+  margin: 0;
+  padding: 0;
+  object-fit: cover;
 }
 
 .games-page .featured-game-content {
@@ -728,43 +719,43 @@
   margin: 0;
   padding: 0;
   box-sizing: border-box;
-  background: transparent;
 }
 
 .games-page .featured-game-description {
   width: 100%;
   margin: 0;
-  padding: 0 20px 0 0;
+  padding: 0 10px 0 4px;
   box-sizing: border-box;
-  background: transparent;
+  text-align: justify;
 }
 
 .games-page .featured-game-description p {
-  margin: 0 0 20px;
+  margin: 0 0 12px;
   padding: 0;
-  color: var(--black, #111111);
-  font-size: 14px;
-  font-weight: 400;
-  line-height: 1.8;
-  text-indent: 0;
+  color: #111111;
+  font-size: 15px;
+  line-height: 1.5;
 }
 
 .games-page .games-play-button {
   display: inline-flex;
   align-items: center;
   justify-content: center;
-  width: auto;
-  min-width: 90px;
-  height: auto;
+  min-width: 70px;
   margin: 0;
-  padding: 11px 24px;
-  box-sizing: border-box;
+  padding: 7px 14px;
   color: #ffffff;
-  font-size: 14px;
+  font-size: 15px;
   font-weight: 600;
   text-decoration: none;
   background: var(--orange);
-  border-radius: 24px;
+  border-radius: 20px;
+  transition: transform 0.2s ease, opacity 0.2s ease;
+}
+
+.games-page .games-play-button:hover {
+  transform: translateY(-2px);
+  opacity: 0.9;
 }
 
 /* Featured Screenshots Area */
@@ -772,12 +763,11 @@
   display: grid;
   grid-template-columns: 3fr 1fr;
   grid-template-rows: 1fr 1fr;
-  gap: 8px;
+  gap: 5px;
   width: 100%;
   margin: 0;
   padding: 0;
   box-sizing: border-box;
-  background: transparent;
 }
 
 .games-page .featured-screenshot-big {
@@ -787,9 +777,8 @@
   height: 100%;
   margin: 0;
   padding: 0;
-  box-sizing: border-box;
-  background: transparent;
   overflow: hidden;
+  border-radius: 6px;
 }
 
 .games-page .featured-screenshot-small:nth-child(2) {
@@ -799,9 +788,8 @@
   height: 100%;
   margin: 0;
   padding: 0;
-  box-sizing: border-box;
-  background: transparent;
   overflow: hidden;
+  border-radius: 6px;
 }
 
 .games-page .featured-screenshot-small:nth-child(3) {
@@ -811,9 +799,8 @@
   height: 100%;
   margin: 0;
   padding: 0;
-  box-sizing: border-box;
-  background: transparent;
   overflow: hidden;
+  border-radius: 6px;
 }
 
 .games-page .featured-screenshot-big img,
@@ -828,79 +815,100 @@
 
 
 /* =========================================================
-   11. GAMES PAGE - GALLERIES & PAGINATION
+   9. GAMES PAGE - GALLERIES & PAGINATION
    ========================================================= */
 
-.game-gallery {
+.games-page .game-gallery {
   position: relative;
   z-index: 2;
   display: grid;
-  grid-template-columns: minmax(0, 0.62fr) minmax(0, 1fr);
-  column-gap: 35px;
-  align-items: start;
+  grid-template-columns: minmax(0, 1.35fr) minmax(0, 1fr);
+  gap: 35px;
+  align-items: center;
   width: 100%;
-  max-width: 770px;
-  margin: 0 auto 38px;
-}
-
-.games-content .games-section-heading + .game-gallery {
-  margin-bottom: 100px;
+  max-width: 1050px;
+  margin: 0 auto 70px;
+  padding: 0;
 }
 
 .game-gallery-feature,
-.game-gallery-side {
+.games-page .game-gallery-side {
+  display: flex;
+  flex-direction: column;
   min-width: 0;
 }
 
-.game-gallery-feature .game-tile {
+.games-page .game-gallery-feature-image {
   width: 100%;
+  aspect-ratio: 16 / 9;
+  overflow: hidden;
+  border-radius: 18px;
 }
 
-.game-gallery-feature .game-tile img {
+.games-page .game-gallery-feature-image .game-tile {
+  width: 100%;
+  height: 100%;
+  margin: 0;
+  padding: 0;
+  border: 0;
+  background: transparent;
+  border-radius: 0;
+}
+
+.games-page .game-gallery-feature-image .game-tile img {
   display: block;
   width: 100%;
-  height: auto;
-  aspect-ratio: 1 / 1;
+  height: 100%;
   object-fit: cover;
 }
 
-.game-gallery-description {
-  margin-top: 8px;
+.games-page .game-gallery-description {
+  margin-top: 22px;
+  padding: 0;
 }
 
-.game-gallery-description p {
-  margin: 0 0 15px;
-  color: #111111;
-  font-size: 10px;
-  line-height: 1.4;
+.games-page .game-gallery-description p {
+  margin: 0 0 22px;
+  color: #000000;
+  font-size: 15px;
+  line-height: 1.65;
+  text-align: justify;
 }
 
-.game-gallery-grid {
+.games-page .game-gallery-grid {
   display: grid;
   grid-template-columns: repeat(2, minmax(0, 1fr));
-  gap: 14px;
+  gap: 18px;
+  width: 100%;
 }
 
 .game-tile,
-.games-page .game-tile {
+.games-page .game-tile,
+.games-page .game-gallery-grid .game-tile {
   position: relative;
   width: 100%;
+  aspect-ratio: 1.35 / 1;
+  margin: 0;
+  padding: 0;
   font-size: 14px;
   background: transparent;
+  border: 0;
+  border-radius: 18px;
   overflow: hidden;
 }
 
 .game-tile-image,
-.game-gallery-grid .game-tile img {
+.games-page .game-gallery-grid .game-tile img {
   display: block;
   width: 100%;
-  height: auto;
+  height: 100%;
   aspect-ratio: 1 / 1;
   object-fit: cover;
-  transition: transform 0.2s ease, filter 0.2s ease;
+  transition: transform 0.25s ease;
 }
 
-.game-tile:hover .game-tile-image {
+.game-tile:hover .game-tile-image,
+.games-page .game-gallery-grid .game-tile:hover img {
   transform: scale(1.03);
 }
 
@@ -912,35 +920,243 @@
 }
 
 /* Pagination */
-.game-pagination {
+.game-pagination,
+.games-page .game-pagination {
   display: flex;
   align-items: center;
   justify-content: center;
-  gap: 4px;
-  margin-top: 12px;
+  gap: 12px;
+  margin-top: 22px;
 }
 
-.game-pagination button {
-  width: 14px;
-  height: 14px;
+.game-pagination button,
+.games-page .game-pagination button {
+  width: 34px;
+  height: 34px;
   padding: 0;
-  color: #0069b5;
-  font-size: 8px;
-  line-height: 14px;
-  background: transparent;
+  color: var(--orange);
+  font-family: inherit;
+  font-size: 14px;
+  font-weight: 600;
+  line-height: 1;
+  background: rgba(255, 255, 255, 0.18);
   border: 0;
   border-radius: 50%;
   cursor: pointer;
+  transition: background 0.2s ease, transform 0.2s ease;
 }
 
-.game-pagination button.active {
+.game-pagination button:hover,
+.games-page .game-pagination button:hover {
+  transform: translateY(-1px);
+}
+
+.game-pagination button.active,
+.games-page .game-pagination button.active {
   color: #ffffff;
-  background: #0069b5;
+  background: var(--orange);
 }
 
 
 /* =========================================================
-   12. FOOTER
+   10. NEWS SYSTEM & CONTENT
+   ========================================================= */
+
+body:has(.news-content) {
+  background: url("../images/Background.png") center top / cover no-repeat;
+}
+
+.news-page {
+  position: relative;
+  background: url("../images/Background.png") center top / cover no-repeat;
+}
+
+.news-content {
+  position: relative;
+  width: min(1150px, 90%);
+  margin: 60px auto 80px;
+  padding: 50px 55px;
+  background: rgba(255, 255, 255, 0.88);
+  border-radius: 18px;
+  box-shadow: 0 12px 35px rgba(0, 0, 0, 0.18);
+  box-sizing: border-box;
+  overflow: hidden;
+}
+
+.news-page #all-news {
+  width: 100%;
+}
+
+.news-layout {
+  display: grid;
+  grid-template-columns: 220px minmax(0, 1fr);
+  gap: 45px;
+  width: 100%;
+}
+
+/* Table of Contents */
+.news-toc {
+  position: sticky;
+  top: 25px;
+  align-self: start;
+  color: #111111;
+}
+
+.news-toc-title {
+  padding-bottom: 12px;
+  border-bottom: 1px solid #111111;
+  font-size: 16px;
+  font-weight: 600;
+  line-height: 1.3;
+}
+
+.news-toc ul {
+  margin: 18px 0 0;
+  padding-left: 22px;
+}
+
+.news-toc li {
+  margin-bottom: 12px;
+  font-size: 15px;
+  line-height: 1.45;
+}
+
+.news-toc a {
+  color: #111111;
+  text-decoration: none;
+  transition: color 0.2s ease;
+}
+
+.news-toc a:hover {
+  color: var(--orange);
+}
+
+/* Articles */
+.news-articles {
+  min-width: 0;
+}
+
+.news-category-section {
+  margin-bottom: 70px;
+}
+
+.news-category-heading {
+  margin: 0 0 25px;
+  padding-bottom: 7px;
+  border-bottom: 1px solid #111111;
+  color: #111111;
+  font-size: 20px;
+  font-weight: 500;
+}
+
+.news-article {
+  margin-bottom: 60px;
+  padding-bottom: 60px;
+  border-bottom: 1px solid #111111;
+  scroll-margin-top: 100px;
+}
+
+.news-article:last-child {
+  margin-bottom: 0;
+  padding-bottom: 0;
+  border-bottom: none;
+}
+
+.news-article-header {
+  margin-bottom: 22px;
+}
+
+.news-article-category {
+  margin-bottom: 5px;
+  color: var(--orange);
+  font-size: 9px;
+  font-weight: 600;
+  text-transform: uppercase;
+}
+
+.news-article-header h2 {
+  margin: 0 0 7px;
+  color: #111111;
+  font-size: 24px;
+  font-weight: 600;
+  line-height: 1.3;
+  scroll-margin-top: 40px;
+}
+
+.news-article-header time {
+  color: #555555;
+  font-size: 13px;
+}
+
+.news-article-body p {
+  margin: 0 0 18px;
+  color: #111111;
+  font-size: 15px;
+  line-height: 1.7;
+  text-align: justify;
+}
+
+.news-article-body p:last-child {
+  margin-bottom: 0;
+}
+
+.news-anchor {
+  position: relative;
+  top: -100px;
+  display: block;
+  height: 0;
+  margin: 0;
+  padding: 0;
+  visibility: hidden;
+  pointer-events: none;
+}
+
+/* Article Images */
+.news-article-images {
+  margin-top: 25px;
+}
+
+.news-images-row,
+.news-images-grid {
+  display: grid;
+  gap: 14px;
+}
+
+.news-images-row {
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+}
+
+.news-images-grid {
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+}
+
+.news-images-single {
+  display: flex;
+  justify-content: center;
+}
+
+.news-images-single .news-article-image {
+  width: min(100%, 500px);
+}
+
+.news-article-image {
+  width: 100%;
+  margin: 0;
+  overflow: hidden;
+  border-radius: 12px;
+}
+
+.news-article-image img {
+  display: block;
+  width: 100%;
+  height: 100%;
+  aspect-ratio: 4 / 3;
+  object-fit: cover;
+}
+
+
+/* =========================================================
+   11. FOOTER
    ========================================================= */
 
 .site-footer {
@@ -996,7 +1212,7 @@
 
 
 /* =========================================================
-   13. RESPONSIVE MEDIA QUERIES
+   12. RESPONSIVE MEDIA QUERIES
    ========================================================= */
 
 @media (min-width: 801px) {
@@ -1079,12 +1295,87 @@
   }
 
   .games-page .games-content {
-    padding: 25px 5% 50px;
+    width: 92%;
+    padding: 25px 0 45px;
   }
 
-  .game-gallery {
-    grid-template-columns: minmax(0, 0.62fr) minmax(0, 1fr);
-    column-gap: 20px;
+  .games-page .games-content-box {
+    margin-bottom: 40px;
+    padding: 35px 30px;
+    border-radius: 16px;
+  }
+
+  .games-page #fun-games,
+  .games-page .games-section-heading {
+    width: 92%;
+  }
+
+  .games-page #fun-games .featured-game {
+    padding: 10px;
+  }
+
+  .games-page .featured-game-content {
+    grid-template-columns: 1fr;
+    gap: 15px;
+  }
+
+  .games-page .featured-game-description {
+    padding: 0;
+  }
+
+  .games-page .game-gallery {
+    grid-template-columns: 1fr;
+    gap: 30px;
+  }
+
+  .games-page .game-gallery-side {
+    width: 100%;
+  }
+
+  .games-page .game-gallery-feature-image {
+    aspect-ratio: 1.5 / 1;
+  }
+
+  .news-content {
+    width: 92%;
+    margin: 40px auto 60px;
+    padding: 35px 30px;
+    border-radius: 16px;
+  }
+
+  .news-layout {
+    grid-template-columns: 1fr;
+    gap: 40px;
+  }
+
+  .news-toc {
+    position: static;
+  }
+
+  .news-toc-title {
+    font-size: 17px;
+  }
+
+  .news-toc li {
+    font-size: 15px;
+  }
+
+  .news-category-heading {
+    font-size: 18px;
+  }
+
+  .news-article-header h2 {
+    font-size: 21px;
+  }
+
+  .news-article-body p {
+    font-size: 15px;
+    line-height: 1.65;
+  }
+
+  .news-article {
+    margin-bottom: 45px;
+    padding-bottom: 45px;
   }
 }
 
@@ -1172,22 +1463,97 @@
   }
 
   .games-page .games-content {
-    padding: 25px 20px 45px;
+    width: 94%;
+    padding: 20px 0 35px;
   }
 
-  .games-page .featured-game-content {
-    grid-template-columns: 1fr;
-    row-gap: 18px;
+  .games-page .games-content-box {
+    margin-bottom: 30px;
+    padding: 28px 20px;
+    border-radius: 14px;
   }
 
-  .game-gallery {
-    grid-template-columns: 1fr;
-    row-gap: 18px;
+  .games-page #fun-games,
+  .games-page .games-section-heading {
+    width: 94%;
+  }
+
+  .games-page #fun-games .featured-game {
+    padding: 8px;
+    border-radius: 12px;
+  }
+
+  .games-page .featured-game-banner {
+    margin-bottom: 8px;
+  }
+
+  .games-page .featured-game-description p {
+    font-size: 14px;
+    line-height: 1.65;
+    text-align: justify;
+  }
+
+  .games-page .featured-game-screenshots {
+    grid-template-columns: 1fr 1fr;
+    grid-template-rows: auto auto;
+  }
+
+  .games-page .featured-screenshot-big {
+    grid-column: 1 / 3;
+    grid-row: 1;
+  }
+
+  .games-page .featured-screenshot-small:nth-child(2) {
+    grid-column: 1;
+    grid-row: 2;
+  }
+
+  .games-page .featured-screenshot-small:nth-child(3) {
+    grid-column: 2;
+    grid-row: 2;
   }
 
   .game-gallery-grid {
     grid-template-columns: repeat(2, minmax(0, 1fr));
     gap: 10px;
+  }
+
+  .news-content {
+    width: 94%;
+    margin: 25px auto 45px;
+    padding: 28px 20px;
+    border-radius: 14px;
+  }
+
+  .news-toc ul {
+    padding-left: 20px;
+  }
+
+  .news-toc li {
+    margin-bottom: 10px;
+    font-size: 15px;
+  }
+
+  .news-category-heading {
+    font-size: 17px;
+  }
+
+  .news-article-header h2 {
+    font-size: 20px;
+  }
+
+  .news-article-body p {
+    font-size: 15px;
+    line-height: 1.65;
+  }
+
+  .news-article {
+    margin-bottom: 45px;
+  }
+
+  .news-images-row,
+  .news-images-grid {
+    grid-template-columns: 1fr;
   }
 }
 
@@ -1222,6 +1588,23 @@
 
   .team-name {
     min-width: 170px;
+    font-size: 14px;
+  }
+
+  .games-page .games-section-heading h2 {
+    font-size: 28px;
+  }
+
+  .games-page .game-gallery-grid {
+    gap: 12px;
+  }
+
+  .games-page .game-gallery-grid .game-tile,
+  .games-page .game-gallery-feature-image {
+    border-radius: 12px;
+  }
+
+  .games-page .game-gallery-description p {
     font-size: 14px;
   }
 }
@@ -1275,74 +1658,74 @@
   }
 }
 
-.games-page .featured-game {
-    margin-top: -50px !important;
-    margin-bottom: 50px;
-    padding-top: 0 !important;
-}
-
-.games-page .featured-game-content {
-    margin-top: 0 !important;
-}
-
 /* =========================================================
-   GAMES PAGE - MOCKUP GALLERY
+   GAMES PAGE - ALIGN FEATURED WINDOW WITH OTHER WINDOWS
    ========================================================= */
 
-.games-page .game-gallery {
+.games-page .games-section-heading,
+.games-page #fun-games {
     width: 100%;
-    margin: 0 0 70px;
+    max-width: none;
+
+    margin-left: 0;
+    margin-right: 0;
+}
+
+
+/* Keep the featured window aligned exactly with
+   the Mobile/WebGL and Education windows */
+
+.games-page #fun-games .featured-game {
+    width: 100%;
+    box-sizing: border-box;
+}
+
+@media (max-width: 800px) {
+
+    .games-page .games-section-heading,
+    .games-page #fun-games {
+        width: 100%;
+        max-width: none;
+    }
+
+}
+
+@media (max-width: 800px) {
+
+    .games-page .games-section-heading,
+    .games-page #fun-games {
+        width: 100%;
+        max-width: none;
+    }
+
+}
+
+@media (max-width: 560px) {
+
+    .games-page .games-section-heading,
+    .games-page #fun-games {
+        width: 100%;
+        max-width: none;
+    }
+
+}
+
+.games-page .featured-game-banner {
+    width: 100%;
+
+    aspect-ratio: 1000 / 259;
+
+    margin-bottom: 30px;
     padding: 0;
 
-    display: grid;
-    grid-template-columns: minmax(0, 1.35fr) minmax(0, 1fr);
-    gap: 35px;
-
-    align-items: start;
-}
-
-
-/* =========================================================
-   FEATURED GAME
-   ========================================================= */
-
-.games-page .game-gallery-feature {
-    display: flex;
-    flex-direction: column;
-
-    min-width: 0;
-}
-
-
-/* Large featured image */
-
-.games-page .game-gallery-feature-image {
-    width: 100%;
-    aspect-ratio: 1.35 / 1;
+    box-sizing: border-box;
 
     overflow: hidden;
-    border-radius: 18px;
+
+    border-radius: 8px;
 }
 
-
-/* Remove the old tile styling from the featured image */
-
-.games-page .game-gallery-feature-image .game-tile {
-    width: 100%;
-    height: 100%;
-
-    margin: 0;
-    padding: 0;
-
-    border: 0;
-    background: transparent;
-    border-radius: 0;
-}
-
-
-/* Featured image itself */
-
-.games-page .game-gallery-feature-image .game-tile img {
+.games-page .featured-game-banner img {
     display: block;
 
     width: 100%;
@@ -1350,1190 +1733,45 @@
 
     object-fit: cover;
 }
-
-
-/* =========================================================
-   FEATURED DESCRIPTION
-   ========================================================= */
-
-.games-page .game-gallery-description {
-    margin-top: 22px;
-    padding: 0;
-}
-
-.games-page .game-gallery-description p {
-    margin: 0 0 22px;
-
-    color: #ffffff;
-
-    font-size: 15px;
-    line-height: 1.65;
-}
-
-
-/* =========================================================
-   PLAY BUTTON
-   ========================================================= */
-
-.games-page .games-play-button {
-    display: inline-flex;
-
-    width: fit-content;
-
-    align-items: center;
-    justify-content: center;
-
-    padding: 10px 25px;
-
-    background: var(--orange);
-    color: #ffffff;
-
-    border-radius: 24px;
-
-    font-size: 14px;
-    font-weight: 600;
-
-    text-decoration: none;
-
-    transition:
-        transform 0.2s ease,
-        opacity 0.2s ease;
-}
-
-.games-page .games-play-button:hover {
-    transform: translateY(-2px);
-    opacity: 0.9;
-}
-
-
-/* =========================================================
-   RIGHT SIDE
-   ========================================================= */
-
-.games-page .game-gallery-side {
-    min-width: 0;
-
-    display: flex;
-    flex-direction: column;
-}
-
-
-/* =========================================================
-   2 x 2 THUMBNAILS
-   ========================================================= */
-
-.games-page .game-gallery-grid {
-    width: 100%;
-
-    display: grid;
-    grid-template-columns: repeat(2, minmax(0, 1fr));
-
-    gap: 18px;
-}
-
-
-/* Thumbnail tile */
-
-.games-page .game-gallery-grid .game-tile {
-    width: 100%;
-    aspect-ratio: 1.35 / 1;
-
-    margin: 0;
-    padding: 0;
-
-    overflow: hidden;
-
-    border: 0;
-    border-radius: 18px;
-
-    background: transparent;
-}
-
-
-/* Thumbnail image */
-
-.games-page .game-gallery-grid .game-tile img {
-    display: block;
-
-    width: 100%;
-    height: 100%;
-
-    object-fit: cover;
-
-    transition: transform 0.25s ease;
-}
-
-
-/* Slight hover effect */
-
-.games-page .game-gallery-grid .game-tile:hover img {
-    transform: scale(1.03);
-}
-
-
-/* =========================================================
-   PAGINATION
-   ========================================================= */
-
-.games-page .game-pagination {
-    display: flex;
-
-    justify-content: center;
-    align-items: center;
-
-    gap: 12px;
-
-    margin-top: 22px;
-}
-
-.games-page .game-pagination button {
-    width: 34px;
-    height: 34px;
-
-    padding: 0;
-
-    border: 0;
-    border-radius: 50%;
-
-    background: rgba(255, 255, 255, 0.18);
-    color: #ffffff;
-
-    font-family: inherit;
-    font-size: 14px;
-    font-weight: 600;
-
-    cursor: pointer;
-
-    transition:
-        background 0.2s ease,
-        transform 0.2s ease;
-}
-
-.games-page .game-pagination button:hover {
-    transform: translateY(-1px);
-}
-
-.games-page .game-pagination button.active {
-    background: var(--orange);
-    color: #ffffff;
-}
-
-
-/* =========================================================
-   SECTION SPACING
-   ========================================================= */
 
 .games-page .games-section-heading {
-    margin-bottom: 28px;
-}
-
-.games-page .games-section-heading h2 {
-    margin: 0;
-    margin-top: 100px;
-    font-size: 34px;
-    line-height: 1.2;
-    font-weight: 600;
-}
-
-.games-page .games-section-heading h2 span {
-    color: var(--orange);
-}
-
-
-/* =========================================================
-   MOBILE
-   ========================================================= */
-
-@media (max-width: 800px) {
-
-    .games-page .game-gallery {
-        grid-template-columns: 1fr;
-        gap: 30px;
-    }
-
-    .games-page .game-gallery-side {
-        width: 100%;
-    }
-
-    .games-page .game-gallery-feature-image {
-        aspect-ratio: 1.5 / 1;
-    }
-}
-
-
-@media (max-width: 500px) {
-
-    .games-page .games-section-heading h2 {
-        font-size: 28px;
-    }
-
-    .games-page .game-gallery-grid {
-        gap: 12px;
-    }
-
-    .games-page .game-gallery-grid .game-tile {
-        border-radius: 12px;
-    }
-
-    .games-page .game-gallery-feature-image {
-        border-radius: 12px;
-    }
-
-    .games-page .game-gallery-description p {
-        font-size: 14px;
-    }
-}
-
-.games-page .games-content {
-    width: min(86%, 1180px) !important;
-    max-width: 1180px !important;
-    margin-left: auto !important;
-    margin-right: auto !important;
-}
-
-
-/* Center the actual gallery inside that content area */
-
-.games-page .game-gallery {
     width: 100%;
-    max-width: 1050px;
+    max-width: 1150px;
 
-    margin-left: auto;
-    margin-right: auto;
-
-    display: grid;
-    grid-template-columns: minmax(0, 1.35fr) minmax(0, 1fr);
-    gap: 35px;
-
-    align-items: center;
-}
-
-
-/* Black description text */
-
-.games-page .game-gallery-description p {
-    color: #000000;
-}
-
-.games-page .game-gallery-feature-image {
-    width: 100%;
-    aspect-ratio: 16 / 9;
-
-    overflow: hidden;
-    border-radius: 18px;
-}
-
-.games-page .game-gallery-description p {
-    color: #000000;
-
-    font-size: 15px;
-    line-height: 1.65;
-
-    text-align: justify;
-}
-
-.games-page .game-pagination button {
-    width: 34px;
-    height: 34px;
-    padding: 0;
-    border: 0;
-    border-radius: 50%;
-    background: rgba(255, 255, 255, 0.18);
-    color: var(--orange);
-    font-family: inherit;
-    font-size: 14px;
-    font-weight: 600;
-    cursor: pointer;
-    transition:
-        background 0.2s ease,
-        transform 0.2s ease;
-}
-
-.games-page .game-pagination button.active {
-    background: var(--orange);
-    color: #ffffff;
-}
-
-.news-content {
-  position: relative;
-  padding: 32px 5% 75px;
-  background: url("../images/Background.png") center top / cover no-repeat;
-  overflow: hidden;
-}
-
-/* =========================================================
-   NEWS SYSTEM
-   ========================================================= */
-
-.news-page {
-    position: relative;
-    background:
-        url("../images/Background.png")
-        center top /
-        cover
-        no-repeat;
-}
-
-
-/* =========================================================
-   NEWS LAYOUT
-   ========================================================= */
-
-.news-page #all-news {
-    width: 100%;
-}
-
-.news-layout {
-    display: grid;
-    grid-template-columns: 185px minmax(0, 1fr);
-    gap: 28px;
-
-    width: min(100%, 1050px);
-    margin: 0 auto;
-}
-
-
-/* =========================================================
-   TABLE OF CONTENTS
-   ========================================================= */
-
-.news-toc {
-    position: sticky;
-    top: 25px;
-
-    align-self: start;
-
-    color: #111111;
-}
-
-.news-toc-title {
-    padding-bottom: 8px;
-
-    border-bottom: 1px solid #111111;
-
-    font-size: 10px;
-    font-weight: 600;
-}
-
-.news-toc-group {
-    margin-top: 10px;
-}
-
-.news-toc-group h2 {
-    margin: 0;
-
-    font-size: 10px;
-    font-weight: 600;
-
-    color: #111111;
-}
-
-.news-toc-group:first-of-type h2 {
-    color: var(--orange);
-}
-
-.news-toc-group ul {
-    margin: 5px 0 0;
-    padding-left: 15px;
-}
-
-.news-toc-group li {
-    margin-bottom: 3px;
-
-    font-size: 9px;
-}
-
-.news-toc-group a {
-    color: #111111;
-    text-decoration: none;
-}
-
-.news-toc-group a:hover {
-    color: var(--orange);
-}
-
-
-/* =========================================================
-   ARTICLES
-   ========================================================= */
-
-.news-articles {
-    min-width: 0;
-}
-
-.news-category-section {
-    margin-bottom: 70px;
-}
-
-.news-category-heading {
-    margin: 0 0 25px;
-    padding-bottom: 7px;
-
-    border-bottom: 1px solid #111111;
-
-    color: #111111;
-
-    font-size: 20px;
-    font-weight: 500;
-}
-
-
-/* =========================================================
-   ARTICLE
-   ========================================================= */
-
-.news-article {
-    margin-bottom: 55px;
-
-    scroll-margin-top: 30px;
-}
-
-.news-article-header {
-    margin-bottom: 18px;
-}
-
-.news-article-category {
-    margin-bottom: 5px;
-
-    color: var(--orange);
-
-    font-size: 9px;
-    font-weight: 600;
-    text-transform: uppercase;
-}
-
-.news-article-header h2 {
-    margin: 0 0 5px;
-
-    color: #111111;
-
-    font-size: 18px;
-    font-weight: 600;
-    line-height: 1.3;
-}
-
-.news-article-header time {
-    color: #555555;
-
-    font-size: 9px;
-}
-
-
-/* =========================================================
-   ARTICLE TEXT
-   ========================================================= */
-
-.news-article-body p {
-    margin: 0 0 12px;
-
-    color: #111111;
-
-    font-size: 11px;
-    line-height: 1.6;
-
-    text-align: justify;
-}
-
-.news-article-body p:last-child {
-    margin-bottom: 0;
-}
-
-
-/* =========================================================
-   ARTICLE IMAGES
-   ========================================================= */
-
-.news-article-images {
-    margin-top: 20px;
-}
-
-.news-images-row {
-    display: grid;
-    grid-template-columns:
-        repeat(3, minmax(0, 1fr));
-
-    gap: 12px;
-}
-
-.news-images-grid {
-    display: grid;
-    grid-template-columns:
-        repeat(2, minmax(0, 1fr));
-
-    gap: 12px;
-}
-
-.news-images-single {
-    display: flex;
-    justify-content: center;
-}
-
-.news-article-image {
-    width: 100%;
-    margin: 0;
-    overflow: hidden;
-    border-radius: 12px;
-}
-
-.news-images-single .news-article-image {
-    width: min(100%, 260px);
-}
-
-.news-article-image img {
-    display: block;
-
-    width: 100%;
-    height: 100%;
-
-    aspect-ratio: 4 / 3;
-
-    object-fit: cover;
-}
-
-
-/* =========================================================
-   MOBILE
-   ========================================================= */
-
-@media (max-width: 800px) {
-
-    .news-layout {
-        grid-template-columns: 1fr;
-        gap: 35px;
-    }
-
-    .news-toc {
-        position: static;
-    }
-
-    .news-toc-group {
-        display: inline-block;
-        width: 48%;
-        vertical-align: top;
-    }
-
-    .news-category-heading {
-        font-size: 18px;
-    }
-
-    .news-article-header h2 {
-        font-size: 17px;
-    }
-
-    .news-article-body p {
-        font-size: 12px;
-        line-height: 1.65;
-    }
-}
-
-
-@media (max-width: 560px) {
-
-    .news-images-row,
-    .news-images-grid {
-        grid-template-columns: 1fr;
-    }
-
-    .news-toc-group {
-        display: block;
-        width: 100%;
-    }
-
-    .news-category-heading {
-        font-size: 17px;
-    }
-
-    .news-article {
-        margin-bottom: 45px;
-    }
-}
-
-/* =========================================================
-   NEWS ARTICLE TEXT
-   ========================================================= */
-
-.news-article-body p {
-    margin: 0 0 18px;
-
-    color: #111111;
-
-    font-size: 15px;
-    line-height: 1.65;
-
-    text-align: justify;
-}
-
-.news-article-header h2 {
-    margin: 0 0 6px;
-
-    color: #111111;
-
-    font-size: 24px;
-    font-weight: 600;
-    line-height: 1.3;
-}
-
-.news-article-header time {
-    color: #555555;
-
-    font-size: 13px;
-}
-
-/* =========================================================
-   NEWS TABLE OF CONTENTS
-   ========================================================= */
-
-.news-toc {
-    position: sticky;
-    top: 25px;
-    align-self: start;
-    color: #111111;
-}
-
-.news-toc-title {
-    padding-bottom: 12px;
-    border-bottom: 1px solid #111111;
-
-    font-size: 16px;
-    font-weight: 600;
-    line-height: 1.3;
-}
-
-.news-toc-group {
-    margin-top: 18px;
-}
-
-.news-toc-group h2 {
-    margin: 0 0 8px;
-
-    font-size: 15px;
-    font-weight: 600;
-    line-height: 1.3;
-}
-
-.news-toc-group:first-of-type h2 {
-    color: var(--orange);
-}
-
-.news-toc-group ul {
-    margin: 0;
-    padding-left: 20px;
-}
-
-.news-toc-group li {
-    margin-bottom: 8px;
-
-    font-size: 14px;
-    line-height: 1.45;
-}
-
-.news-toc-group a {
-    color: #111111;
-    text-decoration: none;
-}
-
-.news-toc-group a:hover {
-    color: var(--orange);
-}
-
-/* =========================================================
-   NEWS TABLE OF CONTENTS
-   ========================================================= */
-
-.news-toc {
-    position: sticky;
-    top: 25px;
-    align-self: start;
-    color: #111111;
-}
-
-.news-toc-title {
-    padding-bottom: 12px;
-    border-bottom: 1px solid #111111;
-
-    font-size: 16px;
-    font-weight: 600;
-    line-height: 1.3;
-}
-
-.news-toc ul {
-    margin: 18px 0 0;
-    padding-left: 22px;
-}
-
-.news-toc li {
-    margin-bottom: 10px;
-
-    font-size: 15px;
-    line-height: 1.45;
-}
-
-.news-toc a {
-    color: #111111;
-    text-decoration: none;
-}
-
-.news-toc a:hover {
-    color: var(--orange);
-}
-
-.news-article {
-    margin-bottom: 60px;
-    padding-bottom: 60px;
-
-    scroll-margin-top: 30px;
-
-    border-bottom: 1px solid #111111;
-}
-
-.news-article:last-child {
-    margin-bottom: 0;
-    padding-bottom: 0;
-    border-bottom: none;
-}
-
-@media (max-width: 800px) {
-
-    .news-article {
-        margin-bottom: 45px;
-        padding-bottom: 45px;
-    }
-
-}
-
-.news-article-header h2 {
-    margin: 0 0 6px;
-
-    color: #111111;
-
-    font-size: 24px;
-    font-weight: 600;
-    line-height: 1.3;
-
-    scroll-margin-top: 40px;
-}
-
-.news-anchor {
-    display: block;
-    position: relative;
-
-    top: -100px;
-
-    height: 0;
-    margin: 0;
+    margin: 0 auto 18px;
     padding: 0;
 
-    visibility: hidden;
+    box-sizing: border-box;
+}
+
+.games-page .featured-game-description p {
+    margin: 0 0 22px;
+    margin-right: 25px;
+    padding: 0;
+    color: #000000;
+    font-size: 15px;
+    font-weight: 400;
+    line-height: 1.65;
+    text-align: justify;
+    text-indent: 0;
+}
+
+.games-page .games-content::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 50%;
+    z-index: -1;
+
+    width: 100vw;
+    height: 100vh;
+
+    background-image: url("../images/Background.png");
+    background-position: center top;
+    background-size: 100% auto;
+    background-repeat: no-repeat;
+    background-color: #dff3ff;
+
+    transform: translateX(-50%);
     pointer-events: none;
-}
-
-/* =========================================================
-   NEWS CONTENT WINDOW
-   ========================================================= */
-
-.news-content {
-    width: min(1150px, 90%);
-    margin: 60px auto 80px;
-
-    padding: 50px 55px;
-
-    background: rgba(255, 255, 255, 0.96);
-
-    border-radius: 18px;
-
-    box-shadow:
-        0 12px 35px rgba(0, 0, 0, 0.18);
-
-    box-sizing: border-box;
-}
-
-
-/* =========================================================
-   NEWS LAYOUT
-   ========================================================= */
-
-.news-layout {
-    display: grid;
-    grid-template-columns: 220px minmax(0, 1fr);
-
-    gap: 45px;
-
-    width: 100%;
-}
-
-
-/* =========================================================
-   TABLE OF CONTENTS
-   ========================================================= */
-
-.news-toc {
-    position: sticky;
-    top: 25px;
-
-    align-self: start;
-
-    color: #111111;
-}
-
-.news-toc-title {
-    padding-bottom: 12px;
-
-    border-bottom: 1px solid #111111;
-
-    font-size: 16px;
-    font-weight: 600;
-    line-height: 1.3;
-}
-
-.news-toc ul {
-    margin: 18px 0 0;
-    padding-left: 22px;
-}
-
-.news-toc li {
-    margin-bottom: 12px;
-
-    font-size: 15px;
-    line-height: 1.45;
-}
-
-.news-toc a {
-    color: #111111;
-    text-decoration: none;
-
-    transition: color 0.2s ease;
-}
-
-.news-toc a:hover {
-    color: var(--orange);
-}
-
-
-/* =========================================================
-   ARTICLES
-   ========================================================= */
-
-.news-articles {
-    min-width: 0;
-}
-
-.news-article {
-    margin-bottom: 60px;
-    padding-bottom: 60px;
-
-    scroll-margin-top: 100px;
-
-    border-bottom: 1px solid #111111;
-}
-
-.news-article:last-child {
-    margin-bottom: 0;
-    padding-bottom: 0;
-    border-bottom: none;
-}
-
-
-/* =========================================================
-   ARTICLE HEADER
-   ========================================================= */
-
-.news-article-header {
-    margin-bottom: 22px;
-}
-
-.news-article-header h2 {
-    margin: 0 0 7px;
-
-    color: #111111;
-
-    font-size: 24px;
-    font-weight: 600;
-    line-height: 1.3;
-}
-
-.news-article-header time {
-    color: #555555;
-
-    font-size: 13px;
-}
-
-
-/* =========================================================
-   ARTICLE BODY
-   ========================================================= */
-
-.news-article-body p {
-    margin: 0 0 18px;
-
-    color: #111111;
-
-    font-size: 15px;
-    line-height: 1.7;
-
-    text-align: justify;
-}
-
-.news-article-body p:last-child {
-    margin-bottom: 0;
-}
-
-
-/* =========================================================
-   ARTICLE IMAGES
-   ========================================================= */
-
-.news-article-images {
-    margin-top: 25px;
-}
-
-.news-images-row {
-    display: grid;
-    grid-template-columns: repeat(3, minmax(0, 1fr));
-
-    gap: 14px;
-}
-
-.news-images-grid {
-    display: grid;
-    grid-template-columns: repeat(2, minmax(0, 1fr));
-
-    gap: 14px;
-}
-
-.news-images-single {
-    display: flex;
-    justify-content: center;
-}
-
-.news-images-single .news-article-image {
-    width: min(100%, 500px);
-}
-
-.news-article-image {
-    width: 100%;
-    margin: 0;
-
-    overflow: hidden;
-
-    border-radius: 12px;
-}
-
-.news-article-image img {
-    display: block;
-
-    width: 100%;
-    height: 100%;
-
-    aspect-ratio: 4 / 3;
-
-    object-fit: cover;
-}
-
-
-/* =========================================================
-   TABLET
-   ========================================================= */
-
-@media (max-width: 800px) {
-
-    .news-content {
-        width: 92%;
-        margin: 40px auto 60px;
-
-        padding: 35px 30px;
-
-        border-radius: 16px;
-    }
-
-    .news-layout {
-        grid-template-columns: 1fr;
-
-        gap: 40px;
-    }
-
-    .news-toc {
-        position: static;
-    }
-
-    .news-toc-title {
-        font-size: 17px;
-    }
-
-    .news-toc li {
-        font-size: 15px;
-    }
-
-    .news-article-header h2 {
-        font-size: 21px;
-    }
-
-    .news-article-body p {
-        font-size: 15px;
-        line-height: 1.65;
-    }
-
-    .news-article {
-        margin-bottom: 45px;
-        padding-bottom: 45px;
-    }
-}
-
-
-/* =========================================================
-   MOBILE
-   ========================================================= */
-
-@media (max-width: 560px) {
-
-    .news-content {
-        width: 94%;
-        margin: 25px auto 45px;
-
-        padding: 28px 20px;
-
-        border-radius: 14px;
-    }
-
-    .news-toc ul {
-        padding-left: 20px;
-    }
-
-    .news-toc li {
-        font-size: 15px;
-        margin-bottom: 10px;
-    }
-
-    .news-article-header h2 {
-        font-size: 20px;
-    }
-
-    .news-article-body p {
-        font-size: 15px;
-        line-height: 1.65;
-    }
-
-    .news-images-row,
-    .news-images-grid {
-        grid-template-columns: 1fr;
-    }
-}
-
-.news-content {
-    width: min(1150px, 90%);
-    margin: 60px auto 80px;
-
-    padding: 50px 55px;
-
-    /* Keep the background visible underneath */
-    background: rgba(255, 255, 255, 0.88);
-
-    border-radius: 18px;
-
-    box-shadow:
-        0 12px 35px rgba(0, 0, 0, 0.18);
-
-    box-sizing: border-box;
-}
-
-body:has(.news-content) {
-    background:
-        url("../images/Background.png")
-        center top /
-        cover
-        no-repeat;
-}
-
-/* =========================================================
-   GAMES PAGE - INDIVIDUAL CONTENT WINDOWS
-   ========================================================= */
-
-.games-page .games-content {
-    width: min(1180px, 90%);
-    max-width: 1180px;
-
-    margin: 0 auto;
-
-    padding: 30px 0 60px;
-
-    box-sizing: border-box;
-}
-
-
-/* Each content gets its own window */
-
-.games-page .games-content-box {
-    width: 100%;
-
-    margin: 0 auto 55px;
-    padding: 45px 55px;
-
-    box-sizing: border-box;
-
-    background: rgba(255, 255, 255, 0.88);
-
-    border-radius: 18px;
-
-    box-shadow:
-        0 12px 35px rgba(0, 0, 0, 0.18);
-}
-
-
-/* Last box doesn't need extra space underneath */
-
-.games-page .games-content-box:last-child {
-    margin-bottom: 0;
-}
-
-
-/* Make the existing content use the box width */
-
-.games-page .games-content-box .game-showcase,
-.games-page .games-content-box .game-gallery {
-    width: 100%;
-}
-
-
-/* =========================================================
-   TABLET
-   ========================================================= */
-
-@media (max-width: 800px) {
-
-    .games-page .games-content {
-        width: 92%;
-
-        padding: 25px 0 45px;
-    }
-
-    .games-page .games-content-box {
-        margin-bottom: 40px;
-
-        padding: 35px 30px;
-
-        border-radius: 16px;
-    }
-
-}
-
-
-/* =========================================================
-   MOBILE
-   ========================================================= */
-
-@media (max-width: 560px) {
-
-    .games-page .games-content {
-        width: 94%;
-
-        padding: 20px 0 35px;
-    }
-
-    .games-page .games-content-box {
-        margin-bottom: 30px;
-
-        padding: 28px 20px;
-
-        border-radius: 14px;
-    }
-
 }
