@@ -1,0 +1,28 @@
+body {
+  background-image:
+    radial-gradient(circle at 10% 20%, #ffffff99 0 3px, transparent 4px),
+    radial-gradient(circle at 90% 40%, #ffffff88 0 3px, transparent 4px);
+  background-size:90px 90px,110px 110px;
+}
+
+/* About Us page */
+.about-hero{min-height:500px;background:linear-gradient(rgba(20,25,30,.58),rgba(20,25,30,.68)),url("../images/about-hero.jpg") center/cover}
+.about-content{position:relative;overflow:hidden;padding:52px 6% 75px;background:radial-gradient(circle at 76% 7%,rgba(255,255,255,.72) 0 2px,transparent 3px) 0 0/34px 34px,linear-gradient(135deg,#eaf9ff,#a9def9 48%,#f2fbff)}
+.about-content:before,.about-content:after{content:"";position:absolute;pointer-events:none;border-radius:50%;border:22px solid rgba(42,185,190,.42);width:520px;height:520px;left:-390px;bottom:-240px}
+.about-content:after{left:auto;right:-410px;bottom:160px;width:620px;height:620px;border-color:rgba(255,205,40,.42)}
+.about-dots{position:absolute;width:260px;height:160px;right:5%;top:5px;opacity:.5;background:radial-gradient(circle,#fff 0 3px,transparent 4px) 0 0/28px 28px}
+.who-panel{position:relative;z-index:1;max-width:1020px;margin:0 auto 36px;min-height:280px;display:grid;grid-template-columns:1fr 230px;gap:30px;align-items:center;background:rgba(44,70,89,.93);border-radius:28px;box-shadow:20px 20px 0 rgba(47,72,90,.25)}
+.who-panel h2,.angled-panel h2{margin-top:0;font-size:clamp(27px,3vw,35px)}
+.who-panel p,.angled-panel p{font-size:15px;line-height:1.75;margin:0 0 18px}.highlight{color:var(--orange)}
+.who-character{width:190px;height:190px;margin:auto;border-radius:42% 42% 48% 48%;display:grid;place-items:center;background:var(--orange);color:#30485c;font-size:45px;font-weight:800}
+.vision-mission{position:relative;z-index:1;max-width:1020px;margin:0 auto 55px;display:grid;grid-template-columns:1fr 1fr;gap:70px}
+.angled-panel{min-height:285px;position:relative;overflow:hidden;display:grid;grid-template-columns:75px 1fr;gap:15px;align-items:start;border-radius:28px 28px 28px 12px;box-shadow:20px 20px 0 rgba(47,72,90,.22)}
+.angled-panel:after{content:"";position:absolute;right:-45px;bottom:-65px;width:150px;height:130px;background:rgba(40,57,70,.72);transform:rotate(-16deg)}
+.feature-symbol{font-size:70px;line-height:1;color:rgba(255,153,56,.75)}
+.about-team{position:relative;z-index:1;max-width:1120px;margin:0 auto;padding:32px 45px 48px;background:rgba(44,70,89,.91);color:#fff;border-radius:30px}
+.about-team .section-heading{margin-bottom:75px}
+.about-team-grid{max-width:900px;margin:auto;display:grid;grid-template-columns:repeat(3,1fr);gap:55px}
+.team-member{text-align:center}.team-avatar{width:112px;height:112px;margin:0 auto -4px;border:7px solid #fff4b9;border-radius:50%;display:grid;place-items:center;background:var(--orange);color:#30485c;font-size:27px;font-weight:800}
+.team-name{display:inline-block;min-width:185px;padding:17px 15px;border-radius:25px;background:var(--orange);color:#fff;border:2px solid #111;font-weight:600}
+.team-role{margin-top:9px;color:#fff;font-size:13px;line-height:1.4}
+@media(max-width:800px){.who-panel,.vision-mission{grid-template-columns:1fr}.who-character{width:140px;height:140px;font-size:32px}.vision-mission{gap:25px}.about-team{padding:28px 18px 40px}.about-team-grid{grid-template-columns:1fr;gap:70px}.about-team .section-heading{margin-bottom:55px}}
