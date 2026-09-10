@@ -485,24 +485,37 @@
    6. CLIENTS & PARTNERS
    ========================================================= */
 
-.services-page-section .section-heading {
+.services-page-section .clients-partners-window {
   position: relative;
   z-index: 1;
-  margin-top: 65px;
-  margin-bottom: 30px;
+  width: fit-content;
+  max-width: calc(100% - 40px);
+  margin: 65px auto 0;
+  padding: 40px 45px 50px;
+  box-sizing: border-box;
+  background: rgba(255, 255, 255, 0.88);
+  border-radius: 18px;
+  box-shadow: 0 12px 35px rgba(0, 0, 0, 0.18);
 }
 
-.services-page-section .section-heading h2 {
+.services-page-section .clients-partners-window .section-heading {
+  margin: 0 0 35px;
+  padding: 0;
+}
+
+.services-page-section .clients-partners-window .section-heading h2 {
   margin: 0;
   font-size: 28px;
   font-weight: 500;
+  white-space: nowrap;
 }
 
-.services-page-section .section-heading h2 span {
+.services-page-section .clients-partners-window .section-heading h2 span {
   color: var(--orange);
 }
 
-.services-page-section .partner-row {
+.services-page-section .clients-partners-window .partner-row {
+  margin: 0;
   position: relative;
   z-index: 1;
   display: flex;
@@ -538,9 +551,19 @@
    7. GAMES PAGE - LAYOUT & ACTION BAR
    ========================================================= */
 
+body:has(.games-page) {
+  background:
+    url("../images/Background.png")
+    center top / cover
+    fixed
+    no-repeat;
+  background-color: #dff3ff;
+}
+
 .games-page {
   position: relative;
   width: 100%;
+  background: transparent;
   overflow-x: hidden;
 }
 
@@ -616,7 +639,7 @@
 .games-page .games-content {
   position: relative;
   padding: 32px 10% 75px;
-  background: url("../images/Background.png") center top / cover no-repeat;
+  background: transparent;
   overflow: hidden;
 }
 
@@ -648,8 +671,7 @@
   position: relative;
   z-index: 5;
   width: 100%;
-  max-width: 1150px;
-  margin: 0 auto 16px;
+  margin: 0 0 18px;
   padding: 0;
   box-sizing: border-box;
 }
@@ -673,8 +695,7 @@
   position: relative;
   z-index: 2;
   width: 100%;
-  max-width: 1150px;
-  margin: 0 auto 40px;
+  margin: 0 0 40px;
   padding: 0;
   box-sizing: border-box;
   background: transparent;
@@ -694,7 +715,7 @@
   display: block;
   width: 100%;
   aspect-ratio: 1000 / 259;
-  margin: 0 0 10px;
+  margin: 0 0 30px;
   padding: 0;
   box-sizing: border-box;
   overflow: hidden;
@@ -730,11 +751,15 @@
 }
 
 .games-page .featured-game-description p {
-  margin: 0 0 12px;
+  margin: 0 0 22px;
+  margin-right: 25px;
   padding: 0;
-  color: #111111;
+  color: #000000;
   font-size: 15px;
-  line-height: 1.5;
+  font-weight: 400;
+  line-height: 1.65;
+  text-align: justify;
+  text-indent: 0;
 }
 
 .games-page .games-play-button {
@@ -963,15 +988,26 @@
    ========================================================= */
 
 body:has(.news-content) {
-  background: url("../images/Background.png") center top / cover no-repeat;
+  background:
+    url("../images/Background.png")
+    center top / cover
+    fixed
+    no-repeat;
+  background-color: #dff3ff;
 }
 
 .news-page {
   position: relative;
-  background: url("../images/Background.png") center top / cover no-repeat;
+  background:
+    url("../images/Background.png")
+    center top / cover
+    fixed
+    no-repeat;
+  background-color: #dff3ff;
 }
 
-.news-content {
+.news-content,
+.news-page .news-content {
   position: relative;
   width: min(1150px, 90%);
   margin: 60px auto 80px;
@@ -1284,6 +1320,12 @@ body:has(.news-content) {
     max-width: 560px;
   }
 
+  .services-page-section .clients-partners-window {
+    max-width: calc(100% - 30px);
+    padding: 35px 30px 40px;
+    margin-top: 50px;
+  }
+
   .games-page .video-hero {
     height: 350px;
     min-height: 350px;
@@ -1307,11 +1349,14 @@ body:has(.news-content) {
 
   .games-page #fun-games,
   .games-page .games-section-heading {
-    width: 92%;
+    width: 100%;
+    max-width: none;
   }
 
   .games-page #fun-games .featured-game {
+    width: 100%;
     padding: 10px;
+    box-sizing: border-box;
   }
 
   .games-page .featured-game-content {
@@ -1452,6 +1497,18 @@ body:has(.news-content) {
 }
 
 @media (max-width: 560px) {
+  .services-page-section .clients-partners-window {
+    width: calc(100% - 30px);
+    max-width: none;
+    padding: 30px 20px 35px;
+    margin-top: 40px;
+    border-radius: 15px;
+  }
+
+  .services-page-section .clients-partners-window .section-heading h2 {
+    white-space: normal;
+  }
+
   .games-page .video-hero {
     height: 270px;
     min-height: 270px;
@@ -1475,7 +1532,8 @@ body:has(.news-content) {
 
   .games-page #fun-games,
   .games-page .games-section-heading {
-    width: 94%;
+    width: 100%;
+    max-width: none;
   }
 
   .games-page #fun-games .featured-game {
@@ -1656,122 +1714,4 @@ body:has(.news-content) {
   .games-page .games-section-heading h2 {
     font-size: 24px;
   }
-}
-
-/* =========================================================
-   GAMES PAGE - ALIGN FEATURED WINDOW WITH OTHER WINDOWS
-   ========================================================= */
-
-.games-page .games-section-heading,
-.games-page #fun-games {
-    width: 100%;
-    max-width: none;
-
-    margin-left: 0;
-    margin-right: 0;
-}
-
-
-/* Keep the featured window aligned exactly with
-   the Mobile/WebGL and Education windows */
-
-.games-page #fun-games .featured-game {
-    width: 100%;
-    box-sizing: border-box;
-}
-
-@media (max-width: 800px) {
-
-    .games-page .games-section-heading,
-    .games-page #fun-games {
-        width: 100%;
-        max-width: none;
-    }
-
-}
-
-@media (max-width: 800px) {
-
-    .games-page .games-section-heading,
-    .games-page #fun-games {
-        width: 100%;
-        max-width: none;
-    }
-
-}
-
-@media (max-width: 560px) {
-
-    .games-page .games-section-heading,
-    .games-page #fun-games {
-        width: 100%;
-        max-width: none;
-    }
-
-}
-
-.games-page .featured-game-banner {
-    width: 100%;
-
-    aspect-ratio: 1000 / 259;
-
-    margin-bottom: 30px;
-    padding: 0;
-
-    box-sizing: border-box;
-
-    overflow: hidden;
-
-    border-radius: 8px;
-}
-
-.games-page .featured-game-banner img {
-    display: block;
-
-    width: 100%;
-    height: 100%;
-
-    object-fit: cover;
-}
-
-.games-page .games-section-heading {
-    width: 100%;
-    max-width: 1150px;
-
-    margin: 0 auto 18px;
-    padding: 0;
-
-    box-sizing: border-box;
-}
-
-.games-page .featured-game-description p {
-    margin: 0 0 22px;
-    margin-right: 25px;
-    padding: 0;
-    color: #000000;
-    font-size: 15px;
-    font-weight: 400;
-    line-height: 1.65;
-    text-align: justify;
-    text-indent: 0;
-}
-
-.games-page .games-content::before {
-    content: "";
-    position: absolute;
-    top: 0;
-    left: 50%;
-    z-index: -1;
-
-    width: 100vw;
-    height: 100vh;
-
-    background-image: url("../images/Background.png");
-    background-position: center top;
-    background-size: 100% auto;
-    background-repeat: no-repeat;
-    background-color: #dff3ff;
-
-    transform: translateX(-50%);
-    pointer-events: none;
 }
