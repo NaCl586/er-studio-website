@@ -1,4 +1,5 @@
 @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=DM+Sans:ital,opsz,wght@0,9..40,100..1000;1,9..40,100..1000&display=swap');
 
 :root {
   --orange:#ff9938;
@@ -32,6 +33,11 @@ img,video { max-width:100%; display:block; }
 .site-nav a { opacity:.9; padding:10px 0; border-bottom:2px solid transparent; }
 .site-nav a.active,.site-nav a:hover { opacity:1; border-bottom-color:white; }
 .nav-toggle { display:none; background:none; border:0; color:white; font-size:28px; }
+
+.brand-logo{
+  width: 100px;
+  height: auto;
+}
 
 .hero { min-height:470px; }
 .video-placeholder { min-height:470px; background:#555; display:grid; place-items:center; align-content:center; color:#ddd; gap:15px; }

@@ -3,18 +3,35 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <meta name="description" content="Education Reinvented Studio — creating educational, fun, and engaging games.">
+  <meta name="description" content="Education Reinvented Studio — educational, fun, and engaging game development.">
   <title>ER Studio | Home</title>
+
   <link rel="stylesheet" href="css/style.css">
   <link rel="stylesheet" href="css/pages.css">
   <link rel="stylesheet" href="css/home.css">
 </head>
+
 <body>
+
 <header class="site-header">
+
   <a class="brand" href="index.html" aria-label="ER Studio home">
-    <span class="brand-mark">ER</span><span>Studio</span>
+    <img
+      src="images/Logo/Logo + Nama Horizontal Putih.png"
+      alt="ER Studio"
+      class="brand-logo"
+    >
   </a>
-  <button class="nav-toggle" aria-label="Open navigation" aria-expanded="false">☰</button>
+
+  <button
+    class="nav-toggle"
+    aria-label="Open navigation"
+    aria-expanded="false"
+    type="button"
+  >
+    ☰
+  </button>
+
   <nav class="site-nav">
     <a class="active" href="index.html">Home</a>
     <a href="games.html">Games</a>
@@ -22,80 +39,592 @@
     <a href="about.html">About Us</a>
     <a href="news.html">News</a>
   </nav>
+
 </header>
 
+
 <main>
-  <!-- Featured game / gameplay area -->
-  <section class="home-feature">
-    <div class="feature-slide">
-      <div class="feature-copy">
-        <p class="eyebrow">Featured Game</p>
-        <h1>Block <span>Impact</span></h1>
-        <p>Break bricks, control the ball, and chase high scores with precise timing.</p>
-        <a class="btn" href="games.html">Play Now</a>
+
+  <!-- =====================================================
+     FEATURED GAME CAROUSEL
+     ===================================================== -->
+
+<section class="featured-games">
+
+    <!-- Decorative background -->
+    <div class="featured-games-background"></div>
+
+    <!-- Previous -->
+    <button
+        class="featured-arrow featured-prev"
+        type="button"
+        aria-label="Previous game"
+    >
+        ‹
+    </button>
+
+    <!-- Main featured panel -->
+    <div class="featured-panel">
+
+        <!-- Full carousel background -->
+        <div class="featured-game-background">
+            <img
+                id="featured-game-background-image"
+                src="images/Corousel/Block impact.png"
+                alt=""
+            >
+        </div>
+
+        <!-- Dark gradient over the background -->
+        <div class="featured-game-overlay"></div>
+
+        <!-- Content -->
+        <div class="featured-content">
+
+            <!-- LEFT -->
+            <div class="featured-information">
+
+                <img
+                    id="featured-game-logo"
+                    class="featured-game-logo"
+                    src="images/Corousel/Logo/Block impact.png"
+                    alt="Block Impact"
+                >
+
+                <p
+                    id="featured-game-description"
+                    class="featured-game-description"
+                >
+                    Block Impact is a fun 3D brick breaker game where you
+                    control a paddle to bounce a ball and destroy colorful
+                    blocks. Clear every level, keep the ball in play, and
+                    chase higher scores with precise timing.
+                </p>
+
+                <a
+                    id="featured-game-play"
+                    class="featured-play-button"
+                    href="games.html"
+                >
+                    Play Now
+                </a>
+
+            </div>
+
+            <!-- RIGHT -->
+            <div class="featured-game-icon-wrapper">
+
+                <img
+                    id="featured-game-icon"
+                    class="featured-game-icon"
+                    src="images/Corousel/Block impact.png"
+                    alt="Block Impact"
+                >
+
+            </div>
+
+        </div>
+
+        <!-- Progress -->
+        <div class="featured-progress">
+
+            <div class="featured-progress-track">
+                <div
+                    id="featured-progress-fill"
+                    class="featured-progress-fill"
+                ></div>
+            </div>
+
+            <div
+                id="featured-progress-dots"
+                class="featured-progress-dots"
+            ></div>
+
+        </div>
+
+    </div>
+
+    <!-- Next -->
+    <button
+        class="featured-arrow featured-next"
+        type="button"
+        aria-label="Next game"
+    >
+        ›
+    </button>
+
+</section>
+
+
+
+  <!-- =====================================================
+       MAIN HOME BACKGROUND
+       ===================================================== -->
+
+  <div class="home-background">
+
+    <!-- =================================================
+         SERVICES
+         ================================================= -->
+
+    <section class="home-section services-section">
+
+      <h1>
+        Our <span>Services</span>
+      </h1>
+
+
+      <div class="home-services-grid">
+
+        <article class="home-service-card">
+
+          <img
+            src="images/Icon Services/Icon otak.png"
+            alt=""
+            class="home-service-icon"
+          >
+
+          <div>
+
+            <h2>
+              Gamification
+            </h2>
+
+            <p>
+              We create interactive educational games using gamification
+              to make learning more engaging and enjoyable.
+            </p>
+
+          </div>
+
+        </article>
+
+
+        <article class="home-service-card service-card-right">
+
+          <img
+            src="images/Icon Services/Dadu icon.png"
+            alt=""
+            class="home-service-icon"
+          >
+
+          <div>
+
+            <h2>
+              Fun Games
+            </h2>
+
+            <p>
+              We create fun and entertaining games designed to provide
+              enjoyable experiences for players.
+            </p>
+
+          </div>
+
+        </article>
+
+
+        <article class="home-service-card">
+
+          <img
+            src="images/Icon Services/Game icon.png"
+            alt=""
+            class="home-service-icon"
+          >
+
+          <div>
+
+            <h2>
+              Hypercasual Games
+            </h2>
+
+            <p>
+              We also develop engaging hypercasual games that are simple,
+              accessible, and fun to play.
+            </p>
+
+          </div>
+
+        </article>
+
       </div>
-      <div class="feature-art placeholder-art">BLOCK<br>IMPACT</div>
-      <button class="feature-arrow prev" aria-label="Previous game">‹</button>
-      <button class="feature-arrow next" aria-label="Next game">›</button>
-    </div>
-    <div class="feature-dots" aria-label="Featured game slides"><button class="active"></button><button></button><button></button></div>
-  </section>
 
-  <section class="home-services page-section">
-    <div class="section-heading"><h2>Our <span>Services</span></h2></div>
-    <div class="home-service-grid">
-      <article class="service-card"><div class="service-icon">🧠</div><h3>Gamification</h3><p>We create interactive educational games using gamification to make learning more engaging and enjoyable.</p></article>
-      <article class="service-card"><div class="service-icon">🎲</div><h3>Fun Games</h3><p>We create fun and entertaining games designed to provide enjoyable experiences for players.</p></article>
-      <article class="service-card"><div class="service-icon">🎮</div><h3>Hypercasual Games</h3><p>We develop engaging hypercasual games that are simple, accessible, and fun to play.</p></article>
-    </div>
-  </section>
+    </section>
 
-  <section class="home-works page-section">
-    <div class="section-heading"><h2>Our <span>Works</span></h2></div>
-    <div class="works-main">
-      <div class="works-art placeholder-art">FLOOD<br>FILL</div>
-      <div class="works-copy">
-        <p>ER Studio is a game development team with a focus on creating educational games, while creating for-fun games on the side as well.</p>
-        <p>The games we create are made to order according to our clients' needs. We develop games across a variety of subjects and applications.</p>
+
+
+    <!-- =================================================
+         WORKS
+         ================================================= -->
+
+    <!-- =================================================
+     WORKS
+     ================================================= -->
+
+<section class="home-section works-section">
+
+  <h1>
+    Our <span>Works</span>
+  </h1>
+
+
+  <div class="home-work-feature">
+
+    <!-- LEFT -->
+    <div class="home-work-left">
+
+      <div class="home-work-image">
+        <img
+          src="images/Floodfill banner.png"
+          alt="FloodFill"
+        >
       </div>
-    </div>
-    <div class="work-thumbnails">
-      <div>Flood Fill</div><div>Witchball Froine</div><div>Block Impact</div><div>Boom Castle</div><div>Wild Balls</div>
-    </div>
-  </section>
 
-  <section class="home-about page-section">
-    <div class="section-heading centered"><h2>About <span>Us</span></h2></div>
-    <p class="about-lead">ER Studio is a game development team with a focus on creating educational games, while creating for-fun games on the side as well.</p>
-    <p class="about-lead">We've developed games about a variety of subjects, such as kindergarten education, high school chemistry, and high school mathematics, each built from the ground up according to our clients' requests and applications.</p>
-    <a class="btn" href="about.html">Learn More</a>
-  </section>
+      <!-- STATIC WORK THUMBNAILS -->
+      <div class="home-work-thumbnails">
 
-  <section class="home-team page-section">
-    <div class="section-heading centered"><h2>Meet <span>the Team</span></h2></div>
-    <div class="team-grid">
-      <article class="team-card"><div class="avatar placeholder-art">FM</div><h3>Fariz Maulana Tanim</h3><p>Game Designer, Visual, UI Artist</p></article>
-      <article class="team-card"><div class="avatar placeholder-art">GN</div><h3>Gerson Natanael</h3><p>CEO, Programmer</p></article>
-      <article class="team-card"><div class="avatar placeholder-art">DO</div><h3>Dhia Okta Hanif</h3><p>Visual Artist, Animator</p></article>
+        <div class="home-work-thumbnail">
+          <img
+            src="images/Corousel/Floodfill.png"
+            alt="FloodFill"
+          >
+        </div>
+
+        <div class="home-work-thumbnail">
+          <img
+            src="images/Corousel/Witchball.png"
+            alt="Witchball Froine"
+          >
+        </div>
+
+        <div class="home-work-thumbnail">
+          <img
+            src="images/Corousel/Block impact.png"
+            alt="Block Impact"
+          >
+        </div>
+
+        <div class="home-work-thumbnail">
+          <img
+            src="images/Corousel/Balon.png"
+            alt="Boom Castle"
+          >
+        </div>
+
+        <div class="home-work-thumbnail">
+          <img
+            src="images/Corousel/Wildball.png"
+            alt="Wild Balls"
+          >
+        </div>
+
+      </div>
+
     </div>
-  </section>
 
-  <section class="home-news page-section">
-    <div class="news-heading-row"><div class="section-heading"><h2>News about <span>ER Studio</span></h2></div><a href="news.html" class="see-more">See More →</a></div>
-    <div id="home-news" class="home-news-grid"></div>
-    <div class="news-carousel-controls"><button aria-label="Previous news">‹</button><button aria-label="Next news">›</button></div>
-  </section>
+
+    <!-- RIGHT -->
+    <div class="home-work-copy">
+
+      <p>
+        ER Studio is a game development team with a focus on
+        creating educational games, while creating for-fun games
+        on the sides as well.
+      </p>
+
+      <p>
+        The games we create are made to order according to our
+        clients' needs. We've developed games about a variety of
+        subjects, such as kindergarten education, high school
+        chemistry, and high school mathematics, each built from
+        ground up according to our clients' request and
+        application.
+      </p>
+
+      <a
+        class="btn"
+        href="games.html"
+      >
+        See Our Games
+      </a>
+
+    </div>
+
+  </div>
+
+</section>
+
+
+
+    <!-- =================================================
+         ABOUT
+         ================================================= -->
+
+    <section class="home-section about-preview">
+
+      <h1 class="home-section-text">
+        About <span>Us</span>
+      </h1>
+
+
+      <div class="about-preview-inner">
+
+        <div class="about-preview-copy">
+
+          <p>
+            ER Studio is a game development team with a focus on creating
+            educational games, while creating for-fun games on the sides as well.
+          </p>
+
+          <p>
+            The games we create are made to order according to our clients'
+            needs. We've developed games about a variety of subjects, such as
+            kindergarten education, high school chemistry, and high school
+            mathematics.
+          </p>
+
+          <a class="btn" href="about.html">
+            Learn More
+          </a>
+
+        </div>
+
+      </div>
+
+    </section>
+
+
+
+    <!-- =================================================
+         TEAM
+         ================================================= -->
+
+    <section class="home-section team-preview-home">
+
+      <h1 class="home-section-text">
+        Meet <span>the Team</span>
+      </h1>
+
+
+      <div class="home-team-grid">
+
+        <article class="home-team-member">
+
+          <img
+            src="images/Karakter/Fariz.png"
+            alt="Fariz Maulana Tanim"
+          >
+
+          <h2>
+            Fariz Maulana Tanim
+          </h2>
+
+          <p>
+            Game Designer, Visual, UI Artist
+          </p>
+
+        </article>
+
+
+        <article class="home-team-member">
+
+          <img
+            src="images/Karakter/Gerson.png"
+            alt="Gerson Natanael"
+          >
+
+          <h2>
+            Gerson Natanael
+          </h2>
+
+          <p>
+            CEO, Programmer
+          </p>
+
+        </article>
+
+
+        <article class="home-team-member">
+
+          <img
+            src="images/Karakter/Okta.png"
+            alt="Dhia Okta Hanif"
+          >
+
+          <h2>
+            Dhia Okta Hanif
+          </h2>
+
+          <p>
+            Visual Artist &amp; Animator
+          </p>
+
+        </article>
+
+      </div>
+
+    </section>
+
+
+
+    <!-- =================================================
+         NEWS
+         ================================================= -->
+
+    <section class="home-news-section">
+
+      <div class="home-news-heading">
+
+        <h1>
+          News about <span>ER Studio</span>
+        </h1>
+
+        <a href="news.html">
+          See More →
+        </a>
+
+      </div>
+
+
+      <div
+        id="home-news"
+        class="home-news-grid"
+      ></div>
+
+
+      <div class="home-news-arrows">
+
+        <button
+          type="button"
+          aria-label="Previous news"
+        >
+          ‹
+        </button>
+
+        <button
+          type="button"
+          aria-label="Next news"
+        >
+          ›
+        </button>
+
+      </div>
+
+    </section>
+
+  </div>
+
 </main>
 
-<footer id="contact" class="site-footer">
-  <div><h2>Contact Us!</h2><p>Email:</p><p>education.reinvented.studio@gmail.com<br>gerson.natanael@outlook.com</p></div>
-  <div class="footer-brand"><span class="brand-mark">ER</span><strong>Studio</strong></div>
-  <div class="footer-bottom"><div class="socials"><a href="#" aria-label="WhatsApp">◉</a><a href="#" aria-label="YouTube">▶</a><a href="#" aria-label="Instagram">◎</a></div><small>© 2026 ER STUDIO. ALL RIGHTS RESERVED.</small></div>
+
+
+<!-- =====================================================
+     FOOTER
+     ===================================================== -->
+
+<footer
+  id="contact"
+  class="site-footer"
+>
+<div class="footer-contact">
+  <h2>
+    Contact Us!
+  </h2>
+
+  <p>
+    Email :
+  </p>
+
+  <p>
+    <a href="mailto:education.reinvented.studio@gmail.com">
+      education.reinvented.studio@gmail.com
+    </a>
+    <br>
+
+    <a href="mailto:gerson.natanael@outlook.com">
+      gerson.natanael@outlook.com
+    </a>
+  </p>
+</div>
+
+
+<img
+  src="images/Logo/Logo + Nama Horizontal Putih.png"
+  alt="ER Studio"
+  class="footer-logo"
+>
+
+
+<div class="footer-bottom">
+
+  <div class="socials">
+
+    <!-- WhatsApp -->
+    <a
+      href="http://wa.me/6287888633468"
+      target="_blank"
+      rel="noopener noreferrer"
+      aria-label="WhatsApp"
+    >
+      <img
+        src="images/Icon Sosmed/Whatsapp.png"
+        alt="WhatsApp"
+      >
+    </a>
+
+
+    <!-- YouTube -->
+    <a
+      href="https://www.youtube.com/channel/UCxSBws73TBzKOpwoqveHt7w"
+      target="_blank"
+      rel="noopener noreferrer"
+      aria-label="YouTube"
+    >
+      <img
+        src="images/Icon Sosmed/Youtube.png"
+        alt="YouTube"
+      >
+    </a>
+
+
+    <!-- Instagram -->
+    <a
+      href="https://www.instagram.com/educationreinventedstudio"
+      target="_blank"
+      rel="noopener noreferrer"
+      aria-label="Instagram"
+    >
+      <img
+        src="images/Icon Sosmed/Instagram.png"
+        alt="Instagram"
+      >
+    </a>
+
+  </div>
+
+  <div class="footer-line"></div>
+
+  <small>
+    © 2026 ER STUDIO. ALL RIGHTS RESERVED.
+  </small>
+
+</div>
 </footer>
 
-<a class="floating-contact" href="#contact">Contact Us</a>
+
+
+<a
+  class="floating-contact"
+  href="#contact"
+>
+  Contact Us
+</a>
+
+
+
 <script src="js/main.js"></script>
 <script src="js/news.js"></script>
 <script src="js/home.js"></script>
+
 </body>
 </html>

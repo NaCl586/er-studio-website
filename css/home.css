@@ -1,14 +1,2220 @@
-.home-feature{position:relative;min-height:610px;background:#202a35;overflow:hidden;color:#fff}
-.feature-slide{min-height:610px;max-width:1280px;margin:auto;display:grid;grid-template-columns:1fr 1.15fr;align-items:center;gap:30px;padding:55px 7%;position:relative;background:radial-gradient(circle at 80% 25%,#5b7490 0 2px,transparent 3px) 0 0/35px 35px,linear-gradient(115deg,#182330,#4a637a)}
-.feature-copy{max-width:450px;position:relative;z-index:2}.eyebrow{color:var(--orange);font-weight:700;text-transform:uppercase;letter-spacing:2px}.feature-copy h1{font-size:clamp(45px,6vw,76px);line-height:1;margin:10px 0 22px}.feature-copy p:not(.eyebrow){line-height:1.8;color:#eef4f8}
-.feature-art{height:390px;border-radius:30px;display:grid;place-items:center;text-align:center;font-size:55px;line-height:.9;font-weight:800;box-shadow:20px 20px 0 rgba(0,0,0,.2);transform:rotate(1deg)}
-.feature-arrow{position:absolute;top:50%;transform:translateY(-50%);width:52px;height:52px;border:0;border-radius:50%;background:#fff;color:#30485c;font-size:45px;line-height:40px;cursor:pointer}.feature-arrow.prev{left:2%}.feature-arrow.next{right:2%}
-.feature-dots{position:absolute;bottom:25px;left:50%;transform:translateX(-50%);display:flex;gap:8px}.feature-dots button{width:9px;height:9px;padding:0;border:0;border-radius:50%;background:#ddd}.feature-dots button.active{background:var(--orange)}
-.home-services,.home-works,.home-about{background:linear-gradient(135deg,#dff6ff,#a9ddf9 55%,#eefaff)}
-.home-service-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:55px;max-width:1050px;margin:auto}.service-card{background:#3d566b;color:#fff;padding:30px;border-radius:8px 8px 35px 8px;min-height:235px;box-shadow:12px 12px 0 rgba(47,72,90,.18)}.service-icon{font-size:50px}.service-card h3{font-size:22px;margin:10px 0}.service-card p{line-height:1.7;font-size:14px}
-.works-main{display:grid;grid-template-columns:1.1fr 1fr;gap:50px;align-items:center;max-width:1050px;margin:auto}.works-art{min-height:300px;border-radius:12px;display:grid;place-items:center;text-align:center;font-size:45px;font-weight:800}.works-copy{line-height:1.8}.work-thumbnails{display:grid;grid-template-columns:repeat(5,1fr);gap:12px;max-width:1050px;margin:25px auto 0}.work-thumbnails div{height:80px;border-radius:8px;background:#fff;display:grid;place-items:center;text-align:center;font-size:12px;font-weight:600;box-shadow:0 5px 15px #0001}
-.home-about{text-align:center;padding-top:75px;padding-bottom:75px}.about-lead{max-width:900px;margin:0 auto 20px;line-height:1.8}.home-about .btn{margin-top:20px}
-.home-team{background:#40596e;color:#fff}.home-team .team-grid{padding-top:55px}.home-team .team-card{background:var(--orange)}
-.home-news{background:#40596e;color:#fff}.news-heading-row{display:flex;justify-content:space-between;align-items:center}.see-more{color:#fff;font-weight:600}.home-news-grid{display:grid;grid-template-columns:repeat(2,1fr);gap:25px;max-width:850px;margin:0 auto}.home-news .news-card .news-image{height:150px}.news-carousel-controls{text-align:center;margin-top:25px}.news-carousel-controls button{border:0;background:transparent;color:#fff;font-size:35px;margin:0 8px;cursor:pointer}
-@media(max-width:800px){.feature-slide{grid-template-columns:1fr;min-height:570px;text-align:center;padding:45px 10%}.home-feature,.feature-slide{min-height:570px}.feature-art{height:250px;font-size:38px}.feature-copy{margin:auto}.feature-arrow.prev{left:10px}.feature-arrow.next{right:10px}.home-service-grid,.works-main,.home-news-grid{grid-template-columns:1fr}.work-thumbnails{grid-template-columns:repeat(2,1fr)}.news-heading-row{align-items:flex-end;gap:15px}.news-heading-row .section-heading h2{font-size:25px}}
-@media(max-width:480px){.work-thumbnails{grid-template-columns:1fr}.service-card{min-height:auto}.feature-copy h1{font-size:45px}}
+/* =========================================================
+   ER STUDIO HOME PAGE
+   ========================================================= */
+
+
+/* =========================================================
+   HOME BACKGROUND
+   ========================================================= */
+
+.home-background {
+    background:
+        url("../images/Background.png") center top / cover fixed no-repeat,
+        #dff3ff;
+
+    overflow: hidden;
+}
+
+
+/* =========================================================
+   FEATURED GAME HERO
+   ========================================================= */
+
+.featured-games {
+    position: relative;
+
+    width: 100%;
+    height: 600px;
+
+    overflow: hidden;
+
+    display: flex;
+    align-items: stretch;
+    justify-content: stretch;
+
+    background: #9edcf5;
+}
+
+
+/* Decorative background behind the carousel */
+
+.featured-games-background {
+    position: absolute;
+    inset: 0;
+
+    background:
+        url("../images/Background.png")
+        center center / cover no-repeat;
+
+    z-index: 0;
+}
+
+
+/* =========================================================
+   FEATURED PANEL
+   ========================================================= */
+
+.featured-panel {
+    position: relative;
+
+    width: 100%;
+    height: 100%;
+
+    overflow: hidden;
+
+    background: #241b3b;
+
+    border-radius: 0;
+
+    box-shadow: none;
+
+    z-index: 2;
+}
+
+
+/* =========================================================
+   GAME PREVIEW BACKGROUND
+   ========================================================= */
+
+.featured-game-background {
+    position: absolute;
+
+    inset: 0;
+
+    z-index: 0;
+
+    overflow: hidden;
+}
+
+
+.featured-game-background img {
+    display: block;
+
+    width: 100%;
+    height: 100%;
+
+    object-fit: cover;
+
+    object-position: center;
+
+    transform: scale(1.02);
+}
+
+
+/* =========================================================
+   DARK OVERLAY
+   ========================================================= */
+
+.featured-game-overlay {
+    position: absolute;
+
+    inset: 0;
+
+    z-index: 1;
+
+    background:
+        linear-gradient(
+            90deg,
+            rgba(25, 19, 45, 0.96) 0%,
+            rgba(25, 19, 45, 0.88) 32%,
+            rgba(25, 19, 45, 0.55) 58%,
+            rgba(25, 19, 45, 0.20) 100%
+        );
+}
+
+
+/* =========================================================
+   FEATURED CONTENT
+   ========================================================= */
+
+.featured-content {
+    position: relative;
+
+    z-index: 2;
+
+    width: 100%;
+    height: calc(100% - 65px);
+
+    display: grid;
+
+    grid-template-columns:
+        minmax(0, 1fr)
+        minmax(300px, 42%);
+
+    align-items: center;
+
+    padding:
+        45px
+        8%
+        20px;
+}
+
+
+/* =========================================================
+   INFORMATION
+   ========================================================= */
+
+.featured-information {
+    max-width: 570px;
+
+    color: #fff;
+}
+
+
+/* =========================================================
+   GAME LOGO
+   ========================================================= */
+
+.featured-game-logo {
+    display: block;
+
+    width: auto;
+    max-width: 420px;
+
+    height: 200px;
+
+    object-fit: contain;
+
+    object-position: center;
+
+    margin:
+        0
+        auto
+        20px;
+}
+
+
+/* =========================================================
+   DESCRIPTION
+   ========================================================= */
+
+.featured-game-description {
+    max-width: 520px;
+
+    margin:
+        0
+        auto
+        30px;
+
+    color: #fff;
+
+    font-size: 16px;
+
+    line-height: 1.55;
+}
+
+
+/* =========================================================
+   PLAY BUTTON
+   ========================================================= */
+
+.featured-play-button {
+    display: flex;
+
+    align-items: center;
+    justify-content: center;
+
+    width: fit-content;
+    min-width: 120px;
+
+    padding:
+        10px
+        25px;
+
+    margin:
+        0
+        auto;
+
+    border-radius: 25px;
+
+    background: #ff9938;
+
+    color: #fff;
+
+    font-size: 14px;
+    font-weight: 600;
+
+    text-decoration: none;
+
+    box-shadow:
+        0 5px 0 #d87518;
+
+    transition:
+        transform 0.2s ease,
+        box-shadow 0.2s ease;
+}
+
+
+.featured-play-button:hover {
+    transform: translateY(-2px);
+
+    box-shadow:
+        0 7px 0 #d87518;
+}
+
+
+/* =========================================================
+   GAME ICON
+   ========================================================= */
+
+.featured-game-icon-wrapper {
+    width: 100%;
+    height: 100%;
+
+    display: flex;
+
+    align-items: center;
+    justify-content: center;
+}
+
+
+.featured-game-icon {
+    width: 450px;
+    height: auto;
+
+    object-fit: cover;
+
+    border-radius: 18px;
+
+    background:
+        rgba(255, 255, 255, 0.08);
+
+    box-shadow:
+        0 8px 20px rgba(0, 0, 0, 0.28);
+}
+
+
+/* =========================================================
+   FEATURED ARROWS
+   ========================================================= */
+
+.featured-arrow {
+    position: absolute;
+
+    top: 50%;
+
+    z-index: 5;
+
+    transform: translateY(-50%);
+
+    width: 55px;
+    height: 55px;
+
+    padding: 0;
+
+    border: 0;
+
+    background: transparent;
+
+    color: #fff;
+
+    font-size: 58px;
+
+    line-height: 45px;
+
+    cursor: pointer;
+
+    transition:
+        transform 0.2s ease,
+        color 0.2s ease;
+}
+
+
+.featured-arrow:hover {
+    transform:
+        translateY(-50%)
+        scale(1.15);
+
+    color: #ff9938;
+}
+
+
+.featured-prev {
+    left: 25px;
+}
+
+
+.featured-next {
+    right: 25px;
+}
+
+
+/* =========================================================
+   FEATURED PROGRESS BAR
+   ========================================================= */
+
+.featured-progress {
+    position: absolute;
+
+    left: 50%;
+    bottom: 18px;
+
+    transform: translateX(-50%);
+
+    width: 75%;
+
+    z-index: 5;
+}
+
+
+.featured-progress-track {
+    width: 100%;
+    height: 4px;
+
+    background:
+        rgba(0, 0, 0, 0.75);
+
+    border-radius: 10px;
+
+    overflow: hidden;
+}
+
+
+.featured-progress-fill {
+    width: 0%;
+    height: 100%;
+
+    background: #ff9938;
+
+    transition:
+        width 0.05s linear;
+}
+
+
+.featured-progress-dots {
+    display: flex;
+
+    justify-content: center;
+
+    gap: 7px;
+
+    margin-top: 10px;
+}
+
+
+.featured-progress-dots span {
+    width: 7px;
+    height: 7px;
+
+    border-radius: 50%;
+
+    background:
+        rgba(255, 255, 255, 0.45);
+
+    cursor: pointer;
+
+    transition:
+        background 0.2s ease,
+        transform 0.2s ease;
+}
+
+
+.featured-progress-dots span.active {
+    background: #ff9938;
+
+    transform: scale(1.25);
+}
+
+
+/* =========================================================
+   HOME ACTION BUTTONS
+   ========================================================= */
+
+.home-action-bar {
+    width: min(86%, 1180px);
+
+    margin: 0 auto;
+
+    padding:
+        45px
+        0
+        55px;
+
+    display: flex;
+
+    justify-content: space-between;
+
+    align-items: center;
+}
+
+
+.home-action-bar .btn {
+    min-width: 150px;
+
+    padding:
+        13px
+        28px;
+
+    border-radius: 28px;
+
+    text-align: center;
+
+    font-size: 15px;
+
+    box-shadow:
+        0 6px 0 rgba(48, 72, 92, 0.22);
+}
+
+
+.home-action-bar .btn-dark {
+    background: #30485c;
+}
+
+
+/* =========================================================
+   GENERAL HOME SECTIONS
+   ========================================================= */
+
+.home-section {
+    width: min(86%, 1180px);
+
+    margin: 0 auto;
+
+    padding:
+        35px
+        0
+        95px;
+}
+
+
+.home-section > h1,
+.home-news-heading h1 {
+    margin:
+        0
+        0
+        42px;
+
+    color: #30485c;
+
+    font-size:
+        clamp(32px, 4vw, 48px);
+
+    line-height: 1.15;
+
+    font-weight: 500;
+}
+
+
+.home-section > h1 span,
+.home-news-heading h1 span {
+    color: #ff9938;
+}
+
+
+/* =========================================================
+   SERVICES
+   ========================================================= */
+
+.services-section{
+    margin-top: 100px;
+}
+
+.home-services-grid {
+    display: grid;
+
+    grid-template-columns: 1fr;
+
+    gap: 35px;
+}
+
+
+.home-service-card {
+    width: min(730px, 78%);
+
+    min-height: 185px;
+
+    padding:
+        32px
+        42px;
+
+    display: flex;
+
+    align-items: center;
+
+    gap: 35px;
+
+    color: #fff;
+
+    background:
+        rgba(49, 73, 94, 0.94);
+
+    border-radius: 28px;
+
+    box-shadow:
+        18px 18px 0
+        rgba(49, 73, 94, 0.17);
+}
+
+
+.home-service-card.service-card-right {
+    justify-self: end;
+}
+
+
+.home-service-icon {
+    width: 105px;
+    height: 105px;
+
+    flex:
+        0 0
+        105px;
+
+    object-fit: contain;
+}
+
+
+.home-service-card h2 {
+    margin:
+        0
+        0
+        12px;
+
+    color: #fff;
+
+    font-size: 28px;
+
+    line-height: 1.2;
+
+    font-weight: 500;
+}
+
+
+.home-service-card p {
+    margin: 0;
+
+    font-size: 14px;
+
+    line-height: 1.7;
+}
+
+
+/* =========================================================
+   WORKS
+   ========================================================= */
+
+.works-section {
+    padding-top: 25px;
+}
+
+
+.home-work-feature {
+    display: grid;
+
+    grid-template-columns:
+        1.15fr
+        0.85fr;
+
+    gap: 55px;
+
+    align-items: center;
+}
+
+
+.home-work-image {
+    width: 100%;
+
+    overflow: hidden;
+
+    border-radius: 24px;
+
+    background: #40596e;
+
+    box-shadow:
+        16px 16px 0
+        rgba(49, 73, 94, 0.15);
+}
+
+
+.home-work-image img {
+    display: block;
+
+    width: 100%;
+    height: 100%;
+
+    min-height: 330px;
+
+    object-fit: cover;
+}
+
+
+.home-work-copy {
+    color: #30485c;
+
+    font-size: 15px;
+
+    line-height: 1.8;
+}
+
+
+.home-work-copy p {
+    margin:
+        0
+        0
+        20px;
+}
+
+
+.home-work-copy .btn {
+    margin-top: 8px;
+}
+
+
+/* =========================================================
+   LOWER GAME CAROUSEL
+   ========================================================= */
+
+.home-game-carousel {
+    margin:
+        38px
+        auto
+        0;
+
+    display: flex;
+
+    align-items: center;
+
+    gap: 16px;
+}
+
+
+.carousel-viewport {
+    min-width: 0;
+
+    flex: 1;
+
+    overflow: hidden;
+}
+
+
+.carousel-track {
+    display: flex;
+
+    justify-content: center;
+
+    gap: 16px;
+}
+
+
+.game-thumb {
+    width: 145px;
+    height: 100px;
+
+    flex:
+        0 0
+        145px;
+
+    padding: 0;
+
+    border:
+        4px solid
+        transparent;
+
+    border-radius: 15px;
+
+    overflow: hidden;
+
+    cursor: pointer;
+
+    background: #fff;
+
+    opacity: 0.68;
+
+    transition:
+        transform 0.2s ease,
+        opacity 0.2s ease,
+        border-color 0.2s ease;
+}
+
+
+.game-thumb.active,
+.game-thumb:hover {
+    opacity: 1;
+
+    transform:
+        translateY(-4px);
+
+    border-color:
+        #ff9938;
+}
+
+
+.game-thumb img {
+    width: 100%;
+    height: 100%;
+
+    object-fit: cover;
+}
+
+
+.carousel-arrow {
+    width: 45px;
+    height: 45px;
+
+    flex:
+        0 0
+        45px;
+
+    padding: 0;
+
+    border: 0;
+
+    border-radius: 50%;
+
+    background: #30485c;
+
+    color: #fff;
+
+    font-size: 31px;
+
+    line-height: 1;
+
+    cursor: pointer;
+}
+
+
+.carousel-dots {
+    display: flex;
+
+    justify-content: center;
+
+    gap: 9px;
+
+    margin-top: 22px;
+}
+
+
+.carousel-dots span {
+    width: 8px;
+    height: 8px;
+
+    border-radius: 50%;
+
+    background: #fff;
+
+    opacity: 0.7;
+}
+
+
+.carousel-dots span.active {
+    background: #ff9938;
+
+    opacity: 1;
+}
+
+
+/* =========================================================
+   ABOUT
+   ========================================================= */
+
+.about-preview {
+    width: 100%;
+
+    max-width: none;
+
+    padding:
+        100px
+        7%;
+}
+
+
+.home-section-text {
+    text-align: center;
+}
+
+
+.about-preview-inner {
+    width:
+        min(950px, 100%);
+
+    margin:
+        0
+        auto;
+}
+
+
+.about-preview-copy {
+    max-width: 760px;
+
+    margin:
+        0
+        auto;
+
+    padding:
+        38px
+        42px;
+
+    color: #fff;
+
+    background:
+        rgba(49, 73, 94, 0.88);
+
+    border-radius: 28px;
+
+    line-height: 1.75;
+
+    text-align: center;
+
+    box-shadow:
+        16px 16px 0
+        rgba(49, 73, 94, 0.16);
+}
+
+
+.about-preview-copy p {
+    margin:
+        0
+        0
+        20px;
+}
+
+
+.about-preview-copy .btn {
+    margin-top: 8px;
+}
+
+
+/* =========================================================
+   TEAM
+   ========================================================= */
+
+.team-preview-home {
+    padding-top: 100px;
+
+    padding-bottom: 105px;
+}
+
+
+.home-team-grid {
+    width:
+        min(930px, 100%);
+
+    margin:
+        75px
+        auto
+        0;
+
+    display: grid;
+
+    grid-template-columns:
+        repeat(3, 1fr);
+
+    gap: 55px;
+
+    text-align: center;
+}
+
+
+.home-team-member {
+    color: #30485c;
+}
+
+
+.home-team-member img {
+    height: 185px;
+
+    width: auto;
+
+    max-width: 100%;
+
+    margin:
+        0
+        auto
+        18px;
+
+    object-fit: contain;
+}
+
+
+.home-team-member h2 {
+    margin: 0;
+
+    font-size: 18px;
+
+    font-weight: 600;
+}
+
+
+.home-team-member p {
+    margin:
+        6px
+        0
+        0;
+
+    font-size: 13px;
+
+    line-height: 1.5;
+}
+
+
+/* =========================================================
+   NEWS
+   ========================================================= */
+
+.home-news-section {
+    width: 100%;
+
+    padding:
+        80px
+        7%
+        95px;
+
+    color: #fff;
+
+    background:
+        rgba(49, 73, 94, 0.94);
+}
+
+
+.home-news-heading {
+    width:
+        min(1180px, 100%);
+
+    margin:
+        0
+        auto;
+
+    display: flex;
+
+    align-items: center;
+
+    justify-content: space-between;
+
+    gap: 25px;
+}
+
+
+.home-news-heading h1 {
+    color: #fff;
+
+    margin-bottom: 0;
+}
+
+
+.home-news-heading a {
+    color: #fff;
+
+    font-weight: 600;
+
+    white-space: nowrap;
+}
+
+
+.home-news-grid {
+    width:
+        min(900px, 100%);
+
+    margin:
+        35px
+        auto
+        0;
+
+    display: grid;
+
+    grid-template-columns:
+        repeat(2, 1fr);
+
+    gap: 28px;
+}
+
+
+.home-news-arrows {
+    display: flex;
+
+    justify-content: center;
+
+    gap: 14px;
+
+    margin-top: 30px;
+}
+
+
+.home-news-arrows button {
+    width: 45px;
+    height: 45px;
+
+    border: 0;
+
+    border-radius: 50%;
+
+    background: #fff;
+
+    color: #30485c;
+
+    font-size: 31px;
+
+    cursor: pointer;
+}
+
+
+/* =========================================================
+   FOOTER
+   ========================================================= */
+
+.site-footer {
+    background: #ff9938;
+
+    color: #fff;
+
+    padding:
+        55px
+        7%
+        22px;
+}
+
+
+.footer-contact h2 {
+    color: #111;
+}
+
+
+.footer-logo {
+    width: 190px;
+
+    max-height: 105px;
+
+    object-fit: contain;
+
+    margin-left: auto;
+
+    display: block;
+}
+
+
+.footer-bottom {
+    margin-top: 35px;
+
+    text-align: center;
+}
+
+
+.socials {
+    display: flex;
+
+    justify-content: center;
+
+    gap: 16px;
+}
+
+
+.socials a {
+    display: inline-flex;
+
+    width: 42px;
+    height: 42px;
+
+    align-items: center;
+    justify-content: center;
+}
+
+
+.socials img {
+    width: 32px;
+    height: 32px;
+
+    object-fit: contain;
+}
+
+
+.footer-line {
+    width:
+        min(420px, 80%);
+
+    height: 2px;
+
+    margin:
+        15px
+        auto;
+
+    background:
+        rgba(255,255,255,.9);
+}
+
+
+/* =========================================================
+   FLOATING CONTACT
+   ========================================================= */
+
+.floating-contact {
+    background: #111;
+
+    color: #ff9938;
+
+    box-shadow:
+        0 6px 18px
+        rgba(0,0,0,.2);
+}
+
+
+/* =========================================================
+   RESPONSIVE
+   ========================================================= */
+
+@media (max-width: 1000px) {
+
+    .featured-games {
+        height: 540px;
+    }
+
+
+    .featured-panel {
+        width: 100%;
+        height: 100%;
+    }
+
+
+    .featured-content {
+        grid-template-columns:
+            minmax(0, 1fr)
+            minmax(260px, 42%);
+
+        padding:
+            35px
+            7%;
+    }
+
+
+    .featured-game-logo {
+        max-width: 320px;
+
+        height: 115px;
+    }
+
+
+    .featured-game-icon {
+        width: 270px;
+        height: 210px;
+    }
+
+
+    .featured-game-description {
+        font-size: 13px;
+    }
+}
+
+
+/* =========================================================
+   TABLET
+   ========================================================= */
+
+@media (max-width: 800px) {
+
+    .featured-games {
+        height: 520px;
+    }
+
+
+    .featured-panel {
+        width: 100%;
+
+        height: 100%;
+
+        border-radius: 0;
+    }
+
+
+    .featured-content {
+        grid-template-columns: 1fr;
+
+        grid-template-rows:
+            1fr
+            1fr;
+
+        padding:
+            25px
+            8%
+            10px;
+
+        text-align: center;
+    }
+
+
+    .featured-information {
+        max-width: 100%;
+    }
+
+
+    .featured-game-logo {
+        height: 90px;
+
+        max-width: 280px;
+
+        margin:
+            0
+            auto
+            12px;
+    }
+
+
+    .featured-game-description {
+        max-width: 500px;
+
+        margin:
+            0
+            auto
+            18px;
+    }
+
+
+    .featured-game-icon-wrapper {
+        height: 175px;
+    }
+
+
+    .featured-game-icon {
+        width: 260px;
+
+        height: 170px;
+    }
+
+
+    .featured-arrow {
+        width: 35px;
+        height: 45px;
+
+        font-size: 45px;
+    }
+
+
+    .featured-prev {
+        left: 8px;
+    }
+
+
+    .featured-next {
+        right: 8px;
+    }
+
+
+    .home-action-bar {
+        width: 90%;
+
+        padding-top: 30px;
+    }
+
+
+    .home-section {
+        width: 90%;
+    }
+
+
+    .home-service-card,
+    .home-service-card.service-card-right {
+        width: 100%;
+
+        justify-self: auto;
+    }
+
+
+    .home-work-feature {
+        grid-template-columns: 1fr;
+    }
+
+
+    .carousel-track {
+        justify-content: flex-start;
+    }
+
+
+    .game-thumb {
+        width: 120px;
+        height: 84px;
+
+        flex-basis: 120px;
+    }
+
+
+    .home-team-grid {
+        grid-template-columns: 1fr;
+
+        margin-top: 45px;
+    }
+
+
+    .home-team-member img {
+        height: 170px;
+    }
+
+
+    .home-news-heading {
+        align-items: flex-start;
+    }
+
+
+    .home-news-grid {
+        grid-template-columns: 1fr;
+    }
+}
+
+
+/* =========================================================
+   MOBILE
+   ========================================================= */
+
+@media (max-width: 560px) {
+
+    .featured-games {
+        height: 500px;
+    }
+
+
+    .featured-panel {
+        width: 100%;
+
+        height: 100%;
+    }
+
+
+    .featured-content {
+        padding:
+            20px
+            15%
+            10px;
+    }
+
+
+    .featured-game-logo {
+        height: 75px;
+
+        max-width: 230px;
+    }
+
+
+    .featured-game-description {
+        font-size: 11px;
+
+        line-height: 1.45;
+
+        margin-bottom: 12px;
+    }
+
+
+    .featured-game-icon-wrapper {
+        height: 145px;
+    }
+
+
+    .featured-game-icon {
+        width: 220px;
+
+        height: 140px;
+    }
+
+
+    .featured-progress {
+        width: 70%;
+    }
+
+
+    .home-action-bar {
+        gap: 12px;
+    }
+
+
+    .home-action-bar .btn {
+        min-width: 0;
+
+        flex: 1;
+
+        padding:
+            11px
+            12px;
+
+        font-size: 13px;
+    }
+
+
+    .home-service-card {
+        padding: 25px;
+
+        gap: 22px;
+
+        min-height: 0;
+    }
+
+
+    .home-service-icon {
+        width: 72px;
+        height: 72px;
+
+        flex-basis: 72px;
+    }
+
+
+    .home-service-card h2 {
+        font-size: 22px;
+    }
+
+
+    .about-preview {
+        padding-left: 5%;
+        padding-right: 5%;
+    }
+
+
+    .about-preview-copy {
+        padding:
+            28px
+            22px;
+    }
+
+
+    .home-news-heading {
+        flex-direction: column;
+    }
+
+
+    .home-news-heading a {
+        align-self: flex-end;
+    }
+}
+
+/* =========================================================
+   SERVICES - MOCKUP STYLE
+   ========================================================= */
+
+.home-services-grid {
+    display: grid;
+
+    grid-template-columns:
+        repeat(3, 1fr);
+
+    gap: 44px;
+
+    align-items: stretch;
+}
+
+
+/* ---------------------------------------------------------
+   SERVICE CARD
+   --------------------------------------------------------- */
+
+.home-service-card,
+.home-service-card.service-card-right {
+    width: 100%;
+
+    min-height: 275px;
+
+    padding:
+        22px
+        55px
+        25px
+        30px;
+
+    display: flex;
+
+    flex-direction: column;
+
+    align-items: flex-start;
+
+    justify-self: auto;
+
+    gap: 0;
+
+    color: #fff;
+
+    background: #30485c;
+
+    border-radius: 0;
+
+    box-shadow: none;
+
+    /*
+        Slanted right side
+    */
+    clip-path: polygon(
+        0 0,
+        78% 0,
+        100% 100%,
+        0 100%
+    );
+}
+
+
+/* ---------------------------------------------------------
+   ICON
+   --------------------------------------------------------- */
+
+.home-service-icon {
+    width: 55px;
+    height: 55px;
+
+    flex:
+        0 0
+        55px;
+
+    object-fit: contain;
+
+    margin:
+        0
+        0
+        8px
+        0;
+}
+
+
+/* ---------------------------------------------------------
+   TITLE
+   --------------------------------------------------------- */
+
+.home-service-card h2 {
+    margin:
+        0
+        0
+        14px
+        0;
+
+    color: #fff;
+
+    font-size: 22px;
+
+    line-height: 1.2;
+
+    font-weight: 500;
+
+    text-align: left;
+}
+
+
+/* ---------------------------------------------------------
+   DESCRIPTION
+   --------------------------------------------------------- */
+
+.home-service-card p {
+    width: 100%;
+
+    margin: 0;
+
+    padding-right: 10px;
+
+    color: #fff;
+
+    font-size: 16px;
+
+    line-height: 1.55;
+
+    text-align: center;
+}
+
+
+/* =========================================================
+   SERVICES RESPONSIVE
+   ========================================================= */
+
+@media (max-width: 1000px) {
+
+    .home-services-grid {
+        grid-template-columns:
+            repeat(3, 1fr);
+
+        gap: 25px;
+    }
+
+    .home-service-card,
+    .home-service-card.service-card-right {
+        min-height: 260px;
+
+        padding:
+            20px
+            45px
+            22px
+            25px;
+    }
+
+    .home-service-icon {
+        width: 50px;
+        height: 50px;
+    }
+
+    .home-service-card h2 {
+        font-size: 19px;
+    }
+
+    .home-service-card p {
+        font-size: 14px;
+    }
+}
+
+
+/* =========================================================
+   TABLET
+   ========================================================= */
+
+@media (max-width: 800px) {
+
+    .home-services-grid {
+        grid-template-columns:
+            1fr;
+
+        gap: 30px;
+    }
+
+    .home-service-card,
+    .home-service-card.service-card-right {
+        width: 100%;
+
+        min-height: 220px;
+
+        padding:
+            25px
+            70px
+            25px
+            30px;
+
+        clip-path: polygon(
+            0 0,
+            88% 0,
+            100% 100%,
+            0 100%
+        );
+    }
+
+    .home-service-icon {
+        width: 55px;
+        height: 55px;
+    }
+
+    .home-service-card h2 {
+        font-size: 22px;
+    }
+
+    .home-service-card p {
+        max-width: 500px;
+
+        font-size: 15px;
+    }
+}
+
+
+/* =========================================================
+   MOBILE
+   ========================================================= */
+
+@media (max-width: 560px) {
+
+    .home-services-grid {
+        gap: 25px;
+    }
+
+    .home-service-card,
+    .home-service-card.service-card-right {
+        min-height: 215px;
+
+        padding:
+            20px
+            45px
+            20px
+            25px;
+
+        clip-path: polygon(
+            0 0,
+            85% 0,
+            100% 100%,
+            0 100%
+        );
+    }
+
+    .home-service-icon {
+        width: 48px;
+        height: 48px;
+    }
+
+    .home-service-card h2 {
+        font-size: 20px;
+    }
+
+    .home-service-card p {
+        font-size: 14px;
+        line-height: 1.5;
+    }
+}
+
+/* =========================================================
+   OUR WORKS
+   ========================================================= */
+
+.works-section {
+    padding-top: 25px;
+}
+
+
+/* ---------------------------------------------------------
+   MAIN FEATURE
+   --------------------------------------------------------- */
+
+.home-work-feature {
+    display: grid;
+
+    grid-template-columns:
+        1.15fr
+        0.85fr;
+
+    gap: 55px;
+
+    align-items: center;
+}
+
+
+/* ---------------------------------------------------------
+   FEATURE IMAGE
+   --------------------------------------------------------- */
+
+.home-work-image {
+    width: 100%;
+
+    aspect-ratio: 1.55 / 1;
+
+    overflow: hidden;
+
+    border-radius: 24px;
+
+    background: #40596e;
+
+    box-shadow:
+        16px 16px 0
+        rgba(49, 73, 94, 0.15);
+}
+
+.home-work-image img {
+    display: block;
+
+    width: 100%;
+    height: 100%;
+
+    object-fit: cover;
+
+    transition:
+        opacity 0.2s ease,
+        transform 0.3s ease;
+}
+
+
+/* ---------------------------------------------------------
+   FEATURE TEXT
+   --------------------------------------------------------- */
+
+.home-work-copy {
+    color: #30485c;
+
+    font-size: 15px;
+
+    line-height: 1.8;
+}
+
+.home-work-copy p {
+    margin:
+        0
+        0
+        20px;
+}
+
+.home-work-copy .btn {
+    margin-top: 8px;
+}
+
+
+/* =========================================================
+   LOWER GAME CAROUSEL
+   ========================================================= */
+
+.home-game-carousel {
+    width: 100%;
+
+    margin:
+        28px
+        auto
+        0;
+
+    display: flex;
+
+    align-items: center;
+
+    gap: 16px;
+}
+
+
+/* ---------------------------------------------------------
+   VIEWPORT
+   --------------------------------------------------------- */
+
+.carousel-viewport {
+    min-width: 0;
+
+    flex: 1;
+
+    overflow: hidden;
+}
+
+
+/* ---------------------------------------------------------
+   TRACK
+   --------------------------------------------------------- */
+
+.carousel-track {
+    display: flex;
+
+    justify-content: center;
+
+    gap: 12px;
+
+    transition:
+        transform 0.3s ease;
+}
+
+
+/* ---------------------------------------------------------
+   THUMBNAILS
+   --------------------------------------------------------- */
+
+.game-thumb {
+    width: 108px;
+    height: 76px;
+
+    flex:
+        0 0
+        108px;
+
+    padding: 0;
+
+    border:
+        3px solid
+        transparent;
+
+    border-radius: 11px;
+
+    overflow: hidden;
+
+    cursor: pointer;
+
+    background: #fff;
+
+    opacity: 0.72;
+
+    transition:
+        transform 0.2s ease,
+        opacity 0.2s ease,
+        border-color 0.2s ease;
+}
+
+.game-thumb.active,
+.game-thumb:hover {
+    opacity: 1;
+
+    transform:
+        translateY(-3px);
+
+    border-color:
+        #ff9938;
+}
+
+.game-thumb img {
+    display: block;
+
+    width: 100%;
+    height: 100%;
+
+    object-fit: cover;
+}
+
+
+/* ---------------------------------------------------------
+   CAROUSEL ARROWS
+   --------------------------------------------------------- */
+
+.carousel-arrow {
+    width: 45px;
+    height: 45px;
+
+    flex:
+        0 0
+        45px;
+
+    padding: 0;
+
+    border: 0;
+
+    border-radius: 50%;
+
+    background: #30485c;
+
+    color: #fff;
+
+    font-size: 31px;
+
+    line-height: 1;
+
+    cursor: pointer;
+
+    transition:
+        transform 0.2s ease,
+        background 0.2s ease;
+}
+
+.carousel-arrow:hover {
+    transform: scale(1.08);
+
+    background: #ff9938;
+}
+
+
+/* ---------------------------------------------------------
+   DOTS
+   --------------------------------------------------------- */
+
+.carousel-dots {
+    display: flex;
+
+    justify-content: center;
+
+    align-items: center;
+
+    gap: 9px;
+
+    margin-top: 18px;
+}
+
+.carousel-dots span {
+    width: 7px;
+    height: 7px;
+
+    padding: 0;
+
+    border-radius: 50%;
+
+    background: #fff;
+
+    opacity: 0.7;
+
+    cursor: pointer;
+
+    transition:
+        transform 0.2s ease,
+        background 0.2s ease,
+        opacity 0.2s ease;
+}
+
+.carousel-dots span.active {
+    background: #ff9938;
+
+    opacity: 1;
+
+    transform:
+        scale(1.25);
+}
+
+
+/* =========================================================
+   WORKS IMAGE TRANSITION
+   ========================================================= */
+
+.home-work-image.is-changing img {
+    opacity: 0;
+}
+
+
+/* =========================================================
+   TABLET
+   ========================================================= */
+
+@media (max-width: 800px) {
+
+    .home-work-feature {
+        grid-template-columns: 1fr;
+
+        gap: 30px;
+    }
+
+    .home-work-image {
+        aspect-ratio: 1.55 / 1;
+    }
+
+    .home-work-copy {
+        text-align: center;
+    }
+
+    .home-work-copy .btn {
+        display: inline-flex;
+    }
+
+    .carousel-track {
+        justify-content: flex-start;
+    }
+
+    .game-thumb {
+        width: 120px;
+        height: 84px;
+
+        flex-basis: 120px;
+    }
+}
+
+
+/* =========================================================
+   MOBILE
+   ========================================================= */
+
+@media (max-width: 560px) {
+
+    .home-game-carousel {
+        gap: 8px;
+    }
+
+    .carousel-arrow {
+        width: 38px;
+        height: 38px;
+
+        flex-basis: 38px;
+
+        font-size: 26px;
+    }
+
+    .game-thumb {
+        width: 105px;
+        height: 74px;
+
+        flex-basis: 105px;
+    }
+}
+/* =========================================================
+   OUR WORKS
+   ========================================================= */
+
+.works-section {
+    padding-top: 25px;
+}
+
+.home-work-feature {
+    display: grid;
+    grid-template-columns: 1.15fr 0.85fr;
+    gap: 55px;
+    align-items: start;
+}
+
+.home-work-left {
+    width: 100%;
+}
+
+/* BIG FLOODFILL IMAGE */
+.home-work-image {
+    width: 100%;
+    overflow: hidden;
+    border-radius: 24px 24px 0 0;
+    background: transparent;
+    box-shadow: none;
+}
+
+.home-work-image img {
+    display: block;
+    width: 100%;
+    height: auto;
+    border-radius: 24px 24px 0 0;
+}
+
+/* =========================================================
+   STATIC THUMBNAILS
+   ========================================================= */
+
+.home-work-thumbnails {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 6px;
+    margin-top: -20px;
+    width: 100%;
+}
+
+.home-work-thumbnail {
+    width: 105px;
+    height: 72px;
+    flex: 0 0 105px;
+    overflow: hidden;
+    border-radius: 7px;
+    background: transparent;
+}
+
+.home-work-thumbnail img {
+    display: block;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+/* =========================================================
+   RIGHT SIDE TEXT
+   ========================================================= */
+
+.home-work-copy {
+    color: #30485c;
+    font-size: 15px;
+    line-height: 1.8;
+    padding-top: 5px;
+}
+
+.home-work-copy p {
+    margin: 0 0 20px;
+}
+
+.home-work-copy .btn {
+    margin-top: 8px;
+}
+
+/* =========================================================
+   TABLET
+   ========================================================= */
+
+@media (max-width: 800px) {
+
+    .home-work-feature {
+        grid-template-columns: 1fr;
+        gap: 30px;
+    }
+
+    .home-work-copy {
+        text-align: center;
+    }
+
+    .home-work-copy .btn {
+        display: inline-flex;
+    }
+
+    .home-work-thumbnails {
+        gap: 6px;
+    }
+
+    .home-work-thumbnail {
+        width: 110px;
+        height: 75px;
+        flex-basis: 110px;
+    }
+}
+
+/* =========================================================
+   MOBILE
+   ========================================================= */
+
+@media (max-width: 560px) {
+
+    .home-work-thumbnails {
+        gap: 4px;
+    }
+
+    .home-work-thumbnail {
+        width: 70px;
+        height: 48px;
+        flex-basis: 70px;
+        border-radius: 5px;
+    }
+}
+
+.news-image {
+    width: 100%;
+    height: 180px;
+    overflow: hidden;
+    background: #9edcf5;
+}
+
+.news-image img {
+    display: block;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
