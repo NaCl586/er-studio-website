@@ -2435,10 +2435,105 @@
     box-sizing: border-box;
 }
 
-.news-page {
+body:has(.news-content) {
     background:
         url("../images/Background.png")
         center top /
         cover
         no-repeat;
+}
+
+/* =========================================================
+   GAMES PAGE - INDIVIDUAL CONTENT WINDOWS
+   ========================================================= */
+
+.games-page .games-content {
+    width: min(1180px, 90%);
+    max-width: 1180px;
+
+    margin: 0 auto;
+
+    padding: 30px 0 60px;
+
+    box-sizing: border-box;
+}
+
+
+/* Each content gets its own window */
+
+.games-page .games-content-box {
+    width: 100%;
+
+    margin: 0 auto 55px;
+    padding: 45px 55px;
+
+    box-sizing: border-box;
+
+    background: rgba(255, 255, 255, 0.88);
+
+    border-radius: 18px;
+
+    box-shadow:
+        0 12px 35px rgba(0, 0, 0, 0.18);
+}
+
+
+/* Last box doesn't need extra space underneath */
+
+.games-page .games-content-box:last-child {
+    margin-bottom: 0;
+}
+
+
+/* Make the existing content use the box width */
+
+.games-page .games-content-box .game-showcase,
+.games-page .games-content-box .game-gallery {
+    width: 100%;
+}
+
+
+/* =========================================================
+   TABLET
+   ========================================================= */
+
+@media (max-width: 800px) {
+
+    .games-page .games-content {
+        width: 92%;
+
+        padding: 25px 0 45px;
+    }
+
+    .games-page .games-content-box {
+        margin-bottom: 40px;
+
+        padding: 35px 30px;
+
+        border-radius: 16px;
+    }
+
+}
+
+
+/* =========================================================
+   MOBILE
+   ========================================================= */
+
+@media (max-width: 560px) {
+
+    .games-page .games-content {
+        width: 94%;
+
+        padding: 20px 0 35px;
+    }
+
+    .games-page .games-content-box {
+        margin-bottom: 30px;
+
+        padding: 28px 20px;
+
+        border-radius: 14px;
+    }
+
 }

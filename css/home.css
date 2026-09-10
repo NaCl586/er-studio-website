@@ -1061,3 +1061,155 @@
 .home-news-section .news-card .read-more {
     color: var(--orange);
 }
+
+/* =========================================================
+   OUR WORKS - WHITE CONTENT WINDOW
+   ========================================================= */
+
+.works-section {
+    width: 1150;
+    max-width: 1150px;
+
+    margin: 60px auto 80px;
+    padding: 45px 55px;
+
+    box-sizing: border-box;
+
+    background: rgba(255, 255, 255, 0.88);
+
+    border-radius: 18px;
+
+    box-shadow: 0 12px 35px rgba(0, 0, 0, 0.18);
+}
+
+
+/* Keep the heading and content inside the window */
+
+.works-section > h1 {
+    margin-top: 0;
+}
+
+.works-section .home-work-feature {
+    width: 100%;
+}
+
+
+/* =========================================================
+   RESPONSIVE
+   ========================================================= */
+
+@media (max-width: 800px) {
+
+    .works-section {
+        width: 92%;
+        margin: 40px auto 60px;
+        padding: 35px 30px;
+    }
+
+}
+
+
+@media (max-width: 560px) {
+
+    .works-section {
+        width: 94%;
+        margin: 30px auto 50px;
+        padding: 28px 20px;
+    }
+
+}
+
+/* =========================================================
+   HOME CONTENT WINDOWS
+   ========================================================= */
+
+/* Our Services */
+.home-section.services-section,
+
+/* Our Works */
+.home-section.works-section,
+
+/* Meet the Team */
+.home-section.team-preview-home {
+    width: 1150;
+    max-width: 1150px;
+
+    margin: 60px auto 80px;
+    padding: 45px 55px;
+
+    box-sizing: border-box;
+
+    background: rgba(255, 255, 255, 0.88);
+
+    border-radius: 18px;
+
+    box-shadow:
+        0 12px 35px rgba(0, 0, 0, 0.18);
+}
+
+
+/* =========================================================
+   SERVICES
+   ========================================================= */
+
+.home-section.services-section .home-services-grid {
+    width: 100%;
+}
+
+
+/* =========================================================
+   WORKS
+   ========================================================= */
+
+.home-section.works-section .home-work-feature {
+    width: 100%;
+}
+
+
+/* =========================================================
+   TEAM
+   ========================================================= */
+
+.home-section.team-preview-home .home-team-grid {
+    width: 100%;
+}
+
+
+/* =========================================================
+   TABLET
+   ========================================================= */
+
+@media (max-width: 800px) {
+
+    .home-section.services-section,
+    .home-section.works-section,
+    .home-section.team-preview-home {
+        width: 92%;
+
+        margin: 40px auto 60px;
+
+        padding: 35px 30px;
+    }
+
+}
+
+
+/* =========================================================
+   MOBILE
+   ========================================================= */
+
+@media (max-width: 560px) {
+
+    .home-section.services-section,
+    .home-section.works-section,
+    .home-section.team-preview-home {
+        width: 94%;
+
+        margin: 30px auto 50px;
+
+        padding: 28px 20px;
+
+        border-radius: 14px;
+    }
+
+}
