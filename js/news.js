@@ -90,7 +90,7 @@ const news = [
           "images/News/getting-to-know-er-studio/3.jpg"
         ],
 
-        imageLayout: "single"
+        imageLayout: "row"
     }
 
 ];

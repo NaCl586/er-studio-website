@@ -6,31 +6,36 @@ const mobileGames = [
     {
         name: "Floodfill",
         screenshot: "images/Corousel/Floodfill.png",
-        icon: "images/Corousel/icon/Floodfill.png"
+        icon: "images/Corousel/icon/Floodfill.png",
+        link: "https://forgehub.id/game/floodfill"
     },
 
     {
         name: "Block Impact",
         screenshot: "images/Corousel/Block impact.png",
-        icon: "images/Corousel/icon/Block impact.png"
+        icon: "images/Corousel/icon/Block impact.png",
+        link: "https://forgehub.id/game/block-impact"
     },
 
     {
         name: "Boom Castle",
         screenshot: "images/Corousel/Balon.png",
-        icon: "images/Corousel/icon/boom caste.png"
+        icon: "images/Corousel/icon/boom caste.png",
+        link: "https://forgehub.id/game/boom-castle"
     },
 
     {
         name: "Wild Balls",
         screenshot: "images/Corousel/Wildball.png",
-        icon: "images/Corousel/icon/Wild balls.png"
+        icon: "images/Corousel/icon/Wild balls.png",
+        link: "https://nacl586.itch.io/wild-balls"
     },
 
     {
         name: "Witchball Froine",
         screenshot: "images/Corousel/Witchball.png",
-        icon: "images/Corousel/icon/Witchball.png"
+        icon: "images/Corousel/icon/Witchball.png",
+        link: "https://nacl586.itch.io/witchballfroine"
     }
 ];
 
@@ -61,7 +66,7 @@ const educationGames = [
     },
 
     {
-        name: "Project K",
+        name: "Project TK",
         screenshot: "images/Preview Edugame/Project tk.png",
         icon: "images/Corousel/logo//Project tk.png"
     },
@@ -320,7 +325,6 @@ function renderGallery(id) {
         <div class="game-gallery-feature">
 
             <div class="game-gallery-feature-image">
-
                 <article class="game-tile">
 
                     <img
@@ -329,22 +333,33 @@ function renderGallery(id) {
                     >
 
                 </article>
-
             </div>
 
 
             <div class="game-gallery-description">
 
+                <h3 class="game-gallery-title">
+                    ${featured.name}
+                </h3>
+
                 <p>
                     ${getGameDescription(featured)}
                 </p>
 
-                <a
-                    href="#"
-                    class="games-play-button"
-                >
-                    Play Now
-                </a>
+                ${
+                    featured.link
+                        ? `
+                            <a
+                                href="${featured.link}"
+                                class="games-play-button"
+                                target="_blank"
+                                rel="noopener noreferrer"
+                            >
+                                Play Now
+                            </a>
+                        `
+                        : ""
+                }
 
             </div>
 

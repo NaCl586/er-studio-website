@@ -44,7 +44,7 @@ document.addEventListener("DOMContentLoaded", () => {
             description:
                 "FloodFill is an endless strategic puzzle game where players drag and drop color-coded pieces onto a board. Tiles can be placed on top of other tiles of the same color, transforming them into a higher-tiered new color.",
 
-            link: "games.html"
+            link: "https://forgehub.id/game/floodfill"
         },
 
         {
@@ -58,7 +58,7 @@ document.addEventListener("DOMContentLoaded", () => {
             description:
                 "Block Impact is a fun 3D brick breaker game where you control a paddle to bounce a ball and destroy colorful blocks. Clear every level, keep the ball in play, and chase higher scores with precise timing.",
 
-            link: "games.html"
+            link: "https://forgehub.id/game/block-impact"
         },
 
         {
@@ -72,7 +72,7 @@ document.addEventListener("DOMContentLoaded", () => {
             description:
                 "Boom Castle is a fast-paced arcade game where you control a cannon to defend your castle from waves of incoming balloons.",
 
-            link: "games.html"
+            link: "https://forgehub.id/game/boom-castle"
         },
 
         {
@@ -86,7 +86,7 @@ document.addEventListener("DOMContentLoaded", () => {
             description:
                 "A puzzle game where you tilt your device to roll ball-shaped animals to their food bowl.",
 
-            link: "games.html"
+            link: "https://nacl586.itch.io/wild-balls"
         },
 
         {
@@ -100,7 +100,7 @@ document.addEventListener("DOMContentLoaded", () => {
             description:
                 "A ball-rolling game controlled by swipe to guide Froine, a magical witch, in her adventure.",
 
-            link: "games.html"
+            link: "https://nacl586.itch.io/witchballfroine"
         },
 
 
@@ -123,8 +123,6 @@ document.addEventListener("DOMContentLoaded", () => {
 
             description:
                 "This educational game transforms 12th-grade topics of permutations, combinations, and probability into a ninja-themed adventure filled with puzzles, where you must solve mathematical challenges using strategy and precision to achieve victory.",
-
-            link: "games.html"
         },
 
         {
@@ -138,7 +136,6 @@ document.addEventListener("DOMContentLoaded", () => {
             description:
                 "This educational roguelike game turns vector addition and subtraction into a fun strategic challenge. Choose and combine vectors to match target vectors, overcome increasingly difficult challenges, and progress through a series of domains with different vector types and enemies. Players must think carefully about direction, magnitude, and combinations to find the right resultant vector.",
 
-            link: "games.html"
         },
 
         {
@@ -152,7 +149,6 @@ document.addEventListener("DOMContentLoaded", () => {
             description:
                 "This educational card game brings each chemical element to life based on its periodic properties, such as atomic radius, ionization energy, and electronegativity. Test your creativity and logic against the clock to achieve the highest score possible!",
 
-            link: "games.html"
         },
 
         {
@@ -166,7 +162,6 @@ document.addEventListener("DOMContentLoaded", () => {
             description:
                 "An educational puzzle game based on the chemical equilibrium topic in 11th-grade chemistry, where players must manipulate reaction conditions to achieve specific equilibrium objectives.",
 
-            link: "games.html"
         },
 
         {
@@ -180,7 +175,6 @@ document.addEventListener("DOMContentLoaded", () => {
             description:
                 "In this game, players complete simple interactive activities such as tapping the screen, dragging and dropping objects, and drawing lines or shapes to solve various educational puzzles and challenges.",
 
-            link: "games.html"
         },
 
         {
@@ -194,7 +188,6 @@ document.addEventListener("DOMContentLoaded", () => {
             description:
                 "Explore a unique office building where each floor is designed to resemble a human digestive organ, challenging you to visit key locations and discover each stage of the digestive process in an engaging and interactive way.",
 
-            link: "games.html"
         }
 
     ];
@@ -272,7 +265,7 @@ document.addEventListener("DOMContentLoaded", () => {
         description:
             "Deliver packages through an absurd city while using dice to determine your abilities and overcome unexpected obstacles.",
 
-        link: "games.html"
+        link: "https://nacl586.itch.io/dice-on-delivery"
     };
 
 
@@ -430,9 +423,17 @@ document.addEventListener("DOMContentLoaded", () => {
 
 
         if (playElement) {
-
-            playElement.href =
-                game.link || "games.html";
+            if (game.link) {
+                playElement.style.display = "flex";
+                playElement.href = game.link;
+                playElement.target = "_blank";
+                playElement.rel = "noopener noreferrer";
+            } else {
+                playElement.style.display = "none";
+                playElement.removeAttribute("href");
+                playElement.removeAttribute("target");
+                playElement.removeAttribute("rel");
+            }
         }
 
 

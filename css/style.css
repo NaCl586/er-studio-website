@@ -627,3 +627,126 @@ h3 span {
     bottom: 14px;
   }
 }
+
+/* =========================================================
+   GLOBAL TYPOGRAPHY
+   ER STUDIO STYLE GUIDE
+
+   HEADERS / NAV / BUTTONS
+   -> Poppins Bold
+
+   PARAGRAPHS / BODY TEXT
+   -> DM Sans Regular
+   ========================================================= */
+
+
+/* ---------------------------------------------------------
+   BODY / PARAGRAPH TEXT
+   --------------------------------------------------------- */
+
+body {
+    font-family: "DM Sans", sans-serif;
+}
+
+p,
+li,
+small,
+time,
+label,
+input,
+textarea,
+select {
+    font-family: "DM Sans", sans-serif;
+    font-weight: 400;
+}
+
+
+/* ---------------------------------------------------------
+   HEADERS
+   Poppins Bold
+   --------------------------------------------------------- */
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+    font-family: "Poppins", sans-serif;
+    font-weight: 700;
+}
+
+
+/* ---------------------------------------------------------
+   NAVIGATION
+   Poppins Bold
+   --------------------------------------------------------- */
+
+.site-nav,
+.site-nav a,
+.nav-toggle {
+    font-family: "Poppins", sans-serif;
+    font-weight: 700;
+}
+
+
+/* ---------------------------------------------------------
+   BRAND / LOGO TEXT
+   --------------------------------------------------------- */
+
+.brand {
+    font-family: "Poppins", sans-serif;
+    font-weight: 700;
+}
+
+
+/* ---------------------------------------------------------
+   BUTTONS
+   Poppins Bold
+   --------------------------------------------------------- */
+
+button,
+.btn,
+[class*="button"] {
+    font-family: "Poppins", sans-serif;
+    font-weight: 700;
+}
+
+
+/* ---------------------------------------------------------
+   LINKS USED AS ACTIONS / BUTTONS
+   --------------------------------------------------------- */
+
+a[class*="button"],
+a.btn {
+    font-family: "Poppins", sans-serif;
+    font-weight: 700;
+}
+
+
+/* ---------------------------------------------------------
+   FLOATING CONTACT BUTTON
+   --------------------------------------------------------- */
+
+.floating-contact {
+    font-family: "Poppins", sans-serif;
+    font-weight: 700;
+}
+
+
+/* ---------------------------------------------------------
+   ORANGE TEXT
+   Keep orange text in its existing color,
+   but make heading-style orange text Poppins Bold.
+   --------------------------------------------------------- */
+
+h1 span,
+h2 span,
+h3 span,
+h4 span,
+h5 span,
+h6 span {
+    font-family: "Poppins", sans-serif;
+    font-weight: 700;
+    color: var(--orange);
+}
