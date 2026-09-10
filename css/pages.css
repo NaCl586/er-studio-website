@@ -1,28 +1,856 @@
-body {
-  background-image:
-    radial-gradient(circle at 10% 20%, #ffffff99 0 3px, transparent 4px),
-    radial-gradient(circle at 90% 40%, #ffffff88 0 3px, transparent 4px);
-  background-size:90px 90px,110px 110px;
+/* =========================================================
+   ABOUT PANEL BACKGROUND
+   ========================================================= */
+
+.about-content {
+    position: relative;
+    overflow: hidden;
+    padding: 32px 5% 75px;
+    background: url("../images/Background.png") center top / cover no-repeat;
 }
 
-/* About Us page */
-.about-hero{min-height:500px;background:linear-gradient(rgba(20,25,30,.58),rgba(20,25,30,.68)),url("../images/about-hero.jpg") center/cover}
-.about-content{position:relative;overflow:hidden;padding:52px 6% 75px;background:radial-gradient(circle at 76% 7%,rgba(255,255,255,.72) 0 2px,transparent 3px) 0 0/34px 34px,linear-gradient(135deg,#eaf9ff,#a9def9 48%,#f2fbff)}
-.about-content:before,.about-content:after{content:"";position:absolute;pointer-events:none;border-radius:50%;border:22px solid rgba(42,185,190,.42);width:520px;height:520px;left:-390px;bottom:-240px}
-.about-content:after{left:auto;right:-410px;bottom:160px;width:620px;height:620px;border-color:rgba(255,205,40,.42)}
-.about-dots{position:absolute;width:260px;height:160px;right:5%;top:5px;opacity:.5;background:radial-gradient(circle,#fff 0 3px,transparent 4px) 0 0/28px 28px}
-.who-panel{position:relative;z-index:1;max-width:1020px;margin:0 auto 36px;min-height:280px;display:grid;grid-template-columns:1fr 230px;gap:30px;align-items:center;background:rgba(44,70,89,.93);border-radius:28px;box-shadow:20px 20px 0 rgba(47,72,90,.25)}
-.who-panel h2,.angled-panel h2{margin-top:0;font-size:clamp(27px,3vw,35px)}
-.who-panel p,.angled-panel p{font-size:15px;line-height:1.75;margin:0 0 18px}.highlight{color:var(--orange)}
-.who-character{width:190px;height:190px;margin:auto;border-radius:42% 42% 48% 48%;display:grid;place-items:center;background:var(--orange);color:#30485c;font-size:45px;font-weight:800}
-.vision-mission{position:relative;z-index:1;max-width:1020px;margin:0 auto 55px;display:grid;grid-template-columns:1fr 1fr;gap:70px}
-.angled-panel{min-height:285px;position:relative;overflow:hidden;display:grid;grid-template-columns:75px 1fr;gap:15px;align-items:start;border-radius:28px 28px 28px 12px;box-shadow:20px 20px 0 rgba(47,72,90,.22)}
-.angled-panel:after{content:"";position:absolute;right:-45px;bottom:-65px;width:150px;height:130px;background:rgba(40,57,70,.72);transform:rotate(-16deg)}
-.feature-symbol{font-size:70px;line-height:1;color:rgba(255,153,56,.75)}
-.about-team{position:relative;z-index:1;max-width:1120px;margin:0 auto;padding:32px 45px 48px;background:rgba(44,70,89,.91);color:#fff;border-radius:30px}
-.about-team .section-heading{margin-bottom:75px}
-.about-team-grid{max-width:900px;margin:auto;display:grid;grid-template-columns:repeat(3,1fr);gap:55px}
-.team-member{text-align:center}.team-avatar{width:112px;height:112px;margin:0 auto -4px;border:7px solid #fff4b9;border-radius:50%;display:grid;place-items:center;background:var(--orange);color:#30485c;font-size:27px;font-weight:800}
-.team-name{display:inline-block;min-width:185px;padding:17px 15px;border-radius:25px;background:var(--orange);color:#fff;border:2px solid #111;font-weight:600}
-.team-role{margin-top:9px;color:#fff;font-size:13px;line-height:1.4}
-@media(max-width:800px){.who-panel,.vision-mission{grid-template-columns:1fr}.who-character{width:140px;height:140px;font-size:32px}.vision-mission{gap:25px}.about-team{padding:28px 18px 40px}.about-team-grid{grid-template-columns:1fr;gap:70px}.about-team .section-heading{margin-bottom:55px}}
+.about-hero {
+    min-height: 500px;
+
+    background:
+        linear-gradient(rgba(0, 0, 0, 0.25), rgba(0, 0, 0, 0.25)),
+        url("../images/Banner/About\ Us.png")
+        center / cover
+        no-repeat;
+}
+
+/* =========================================================
+   DECORATIVE DOTS
+   ========================================================= */
+
+.about-dots {
+    position: absolute;
+    width: 260px;
+    height: 160px;
+    right: 5%;
+    top: 8px;
+    opacity: 0.55;
+    background: radial-gradient(circle, #ffffff 0 3px, transparent 4px) 0 0 / 28px 28px;
+    pointer-events: none;
+}
+
+
+/* =========================================================
+   COMMON PANEL
+   ========================================================= */
+
+.dark-panel {
+    position: relative;
+    z-index: 1;
+    color: #ffffff;
+    background-color: transparent;
+    border: 0;
+    box-shadow: none;
+    overflow: hidden;
+}
+
+.dark-panel > * {
+    position: relative;
+    z-index: 1;
+}
+
+
+/* =========================================================
+   WHO ARE WE
+   ========================================================= */
+
+.who-panel {
+    position: relative;
+
+    width: 100%;
+    max-width: 1125px;
+
+    min-height: 0;
+
+    margin: 0 auto 42px;
+
+    padding: 28px 45px 30px;
+
+    display: grid;
+    grid-template-columns: minmax(0, 1fr) 280px;
+    gap: 25px;
+
+    /* TOP ALIGN CONTENT */
+    align-items: start;
+
+    box-sizing: border-box;
+
+    background-image: url("../images/Asset panel 2.png");
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: 100% 100%;
+    opacity: 0.9;
+}
+
+.who-panel > div:first-child {
+    grid-column: 1;
+    grid-row: 1;
+    position: relative;
+    z-index: 2;
+}
+
+.who-panel .who-copy {
+    grid-column: 1;
+    grid-row: 1;
+}
+
+.who-panel .who-character {
+    grid-column: 2;
+    grid-row: 1;
+}
+
+.who-copy {
+    min-width: 0;
+    width: 100%;
+    padding: 0;
+}
+
+.who-panel h2 {
+    margin: 0 0 22px;
+    color: #ffffff;
+    font-size: clamp(27px, 3vw, 35px);
+    line-height: 1.2;
+    text-align: center;
+}
+
+.who-panel h2 span,
+.highlight {
+    color: var(--orange);
+}
+
+.who-panel p {
+    margin: 0 0 20px;
+    color: #ffffff;
+    font-size: 15px;
+    line-height: 1.75;
+}
+
+.who-panel p:last-child {
+    margin-bottom: 0;
+}
+
+
+/* =========================================================
+   WHO ARE WE CHARACTER
+   ========================================================= */
+
+.who-character {
+    width: 250px;
+    height: 250px;
+    margin: 0 auto;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background: transparent;
+    color: transparent;
+    border: 0;
+    pointer-events: none;
+}
+
+.who-character img {
+    display: block;
+    width: 100%;
+    height: 100%;
+    object-fit: contain;
+}
+
+
+/* =========================================================
+   VISION / MISSION
+   ========================================================= */
+
+.vision-mission {
+    position: relative;
+    z-index: 1;
+    width: 100%;
+    max-width: 1020px;
+    margin: 0 auto 55px;
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 70px;
+}
+
+.angled-panel {
+    position: relative;
+    min-height: 350px;
+    padding: 30px 30px 35px;
+    display: grid;
+    grid-template-columns: 105px minmax(0, 1fr);
+    gap: 15px;
+    align-items: start;
+    color: #ffffff;
+    overflow: hidden;
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: 100% 100%;
+}
+
+.vision-mission .angled-panel:first-child {
+    aspect-ratio: 1000 / 714;
+    background-image: url("../images/Asset panel 1.png");
+}
+
+.vision-mission .angled-panel:last-child {
+    aspect-ratio: 688 / 482;
+    background-image: url("../images/Asset panel 3.png");
+}
+
+.angled-panel::after {
+    display: none;
+    content: none;
+}
+
+
+/* =========================================================
+   VISION / MISSION ICON & CONTENT
+   ========================================================= */
+
+.feature-symbol {
+    width: 105px;
+    height: 105px;
+    display: flex;
+    align-items: flex-start;
+    justify-content: center;
+    position: relative;
+    z-index: 2;
+}
+
+.feature-symbol img {
+    display: block;
+    width: 105px;
+    height: 105px;
+    object-fit: contain;
+    opacity: 0.55;
+}
+
+.angled-panel > div:last-child {
+    position: relative;
+    z-index: 2;
+    min-width: 0;
+}
+
+.angled-panel h2 {
+    margin: 0 0 22px;
+    color: #ffffff;
+    font-size: clamp(27px, 3vw, 35px);
+    line-height: 1.2;
+    text-align: left;
+}
+
+.angled-panel h2 span {
+    color: var(--orange);
+}
+
+.angled-panel p {
+    margin: 0;
+    color: #ffffff;
+    font-size: 15px;
+    line-height: 1.75;
+}
+
+
+/* =========================================================
+   OUR TEAM
+   ========================================================= */
+
+.about-team {
+    position: relative;
+    z-index: 1;
+    max-width: 1120px;
+    margin: 0 auto;
+    padding: 24px 45px 48px;
+    background: rgba(44, 70, 89, 0.91);
+    color: #ffffff;
+    border-radius: 30px;
+}
+
+.about-team .section-heading {
+    margin-bottom: 70px;
+}
+
+.about-team .section-heading h2 {
+    margin: 0;
+    text-align: center;
+    font-size: clamp(28px, 3vw, 36px);
+}
+
+.about-team .section-heading h2 span {
+    color: var(--orange);
+}
+
+.about-team-grid {
+    max-width: 900px;
+    margin: auto;
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 65px;
+}
+
+.team-member {
+    position: relative;
+    min-height: 145px;
+    padding: 60px 15px 18px;
+    background: var(--orange);
+    color: #ffffff;
+    border: 2px solid #111111;
+    border-radius: 25px;
+    text-align: center;
+    box-sizing: border-box;
+}
+
+.team-avatar {
+    position: absolute;
+    z-index: 3;
+    top: -70px;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 135px;
+    height: 135px;
+    margin: 0;
+    display: flex;
+    align-items: flex-end;
+    justify-content: center;
+    background: transparent;
+    border: 0;
+    border-radius: 0;
+    overflow: visible;
+}
+
+.team-avatar img {
+    display: block;
+    width: 135px;
+    height: 135px;
+    object-fit: contain;
+}
+
+.team-name {
+    position: relative;
+    z-index: 1;
+    display: block;
+    min-width: 0;
+    padding: 0;
+    background: transparent;
+    border: 0;
+    border-radius: 0;
+    color: #ffffff;
+    font-size: 15px;
+    font-weight: 600;
+    line-height: 1.3;
+    text-align: center;
+}
+
+.team-role {
+    position: relative;
+    z-index: 1;
+    margin-top: 6px;
+    color: #ffffff;
+    font-size: 15px;
+    line-height: 1.45;
+    text-align: center;
+}
+
+
+/* =========================================================
+   FOOTER
+   ========================================================= */
+
+.site-footer {
+    position: relative;
+    background: #ff9938;
+    color: #fff;
+    padding: 55px 7% 22px;
+}
+
+.footer-contact h2 {
+    color: #111;
+}
+
+.footer-logo {
+    width: 190px;
+    max-height: 105px;
+    object-fit: contain;
+    margin-left: auto;
+    display: block;
+}
+
+.footer-bottom {
+    margin-top: 35px;
+    text-align: center;
+}
+
+.socials {
+    display: flex;
+    justify-content: center;
+    gap: 16px;
+}
+
+.socials a {
+    display: inline-flex;
+    width: 42px;
+    height: 42px;
+    align-items: center;
+    justify-content: center;
+}
+
+.socials img {
+    width: 32px;
+    height: 32px;
+    object-fit: contain;
+}
+
+.footer-line {
+    width: min(420px, 80%);
+    height: 2px;
+    margin: 15px auto;
+    background: rgba(255, 255, 255, .9);
+}
+
+
+/* =========================================================
+   RESPONSIVE
+   ========================================================= */
+
+@media (max-width: 900px) {
+    .about-hero {
+        min-height: 430px;
+    }
+
+    .who-panel {
+        min-height: 320px;
+        grid-template-columns: minmax(0, 1fr) 200px;
+        padding: 25px 30px;
+    }
+
+    .who-character {
+        width: 200px;
+        height: 200px;
+    }
+
+    .vision-mission {
+        gap: 30px;
+    }
+
+    .angled-panel {
+        min-height: 320px;
+        grid-template-columns: 75px minmax(0, 1fr);
+        padding: 25px;
+    }
+
+    .feature-symbol,
+    .feature-symbol img {
+        width: 75px;
+        height: 75px;
+    }
+
+    .about-team {
+        padding: 28px 25px 40px;
+    }
+
+    .about-team-grid {
+        gap: 25px;
+    }
+}
+
+@media (max-width: 700px) {
+    .about-content {
+        padding: 25px 5% 55px;
+    }
+
+    .who-panel {
+        aspect-ratio: auto;
+        min-height: 0;
+        grid-template-columns: 1fr;
+        padding: 30px 25px;
+        background-size: 100% 100%;
+    }
+
+    .who-panel > div:first-child,
+    .who-panel .who-copy {
+        grid-column: 1;
+        grid-row: 1;
+    }
+
+    .who-panel .who-character {
+        grid-column: 1;
+        grid-row: 2;
+        margin: 15px auto 0;
+    }
+
+    .who-panel h2 {
+        text-align: center;
+    }
+
+    .who-character {
+        width: 190px;
+        height: 190px;
+    }
+
+    .vision-mission {
+        grid-template-columns: 1fr;
+        gap: 25px;
+    }
+
+    .vision-mission .angled-panel {
+        min-height: 350px;
+        aspect-ratio: auto;
+    }
+
+    .angled-panel {
+        grid-template-columns: 85px minmax(0, 1fr);
+    }
+
+    .about-team-grid {
+        grid-template-columns: 1fr;
+        gap: 80px;
+    }
+
+    .about-team .section-heading {
+        margin-bottom: 70px;
+    }
+}
+
+@media (max-width: 500px) {
+    .about-hero {
+        min-height: 350px;
+    }
+
+    .about-hero h1 {
+        font-size: 28px;
+    }
+
+    .who-panel {
+        min-height: 520px;
+        padding: 22px 18px 25px;
+    }
+
+    .who-panel p,
+    .angled-panel p {
+        font-size: 14px;
+        line-height: 1.65;
+    }
+
+    .who-character {
+        width: 170px;
+        height: 170px;
+    }
+
+    .angled-panel {
+        min-height: 400px;
+        grid-template-columns: 1fr;
+        text-align: center;
+        padding: 25px 20px 30px;
+    }
+
+    .feature-symbol,
+    .feature-symbol img {
+        width: 90px;
+        height: 90px;
+    }
+
+    .feature-symbol {
+        margin: 0 auto 5px;
+    }
+
+    .angled-panel h2 {
+        text-align: center;
+    }
+
+    .about-team {
+        border-radius: 24px;
+        padding: 25px 15px 40px;
+    }
+
+    .team-name {
+        min-width: 170px;
+        font-size: 14px;
+    }
+}
+
+/* =========================================================
+   VISION & MISSION
+   ========================================================= */
+
+.vision-mission {
+    position: relative;
+    z-index: 1;
+
+    width: 100%;
+    max-width: 1120px;
+    margin: 0 auto 55px;
+
+    display: grid;
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    gap: 70px;
+}
+
+
+/* ---------------------------------------------------------
+   PANEL
+   --------------------------------------------------------- */
+
+.vision-mission .angled-panel {
+    position: relative;
+
+    min-height: 390px;
+    width: 100%;
+
+    padding: 32px 38px 42px;
+
+    display: grid;
+
+    /*
+        Row 1:
+        icon | heading
+
+        Row 2:
+        paragraph spans everything
+    */
+    grid-template-columns: 145px minmax(0, 1fr);
+    grid-template-rows: auto auto;
+
+    column-gap: 20px;
+    row-gap: 28px;
+
+    align-items: start;
+
+    box-sizing: border-box;
+
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: 100% 100%;
+
+    color: #fff;
+}
+
+
+/* Vision */
+.vision-mission .angled-panel:first-child {
+    background-image: url("../images/Asset panel 3.png");
+    opacity: 0.9;
+}
+
+
+/* Mission */
+.vision-mission .angled-panel:last-child {
+    background-image: url("../images/Asset panel 3.png");
+    opacity: 0.9;
+}
+
+
+/* ---------------------------------------------------------
+   ICON
+   --------------------------------------------------------- */
+
+.vision-mission .feature-symbol {
+    grid-column: 1;
+    grid-row: 1;
+
+    width: 145px;
+    height: 145px;
+
+    margin: 0;
+
+    display: flex;
+    align-items: flex-start;
+    justify-content: center;
+
+    background: transparent;
+    border: 0;
+    border-radius: 0;
+
+    opacity: 0.35;
+
+    font-size: 100px;
+    line-height: 1;
+}
+
+
+/*
+   If feature-symbol contains an image,
+   this makes the image large as well.
+*/
+.vision-mission .feature-symbol img {
+    display: block;
+
+    width: 145px;
+    height: 145px;
+
+    object-fit: contain;
+}
+
+
+/* ---------------------------------------------------------
+   HEADING + CONTENT WRAPPER
+   --------------------------------------------------------- */
+
+/*
+   The existing HTML has:
+
+   <div class="feature-symbol">...</div>
+
+   <div>
+       <h2>...</h2>
+       <p>...</p>
+   </div>
+
+   display: contents lets the h2 and p participate
+   directly in the panel's grid.
+*/
+.vision-mission .angled-panel > div:not(.feature-symbol) {
+    display: contents;
+}
+
+
+/* ---------------------------------------------------------
+   HEADING
+   --------------------------------------------------------- */
+
+.vision-mission .angled-panel h2 {
+    grid-column: 2;
+    grid-row: 1;
+
+    margin: 0;
+
+    align-self: center;
+
+    font-size: 38px;
+    line-height: 1.15;
+    font-weight: 700;
+
+    white-space: nowrap;
+}
+
+.vision-mission .angled-panel h2 span {
+    color: var(--orange);
+}
+
+
+/* ---------------------------------------------------------
+   DESCRIPTION
+   --------------------------------------------------------- */
+
+.vision-mission .angled-panel p {
+    grid-column: 1 / -1;
+    grid-row: 2;
+
+    margin: 0;
+
+    font-size: 18px;
+    line-height: 1.6;
+
+    color: #fff;
+}
+
+.vision-mission .angled-panel p .highlight {
+    color: var(--orange);
+}
+
+
+/* ---------------------------------------------------------
+   TABLET
+   --------------------------------------------------------- */
+
+@media (max-width: 900px) {
+
+    .vision-mission {
+        grid-template-columns: 1fr;
+        gap: 45px;
+
+        max-width: 700px;
+    }
+
+    .vision-mission .angled-panel {
+        min-height: 390px;
+    }
+}
+
+
+/* ---------------------------------------------------------
+   MOBILE
+   --------------------------------------------------------- */
+
+@media (max-width: 600px) {
+
+    .vision-mission {
+        gap: 30px;
+        padding: 0 15px;
+    }
+
+    .vision-mission .angled-panel {
+        min-height: 0;
+
+        padding: 28px 25px 35px;
+
+        grid-template-columns: 90px minmax(0, 1fr);
+        grid-template-rows: auto auto;
+
+        column-gap: 15px;
+        row-gap: 25px;
+    }
+
+    .vision-mission .feature-symbol {
+        width: 90px;
+        height: 90px;
+    }
+
+    .vision-mission .feature-symbol img {
+        width: 90px;
+        height: 90px;
+    }
+
+    .vision-mission .angled-panel h2 {
+        font-size: 30px;
+        white-space: normal;
+    }
+
+    .vision-mission .angled-panel p {
+        font-size: 16px;
+        line-height: 1.55;
+    }
+}
+
+/* ---------------------------------------------------------
+   ICON
+   --------------------------------------------------------- */
+
+.vision-mission .feature-symbol {
+    grid-column: 1;
+    grid-row: 1;
+
+    width: 145px;
+    height: 145px;
+
+    margin: 0;
+
+    display: flex;
+    align-items: flex-start;
+    justify-content: center;
+
+    background: transparent;
+    border: 0;
+    border-radius: 0;
+
+    /* Make the image fully visible */
+    opacity: 1;
+
+    font-size: 100px;
+    line-height: 1;
+
+    align-self: start;
+}
+
+.vision-mission .feature-symbol img {
+    display: block;
+
+    width: 145px;
+    height: 145px;
+
+    object-fit: contain;
+
+    opacity: 1;
+}
