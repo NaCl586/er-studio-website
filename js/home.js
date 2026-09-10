@@ -5,249 +5,988 @@
 document.addEventListener("DOMContentLoaded", () => {
 
     /* =====================================================
+       GAME DATA
+       ===================================================== */
+
+    /*
+     * All game information used by the Home page lives here.
+     *
+     * logo:
+     *   Large logo used by the main featured carousel.
+     *
+     * screenshot:
+     *   Main gameplay image.
+     *
+     * icon:
+     *   Small thumbnail/icon used by the lower carousel.
+     *
+     * description:
+     *   Game description.
+     *
+     * category:
+     *   "mobile" or "education"
+     */
+
+    const gameData = [
+
+        /* =================================================
+           MOBILE / WEBGL GAMES
+           ================================================= */
+
+        {
+            name: "Floodfill",
+            category: "mobile",
+
+            logo: "images/Corousel/Logo/FloodFill.png",
+            screenshot: "images/Corousel/Floodfill.png",
+            icon: "images/Corousel/icon/Floodfill.png",
+
+            description:
+                "FloodFill is an endless strategic puzzle game where players drag and drop color-coded pieces onto a board. Tiles can be placed on top of other tiles of the same color, transforming them into a higher-tiered new color.",
+
+            link: "games.html"
+        },
+
+        {
+            name: "Block Impact",
+            category: "mobile",
+
+            logo: "images/Corousel/Logo/Block impact.png",
+            screenshot: "images/Corousel/Block impact.png",
+            icon: "images/Corousel/icon/Block impact.png",
+
+            description:
+                "Block Impact is a fun 3D brick breaker game where you control a paddle to bounce a ball and destroy colorful blocks. Clear every level, keep the ball in play, and chase higher scores with precise timing.",
+
+            link: "games.html"
+        },
+
+        {
+            name: "Boom Castle",
+            category: "mobile",
+
+            logo: "images/Corousel/Logo/Boom Castle.png",
+            screenshot: "images/Corousel/Balon.png",
+            icon: "images/Corousel/icon/boom caste.png",
+
+            description:
+                "Boom Castle is a fast-paced arcade game where you control a cannon to defend your castle from waves of incoming balloons.",
+
+            link: "games.html"
+        },
+
+        {
+            name: "Wild Balls",
+            category: "mobile",
+
+            logo: "images/Corousel/Logo/Wild Balls.png",
+            screenshot: "images/Corousel/Wildball.png",
+            icon: "images/Corousel/icon/Wild balls.png",
+
+            description:
+                "A puzzle game where you tilt your device to roll ball-shaped animals to their food bowl.",
+
+            link: "games.html"
+        },
+
+        {
+            name: "Witchball Froine",
+            category: "mobile",
+
+            logo: "images/Corousel/Logo/witchball.png",
+            screenshot: "images/Corousel/Witchball.png",
+            icon: "images/Corousel/icon/Witchball.png",
+
+            description:
+                "A ball-rolling game controlled by swipe to guide Froine, a magical witch, in her adventure.",
+
+            link: "games.html"
+        },
+
+
+        /* =================================================
+           EDUCATION GAMES
+           ================================================= */
+
+        {
+            name: "Ninja Math Quest",
+            category: "education",
+
+            /*
+             * No separate education logo was present in the
+             * original game data, so the icon is used as
+             * the featured logo.
+             */
+            logo: "images/Corousel/icon/mtk.png",
+            screenshot: "images/Preview Edugame/mtk.png",
+            icon: "images/Corousel/icon/mtk.png",
+
+            description:
+                "This educational game transforms 12th-grade topics of permutations, combinations, and probability into a ninja-themed adventure filled with puzzles, where you must solve mathematical challenges using strategy and precision to achieve victory.",
+
+            link: "games.html"
+        },
+
+        {
+            name: "Vector Rouge: Petualangan Vektor",
+            category: "education",
+
+            logo: "images/Corousel/icon/Fisika Vektor.png",
+            screenshot: "images/Preview Edugame/Fisika.png",
+            icon: "images/Corousel/icon/Fisika Vektor.png",
+
+            description:
+                "This educational roguelike game turns vector addition and subtraction into a fun strategic challenge. Choose and combine vectors to match target vectors, overcome increasingly difficult challenges, and progress through a series of domains with different vector types and enemies. Players must think carefully about direction, magnitude, and combinations to find the right resultant vector.",
+
+            link: "games.html"
+        },
+
+        {
+            name: "Periodium",
+            category: "education",
+
+            logo: "images/Corousel/icon/Kimia Kartu.png",
+            screenshot: "images/Preview Edugame/Kimia Kartu.png",
+            icon: "images/Corousel/icon/Kimia Kartu.png",
+
+            description:
+                "This educational card game brings each chemical element to life based on its periodic properties, such as atomic radius, ionization energy, and electronegativity. Test your creativity and logic against the clock to achieve the highest score possible!",
+
+            link: "games.html"
+        },
+
+        {
+            name: "Equilibrium Shift",
+            category: "education",
+
+            logo: "images/Corousel/logo/kimia  kesetimbangan.png",
+            screenshot: "images/Preview Edugame/Kimia kesetimbangan.png",
+            icon: "images/Corousel/logo/kimia  kesetimbangan.png",
+
+            description:
+                "An educational puzzle game based on the chemical equilibrium topic in 11th-grade chemistry, where players must manipulate reaction conditions to achieve specific equilibrium objectives.",
+
+            link: "games.html"
+        },
+
+        {
+            name: "Project K",
+            category: "education",
+
+            logo: "images/Corousel/logo/Project tk.png",
+            screenshot: "images/Preview Edugame/Project tk.png",
+            icon: "images/Corousel/logo/Project tk.png",
+
+            description:
+                "In this game, players complete simple interactive activities such as tapping the screen, dragging and dropping objects, and drawing lines or shapes to solve various educational puzzles and challenges.",
+
+            link: "games.html"
+        },
+
+        {
+            name: "Digestive Inside Out",
+            category: "education",
+
+            logo: "images/Corousel/logo/biologi.png",
+            screenshot: "images/Preview Edugame/Biologi.png",
+            icon: "images/Corousel/logo/biologi.png",
+
+            description:
+                "Explore a unique office building where each floor is designed to resemble a human digestive organ, challenging you to visit key locations and discover each stage of the digestive process in an engaging and interactive way.",
+
+            link: "games.html"
+        }
+
+    ];
+
+
+    /* =====================================================
        FEATURED GAME CAROUSEL
        ===================================================== */
 
-    const backgroundImageElement = document.getElementById("featured-game-background-image");
-    const logoElement = document.getElementById("featured-game-logo");
-    const iconElement = document.getElementById("featured-game-icon");
-    const descriptionElement = document.getElementById("featured-game-description");
-    const playElement = document.getElementById("featured-game-play");
-    const progressFill = document.getElementById("featured-progress-fill");
-    const progressDots = document.getElementById("featured-progress-dots");
-    const previousButton = document.querySelector(".featured-prev");
-    const nextButton = document.querySelector(".featured-next");
+    const backgroundImageElement =
+        document.getElementById("featured-game-background-image");
 
-    /* =====================================================
-       FEATURED GAME DATA
-       ===================================================== */
+    const logoElement =
+        document.getElementById("featured-game-logo");
 
-    const featuredGames = [
-        {
-            name: "Block Impact",
-            logo: "images/Corousel/Logo/Block impact.png",
-            background: "images/Corousel/Block impact.png",
-            icon: "images/Corousel/icon/Block impact.png",
-            description: "Block Impact is a fun 3D brick breaker game where you control a paddle to bounce a ball and destroy colorful blocks. Clear every level, keep the ball in play, and chase higher scores with precise timing.",
-            link: "games.html"
-        },
-        {
-            name: "Witchball Froine",
-            logo: "images/Corousel/Logo/witchball.png",
-            background: "images/Corousel/witchball.png",
-            icon: "images/Corousel/icon/witchball.png",
-            description: "A 3D platforming adventure where you navigate challenging environments and obstacles.",
-            link: "games.html"
-        },
-        {
-            name: "Dice on Delivery",
-            logo: "images/Corousel/Logo/Dice on Delivery.png",
-            background: "images/Corousel/Dice on Delivery.png",
-            icon: "images/Corousel/icon/Dice on Delivery.png",
-            description: "Deliver packages through an absurd city while using dice to determine your abilities and overcome unexpected obstacles.",
-            link: "games.html"
-        },
-        {
-            name: "FloodFill",
-            logo: "images/Corousel/Logo/FloodFill.png",
-            background: "images/Corousel/Floodfill.png",
-            icon: "images/Corousel/icon/Floodfill.png",
-            description: "A colorful puzzle game where players strategically fill the board and solve increasingly challenging puzzles.",
-            link: "games.html"
-        },
-        {
-            name: "Wild Balls",
-            logo: "images/Corousel/Logo/Wild Balls.png",
-            background: "images/Corousel/Wildball.png",
-            icon: "images/Corousel/icon/Wild Balls.png",
-            description: "A fun puzzle experience featuring colorful balls, challenging levels, and simple mechanics that are easy to learn.",
-            link: "games.html"
-        }
+    const iconElement =
+        document.getElementById("featured-game-icon");
+
+    const descriptionElement =
+        document.getElementById("featured-game-description");
+
+    const playElement =
+        document.getElementById("featured-game-play");
+
+    const progressFill =
+        document.getElementById("featured-progress-fill");
+
+    const progressDots =
+        document.getElementById("featured-progress-dots");
+
+    const previousButton =
+        document.querySelector(".featured-prev");
+
+    const nextButton =
+        document.querySelector(".featured-next");
+
+
+    /*
+     * Games shown in the large featured carousel.
+     *
+     * Keep this separate from gameData so we can decide
+     * which games are promoted on the Home page.
+     *
+     * Education games are included here as well.
+     */
+
+    const featuredGameNames = [
+        "Block Impact",
+        "Witchball Froine",
+        "Dice on Delivery",
+        "Floodfill",
+        "Wild Balls",
+        "Ninja Math Quest",
+        "Vector Rouge: Petualangan Vektor",
+        "Periodium",
+        "Equilibrium Shift",
+        "Project K",
+        "Digestive Inside Out"
     ];
 
+
+    /*
+     * Dice on Delivery is not part of the regular
+     * mobileGames array above, so define it here.
+     */
+
+    const diceOnDelivery = {
+        name: "Dice on Delivery",
+        category: "mobile",
+
+        logo: "images/Corousel/Logo/Dice on Delivery.png",
+        screenshot: "images/Corousel/Dice on Delivery.png",
+        icon: "images/Corousel/icon/Dice on Delivery.png",
+
+        description:
+            "Deliver packages through an absurd city while using dice to determine your abilities and overcome unexpected obstacles.",
+
+        link: "games.html"
+    };
+
+
+    /*
+     * Add Dice on Delivery to the lookup data.
+     */
+
+    const allGames = [
+        diceOnDelivery,
+        ...gameData
+    ];
+
+
+    /*
+     * Convert featured game names into actual game objects.
+     */
+
+    const featuredGames = featuredGameNames
+        .map(name =>
+            allGames.find(game => game.name === name)
+        )
+        .filter(Boolean);
+
+
     let currentGame = 0;
+
     const autoPlayDuration = 6000;
+
     let autoPlayTimer = null;
     let progressTimer = null;
     let progressStartTime = 0;
 
+
     /* =====================================================
-       CREATE & UPDATE PROGRESS DOTS
+       FEATURED PROGRESS DOTS
        ===================================================== */
 
     if (progressDots) {
+
         progressDots.innerHTML = "";
+
         featuredGames.forEach((_, index) => {
-            const dot = document.createElement("span");
+
+            const dot =
+                document.createElement("span");
+
             dot.dataset.index = index;
-            if (index === 0) dot.classList.add("active");
+
+            if (index === 0) {
+                dot.classList.add("active");
+            }
+
             progressDots.appendChild(dot);
+
         });
     }
+
 
     function updateDots() {
-        if (!progressDots) return;
-        const dots = progressDots.querySelectorAll("span");
+
+        if (!progressDots) {
+            return;
+        }
+
+        const dots =
+            progressDots.querySelectorAll("span");
+
         dots.forEach((dot, index) => {
-            dot.classList.toggle("active", index === currentGame);
+
+            dot.classList.toggle(
+                "active",
+                index === currentGame
+            );
+
         });
     }
 
+
     /* =====================================================
-       UPDATE FEATURED GAME DISPLAY
+       SHOW FEATURED GAME
        ===================================================== */
 
     function showFeaturedGame(index) {
-        currentGame = (index + featuredGames.length) % featuredGames.length;
-        const game = featuredGames[currentGame];
+
+        if (featuredGames.length === 0) {
+            return;
+        }
+
+        currentGame =
+            (index + featuredGames.length) %
+            featuredGames.length;
+
+        const game =
+            featuredGames[currentGame];
+
 
         if (backgroundImageElement) {
-            backgroundImageElement.src = game.background;
-            backgroundImageElement.alt = "";
-        }
-        if (logoElement) {
-            logoElement.src = game.logo;
-            logoElement.alt = game.name;
-        }
-        if (iconElement) {
-            iconElement.src = game.icon;
-            iconElement.alt = game.name;
-        }
-        if (descriptionElement) {
-            descriptionElement.textContent = game.description;
-        }
-        if (playElement) {
-            playElement.href = game.link;
+
+            /*
+             * Some versions of the Home HTML use this
+             * element as the large background image.
+             */
+            backgroundImageElement.src =
+                game.screenshot;
+
+            backgroundImageElement.alt =
+                "";
         }
 
+
+        /*
+         * Newer Home layouts use a separate image element.
+         */
+
+        const featuredImage =
+            document.getElementById(
+                "featured-game-image"
+            );
+
+        if (featuredImage) {
+
+            featuredImage.src =
+                game.screenshot;
+
+            featuredImage.alt =
+                game.name;
+        }
+
+
+        if (logoElement) {
+
+            logoElement.src =
+                game.logo || game.icon;
+
+            logoElement.alt =
+                game.name;
+        }
+
+
+        if (iconElement) {
+
+            iconElement.src =
+                game.icon;
+
+            iconElement.alt =
+                game.name;
+        }
+
+
+        if (descriptionElement) {
+
+            descriptionElement.textContent =
+                game.description;
+        }
+
+
+        if (playElement) {
+
+            playElement.href =
+                game.link || "games.html";
+        }
+
+
         updateDots();
+
         resetAutoPlay();
     }
 
+
     /* =====================================================
-       PROGRESS BAR & TIMERS
+       FEATURED AUTOPLAY
        ===================================================== */
 
     function stopAutoPlay() {
+
         clearTimeout(autoPlayTimer);
+
         if (progressTimer) {
-            cancelAnimationFrame(progressTimer);
+
+            cancelAnimationFrame(
+                progressTimer
+            );
+
             progressTimer = null;
         }
     }
 
-    function startProgress() {
-        if (!progressFill) return;
 
-        progressStartTime = performance.now();
-        progressFill.style.width = "0%";
+    function startProgress() {
+
+        if (!progressFill) {
+            return;
+        }
+
+        progressStartTime =
+            performance.now();
+
+        progressFill.style.width =
+            "0%";
+
 
         function updateProgress(currentTime) {
-            const elapsed = currentTime - progressStartTime;
-            const percentage = Math.min((elapsed / autoPlayDuration) * 100, 100);
 
-            progressFill.style.width = percentage + "%";
+            const elapsed =
+                currentTime -
+                progressStartTime;
+
+            const percentage =
+                Math.min(
+                    (elapsed / autoPlayDuration) * 100,
+                    100
+                );
+
+
+            progressFill.style.width =
+                percentage + "%";
+
 
             if (percentage < 100) {
-                progressTimer = requestAnimationFrame(updateProgress);
+
+                progressTimer =
+                    requestAnimationFrame(
+                        updateProgress
+                    );
             }
         }
 
-        progressTimer = requestAnimationFrame(updateProgress);
+
+        progressTimer =
+            requestAnimationFrame(
+                updateProgress
+            );
     }
+
 
     function resetAutoPlay() {
+
         stopAutoPlay();
+
         startProgress();
-        autoPlayTimer = setTimeout(() => {
-            showFeaturedGame(currentGame + 1);
-        }, autoPlayDuration);
+
+        autoPlayTimer =
+            setTimeout(() => {
+
+                showFeaturedGame(
+                    currentGame + 1
+                );
+
+            }, autoPlayDuration);
     }
 
+
     /* =====================================================
-       FEATURED CAROUSEL CONTROLS
+       FEATURED ARROWS
        ===================================================== */
 
     if (nextButton) {
-        nextButton.addEventListener("click", () => showFeaturedGame(currentGame + 1));
+
+        nextButton.addEventListener(
+            "click",
+            () => {
+
+                showFeaturedGame(
+                    currentGame + 1
+                );
+
+            }
+        );
     }
+
 
     if (previousButton) {
-        previousButton.addEventListener("click", () => showFeaturedGame(currentGame - 1));
+
+        previousButton.addEventListener(
+            "click",
+            () => {
+
+                showFeaturedGame(
+                    currentGame - 1
+                );
+
+            }
+        );
     }
+
+
+    /* =====================================================
+       FEATURED DOTS
+       ===================================================== */
 
     if (progressDots) {
-        progressDots.addEventListener("click", (event) => {
-            const dot = event.target.closest("span");
-            if (!dot) return;
 
-            const index = Number(dot.dataset.index);
-            if (Number.isInteger(index)) {
-                showFeaturedGame(index);
+        progressDots.addEventListener(
+            "click",
+            event => {
+
+                const dot =
+                    event.target.closest("span");
+
+                if (!dot) {
+                    return;
+                }
+
+                const index =
+                    Number(dot.dataset.index);
+
+                if (Number.isInteger(index)) {
+
+                    showFeaturedGame(index);
+
+                }
             }
-        });
+        );
     }
 
-    const featuredHero = document.querySelector(".featured-games");
+
+    /* =====================================================
+       PAUSE FEATURED AUTOPLAY ON HOVER
+       ===================================================== */
+
+    const featuredHero =
+        document.querySelector(".featured-games");
+
     if (featuredHero) {
-        featuredHero.addEventListener("mouseenter", stopAutoPlay);
-        featuredHero.addEventListener("mouseleave", resetAutoPlay);
+
+        featuredHero.addEventListener(
+            "mouseenter",
+            stopAutoPlay
+        );
+
+        featuredHero.addEventListener(
+            "mouseleave",
+            resetAutoPlay
+        );
     }
 
-    // Initialize Featured Carousel
+
+    /* =====================================================
+       INITIALIZE FEATURED CAROUSEL
+       ===================================================== */
+
     if (featuredGames.length > 0) {
+
         showFeaturedGame(0);
     }
 
+
     /* =====================================================
-       LOWER WORKS CAROUSEL
+       LOWER GAME CAROUSEL
        ===================================================== */
 
-    const carousel = document.querySelector("[data-carousel]");
-    if (!carousel) return;
+    /* =====================================================
+   LOWER WORKS CAROUSEL
+   ===================================================== */
+
+const carousel = document.querySelector("[data-carousel]");
+
+if (carousel) {
 
     const track = carousel.querySelector(".carousel-track");
-    const thumbnails = carousel.querySelectorAll(".game-thumb");
     const previous = carousel.querySelector(".carousel-arrow.prev");
     const next = carousel.querySelector(".carousel-arrow.next");
 
-    if (!track || thumbnails.length === 0) return;
+    if (track) {
 
-    let lowerCurrent = 0;
+        const lowerCarouselGames = gameData;
 
-    function updateLowerCarousel() {
-        thumbnails.forEach((thumbnail, index) => {
-            thumbnail.classList.toggle("active", index === lowerCurrent);
+        track.innerHTML = "";
+
+        lowerCarouselGames.forEach((game, index) => {
+
+            const thumbnail = document.createElement("button");
+            thumbnail.type = "button";
+            thumbnail.className = "game-thumb";
+            thumbnail.dataset.index = index;
+
+            if (index === 0) {
+                thumbnail.classList.add("active");
+            }
+
+            thumbnail.innerHTML = `
+                <img src="${game.icon}" alt="${game.name}" loading="lazy">
+            `;
+
+            track.appendChild(thumbnail);
         });
 
-        const active = thumbnails[lowerCurrent];
-        if (active) {
-            active.scrollIntoView({
+        const thumbnails = track.querySelectorAll(".game-thumb");
+
+        let lowerCurrent = 0;
+
+        function updateLowerCarousel() {
+            thumbnails.forEach((thumb, index) => {
+                thumb.classList.toggle("active", index === lowerCurrent);
+            });
+
+            thumbnails[lowerCurrent]?.scrollIntoView({
                 behavior: "smooth",
                 block: "nearest",
                 inline: "center"
             });
         }
-    }
 
-    thumbnails.forEach((thumbnail, index) => {
-        thumbnail.addEventListener("click", () => {
-            lowerCurrent = index;
-            updateLowerCarousel();
+        thumbnails.forEach((thumb, index) => {
+            thumb.addEventListener("click", () => {
+                lowerCurrent = index;
+                updateLowerCarousel();
+
+                const game = lowerCarouselGames[index];
+                const featuredIndex = featuredGames.findIndex(
+                    g => g.name === game.name
+                );
+
+                if (featuredIndex !== -1) {
+                    showFeaturedGame(featuredIndex);
+                }
+            });
         });
-    });
 
-    if (previous) {
-        previous.addEventListener("click", () => {
+        previous?.addEventListener("click", () => {
             lowerCurrent = (lowerCurrent - 1 + thumbnails.length) % thumbnails.length;
             updateLowerCarousel();
-        });
-    }
 
-    if (next) {
-        next.addEventListener("click", () => {
+            const featuredIndex = featuredGames.findIndex(
+                g => g.name === lowerCarouselGames[lowerCurrent].name
+            );
+
+            if (featuredIndex !== -1) {
+                showFeaturedGame(featuredIndex);
+            }
+        });
+
+        next?.addEventListener("click", () => {
             lowerCurrent = (lowerCurrent + 1) % thumbnails.length;
             updateLowerCarousel();
+
+            const featuredIndex = featuredGames.findIndex(
+                g => g.name === lowerCarouselGames[lowerCurrent].name
+            );
+
+            if (featuredIndex !== -1) {
+                showFeaturedGame(featuredIndex);
+            }
         });
+
+        updateLowerCarousel();
     }
+}
+
+
+    /*
+     * Determine which games should appear in the
+     * lower carousel.
+     *
+     * This now comes directly from gameData.
+     *
+     * That means education games are automatically
+     * included.
+     */
+
+    const lowerCarouselGames =
+        gameData;
+
+
+    /* =====================================================
+       CREATE LOWER CAROUSEL
+       ===================================================== */
+
+    track.innerHTML = "";
+
+
+    lowerCarouselGames.forEach(
+        (game, index) => {
+
+            const thumbnail =
+                document.createElement("button");
+
+            thumbnail.type =
+                "button";
+
+            thumbnail.className =
+                "game-thumb";
+
+            if (index === 0) {
+
+                thumbnail.classList.add(
+                    "active"
+                );
+            }
+
+
+            thumbnail.dataset.index =
+                index;
+
+            thumbnail.dataset.gameName =
+                game.name;
+
+
+            const image =
+                document.createElement("img");
+
+            image.src =
+                game.icon;
+
+            image.alt =
+                game.name;
+
+            image.loading =
+                "lazy";
+
+
+            thumbnail.appendChild(
+                image
+            );
+
+
+            track.appendChild(
+                thumbnail
+            );
+
+        }
+    );
+
+
+    const thumbnails =
+        track.querySelectorAll(
+            ".game-thumb"
+        );
+
+
+    if (thumbnails.length === 0) {
+        return;
+    }
+
+
+    let lowerCurrent = 0;
+
+
+    /* =====================================================
+       LOWER CAROUSEL UPDATE
+       ===================================================== */
+
+    function updateLowerCarousel() {
+
+        thumbnails.forEach(
+            (thumbnail, index) => {
+
+                thumbnail.classList.toggle(
+                    "active",
+                    index === lowerCurrent
+                );
+
+            }
+        );
+
+
+        const active =
+            thumbnails[lowerCurrent];
+
+
+        if (active) {
+
+            active.scrollIntoView({
+                behavior: "smooth",
+                block: "nearest",
+                inline: "center"
+            });
+
+        }
+    }
+
+
+    /* =====================================================
+       LOWER CAROUSEL GAME SELECTION
+       ===================================================== */
+
+    thumbnails.forEach(
+        (thumbnail, index) => {
+
+            thumbnail.addEventListener(
+                "click",
+                () => {
+
+                    lowerCurrent =
+                        index;
+
+                    updateLowerCarousel();
+
+
+                    /*
+                     * Also change the main featured
+                     * carousel to the selected game
+                     * if it exists there.
+                     */
+
+                    const game =
+                        lowerCarouselGames[
+                            lowerCurrent
+                        ];
+
+
+                    const featuredIndex =
+                        featuredGames.findIndex(
+                            featured =>
+                                featured.name ===
+                                game.name
+                        );
+
+
+                    if (featuredIndex !== -1) {
+
+                        showFeaturedGame(
+                            featuredIndex
+                        );
+
+                    }
+
+                }
+            );
+
+        }
+    );
+
+
+    /* =====================================================
+       LOWER CAROUSEL PREVIOUS
+       ===================================================== */
+
+    if (previous) {
+
+        previous.addEventListener(
+            "click",
+            () => {
+
+                lowerCurrent =
+                    (
+                        lowerCurrent - 1 +
+                        thumbnails.length
+                    ) %
+                    thumbnails.length;
+
+                updateLowerCarousel();
+
+
+                const game =
+                    lowerCarouselGames[
+                        lowerCurrent
+                    ];
+
+
+                const featuredIndex =
+                    featuredGames.findIndex(
+                        featured =>
+                            featured.name ===
+                            game.name
+                    );
+
+
+                if (featuredIndex !== -1) {
+
+                    showFeaturedGame(
+                        featuredIndex
+                    );
+
+                }
+
+            }
+        );
+    }
+
+
+    /* =====================================================
+       LOWER CAROUSEL NEXT
+       ===================================================== */
+
+    if (next) {
+
+        next.addEventListener(
+            "click",
+            () => {
+
+                lowerCurrent =
+                    (
+                        lowerCurrent + 1
+                    ) %
+                    thumbnails.length;
+
+                updateLowerCarousel();
+
+
+                const game =
+                    lowerCarouselGames[
+                        lowerCurrent
+                    ];
+
+
+                const featuredIndex =
+                    featuredGames.findIndex(
+                        featured =>
+                            featured.name ===
+                            game.name
+                    );
+
+
+                if (featuredIndex !== -1) {
+
+                    showFeaturedGame(
+                        featuredIndex
+                    );
+
+                }
+
+            }
+        );
+    }
+
 });
