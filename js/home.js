@@ -157,7 +157,7 @@ document.addEventListener("DOMContentLoaded", () => {
 
             logo: "images/Corousel/logo/kimia  kesetimbangan.png",
             screenshot: "images/Preview Edugame/Kimia kesetimbangan.png",
-            icon: "images/Corousel/logo/Kimia kesetimbangan.png",
+            icon: "images/Corousel/icon/Kimia kesetimbangan.png",
 
             description:
                 "An educational puzzle game based on the chemical equilibrium topic in 11th-grade chemistry, where players must manipulate reaction conditions to achieve specific equilibrium objectives.",
