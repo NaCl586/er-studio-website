@@ -37,7 +37,7 @@ document.addEventListener("DOMContentLoaded", () => {
             name: "Floodfill",
             category: "mobile",
 
-            logo: "images/Corousel/Logo/FloodFill.png",
+            logo: "images/Corousel/logo/FloodFill.png",
             screenshot: "images/Corousel/Floodfill.png",
             icon: "images/Corousel/icon/FloodFill.png",
 
@@ -51,7 +51,7 @@ document.addEventListener("DOMContentLoaded", () => {
             name: "Block Impact",
             category: "mobile",
 
-            logo: "images/Corousel/Logo/Block impact.png",
+            logo: "images/Corousel/logo/Block impact.png",
             screenshot: "images/Corousel/Block impact.png",
             icon: "images/Corousel/icon/Block impact.png",
 
@@ -155,9 +155,9 @@ document.addEventListener("DOMContentLoaded", () => {
             name: "Equilibrium Shift",
             category: "education",
 
-            logo: "images/Corousel/logo/kimia kesetimbangan.png",
+            logo: "images/Corousel/logo/kimia  kesetimbangan.png",
             screenshot: "images/Preview Edugame/Kimia kesetimbangan.png",
-            icon: "images/Corousel/logo/kimia kesetimbangan.png",
+            icon: "images/Corousel/logo/Kimia kesetimbangan.png",
 
             description:
                 "An educational puzzle game based on the chemical equilibrium topic in 11th-grade chemistry, where players must manipulate reaction conditions to achieve specific equilibrium objectives.",
