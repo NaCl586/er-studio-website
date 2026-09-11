@@ -37,7 +37,7 @@ document.addEventListener("DOMContentLoaded", () => {
             name: "Floodfill",
             category: "mobile",
 
-            logo: "images/Corousel/logo/floodFill.png",
+            logo: "images/Corousel/logo/floodfill.png",
             screenshot: "images/Corousel/Floodfill.png",
             icon: "images/Corousel/icon/FloodFill.png",
 
@@ -157,7 +157,7 @@ document.addEventListener("DOMContentLoaded", () => {
 
             logo: "images/Corousel/logo/kimia  kesetimbangan.png",
             screenshot: "images/Preview Edugame/Kimia kesetimbangan.png",
-            icon: "images/Corousel/logo/Kimia  kesetimbangan.png",
+            icon: "images/Corousel/logo/Kimia kesetimbangan.png",
 
             description:
                 "An educational puzzle game based on the chemical equilibrium topic in 11th-grade chemistry, where players must manipulate reaction conditions to achieve specific equilibrium objectives.",
@@ -258,7 +258,7 @@ document.addEventListener("DOMContentLoaded", () => {
         name: "Dice on Delivery",
         category: "mobile",
 
-        logo: "images/Corousel/Logo/Dice on Delivery.png",
+        logo: "images/Corousel/logo/Dice on Delivery.png",
         screenshot: "images/Corousel/Dice on Delivery.png",
         icon: "images/Corousel/icon/Dice on Delivery.png",
 
