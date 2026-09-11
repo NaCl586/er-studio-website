@@ -6,7 +6,7 @@ const mobileGames = [
     {
         name: "Floodfill",
         screenshot: "images/Corousel/Floodfill.png",
-        icon: "images/Corousel/icon/Floodfill.png",
+        icon: "images/Corousel/icon/FloodFill.png",
         link: "https://forgehub.id/game/floodfill"
     },
 
@@ -43,20 +43,20 @@ const mobileGames = [
 const educationGames = [
     {
         name: "Ninja Math Quest",
-        screenshot: "images/Preview Edugame/mtk.png",
+        screenshot: "images/Preview Edugame/Mtk.png",
         icon: "images/Corousel/icon/mtk.png"
     },
 
     {
         name: "Vector Rouge: Petualangan Vektor",
         screenshot: "images/Preview Edugame/Fisika.png",
-        icon: "images/Corousel/icon/Fisika Vektor.png"
+        icon: "images/Corousel/icon/Fisika vektor.png"
     },
 
     {
         name: "Periodium",
         screenshot: "images/Preview Edugame/Kimia Kartu.png",
-        icon: "images/Corousel/icon/Kimia Kartu.png"
+        icon: "images/Corousel/icon/kimia kartu.png"
     },
 
     {
@@ -68,7 +68,7 @@ const educationGames = [
     {
         name: "Project TK",
         screenshot: "images/Preview Edugame/Project tk.png",
-        icon: "images/Corousel/logo//Project tk.png"
+        icon: "images/Corousel/logo/project tk.png"
     },
 
     {
