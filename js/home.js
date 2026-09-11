@@ -37,7 +37,7 @@ document.addEventListener("DOMContentLoaded", () => {
             name: "Floodfill",
             category: "mobile",
 
-            logo: "images/Corousel/logo/floodfill.png",
+            logo: "images/Corousel/Logo/FloodFill.png",
             screenshot: "images/Corousel/Floodfill.png",
             icon: "images/Corousel/icon/FloodFill.png",
 
@@ -51,7 +51,7 @@ document.addEventListener("DOMContentLoaded", () => {
             name: "Block Impact",
             category: "mobile",
 
-            logo: "images/Corousel/logo/Block impact.png",
+            logo: "images/Corousel/Logo/Block impact.png",
             screenshot: "images/Corousel/Block impact.png",
             icon: "images/Corousel/icon/Block impact.png",
 
@@ -65,9 +65,9 @@ document.addEventListener("DOMContentLoaded", () => {
             name: "Boom Castle",
             category: "mobile",
 
-            logo: "images/Corousel/logo/Boom Castle.png",
+            logo: "images/Corousel/logo/boom castle.png",
             screenshot: "images/Corousel/Balon.png",
-            icon: "images/Corousel/icon/boom caste.png",
+            icon: "images/Corousel/icon/Boom Caste.png",
 
             description:
                 "Boom Castle is a fast-paced arcade game where you control a cannon to defend your castle from waves of incoming balloons.",
@@ -79,7 +79,7 @@ document.addEventListener("DOMContentLoaded", () => {
             name: "Wild Balls",
             category: "mobile",
 
-            logo: "images/Corousel/logo/wild balls.png",
+            logo: "images/Corousel/Logo/Wild Balls.png",
             screenshot: "images/Corousel/Wildball.png",
             icon: "images/Corousel/icon/Wild Balls.png",
 
@@ -117,8 +117,8 @@ document.addEventListener("DOMContentLoaded", () => {
              * original game data, so the icon is used as
              * the featured logo.
              */
-            logo: "images/Corousel/logo/mtk.png",
-            screenshot: "images/Preview Edugame/Matematika Ninja.png",
+            logo: "images/Corousel/Logo/Mtk.png",
+            screenshot: "images/Preview Edugame/mtk.png",
             icon: "images/Corousel/icon/Mtk.png",
 
             description:
@@ -129,7 +129,7 @@ document.addEventListener("DOMContentLoaded", () => {
             name: "Vector Rouge: Petualangan Vektor",
             category: "education",
 
-            logo: "images/Corousel/logo/fisika vektor.png",
+            logo: "images/Corousel/Logo/Fisika vektor.png",
             screenshot: "images/Preview Edugame/Fisika.png",
             icon: "images/Corousel/icon/Fisika vektor.png",
 
@@ -142,7 +142,7 @@ document.addEventListener("DOMContentLoaded", () => {
             name: "Periodium",
             category: "education",
 
-            logo: "images/Corousel/logo/kimia kartu.png",
+            logo: "images/Corousel/Logo/Kimia kartu.png",
             screenshot: "images/Preview Edugame/Kimia Kartu.png",
             icon: "images/Corousel/icon/Kimia kartu.png",
 
@@ -155,9 +155,9 @@ document.addEventListener("DOMContentLoaded", () => {
             name: "Equilibrium Shift",
             category: "education",
 
-            logo: "images/Corousel/logo/kimia  kesetimbangan.png",
+            logo: "images/Corousel/logo/kimia kesetimbangan.png",
             screenshot: "images/Preview Edugame/Kimia kesetimbangan.png",
-            icon: "images/Corousel/logo/Kimia kesetimbangan.png",
+            icon: "images/Corousel/logo/kimia kesetimbangan.png",
 
             description:
                 "An educational puzzle game based on the chemical equilibrium topic in 11th-grade chemistry, where players must manipulate reaction conditions to achieve specific equilibrium objectives.",
@@ -168,9 +168,9 @@ document.addEventListener("DOMContentLoaded", () => {
             name: "Project TK",
             category: "education",
 
-            logo: "images/Corousel/logo/Project TK.png",
-            screenshot: "images/Preview Edugame/Project TK.png",
-            icon: "images/Corousel/logo/Project TK.png",
+            logo: "images/Corousel/logo/project tk.png",
+            screenshot: "images/Preview Edugame/Project tk.png",
+            icon: "images/Corousel/logo/project tk.png",
 
             description:
                 "In this game, players complete simple interactive activities such as tapping the screen, dragging and dropping objects, and drawing lines or shapes to solve various educational puzzles and challenges.",
@@ -244,7 +244,7 @@ document.addEventListener("DOMContentLoaded", () => {
         "Vector Rouge: Petualangan Vektor",
         "Periodium",
         "Equilibrium Shift",
-        "Project K",
+        "Project TK",
         "Digestive Inside Out"
     ];
 
@@ -423,18 +423,36 @@ document.addEventListener("DOMContentLoaded", () => {
 
 
         if (playElement) {
-            const canPlay = game.category === "mobile" && !!game.link;
+            const canPlay =
+                game.category === "mobile" &&
+                !!game.link;
 
-            playElement.classList.toggle("is-hidden", !canPlay);
+            playElement.classList.toggle(
+                "is-hidden",
+                !canPlay
+            );
 
             if (canPlay) {
-                playElement.href = game.link;
-                playElement.target = "_blank";
-                playElement.rel = "noopener noreferrer";
+                playElement.href =
+                    game.link;
+
+                playElement.target =
+                    "_blank";
+
+                playElement.rel =
+                    "noopener noreferrer";
             } else {
-                playElement.removeAttribute("href");
-                playElement.removeAttribute("target");
-                playElement.removeAttribute("rel");
+                playElement.removeAttribute(
+                    "href"
+                );
+
+                playElement.removeAttribute(
+                    "target"
+                );
+
+                playElement.removeAttribute(
+                    "rel"
+                );
             }
         }
 
@@ -696,7 +714,10 @@ if (carousel) {
         });
 
         previous?.addEventListener("click", () => {
-            lowerCurrent = (lowerCurrent - 1 + thumbnails.length) % thumbnails.length;
+            lowerCurrent =
+                (lowerCurrent - 1 + thumbnails.length) %
+                thumbnails.length;
+
             updateLowerCarousel();
 
             const featuredIndex = featuredGames.findIndex(
@@ -709,7 +730,10 @@ if (carousel) {
         });
 
         next?.addEventListener("click", () => {
-            lowerCurrent = (lowerCurrent + 1) % thumbnails.length;
+            lowerCurrent =
+                (lowerCurrent + 1) %
+                thumbnails.length;
+
             updateLowerCarousel();
 
             const featuredIndex = featuredGames.findIndex(

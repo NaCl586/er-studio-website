@@ -20,14 +20,14 @@ const mobileGames = [
     {
         name: "Boom Castle",
         screenshot: "images/Corousel/Balon.png",
-        icon: "images/Corousel/icon/boom caste.png",
+        icon: "images/Corousel/icon/Boom Caste.png",
         link: "https://forgehub.id/game/boom-castle"
     },
 
     {
         name: "Wild Balls",
         screenshot: "images/Corousel/Wildball.png",
-        icon: "images/Corousel/icon/Wild balls.png",
+        icon: "images/Corousel/icon/Wild Balls.png",
         link: "https://nacl586.itch.io/wild-balls"
     },
 
@@ -43,8 +43,8 @@ const mobileGames = [
 const educationGames = [
     {
         name: "Ninja Math Quest",
-        screenshot: "images/Preview Edugame/Mtk.png",
-        icon: "images/Corousel/icon/mtk.png"
+        screenshot: "images/Preview Edugame/mtk.png",
+        icon: "images/Corousel/icon/Mtk.png"
     },
 
     {
@@ -56,13 +56,13 @@ const educationGames = [
     {
         name: "Periodium",
         screenshot: "images/Preview Edugame/Kimia Kartu.png",
-        icon: "images/Corousel/icon/kimia kartu.png"
+        icon: "images/Corousel/icon/Kimia kartu.png"
     },
 
     {
         name: "Equilibrium Shift",
         screenshot: "images/Preview Edugame/Kimia kesetimbangan.png",
-        icon: "images/Corousel/logo/kimia  kesetimbangan.png"
+        icon: "images/Corousel/logo/kimia kesetimbangan.png"
     },
 
     {
