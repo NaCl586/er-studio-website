@@ -37,7 +37,7 @@ document.addEventListener("DOMContentLoaded", () => {
             name: "Floodfill",
             category: "mobile",
 
-            logo: "images/Corousel/logo/FloodFill.png",
+            logo: "images/Corousel/logo/floodFill.png",
             screenshot: "images/Corousel/Floodfill.png",
             icon: "images/Corousel/icon/FloodFill.png",
 
@@ -51,7 +51,7 @@ document.addEventListener("DOMContentLoaded", () => {
             name: "Block Impact",
             category: "mobile",
 
-            logo: "images/Corousel/logo/Block impact.png",
+            logo: "images/Corousel/logo/block impact.png",
             screenshot: "images/Corousel/Block impact.png",
             icon: "images/Corousel/icon/Block impact.png",
 
