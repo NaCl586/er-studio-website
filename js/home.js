@@ -79,7 +79,7 @@ document.addEventListener("DOMContentLoaded", () => {
             name: "Wild Balls",
             category: "mobile",
 
-            logo: "images/Corousel/Logo/Wild Balls.png",
+            logo: "images/Corousel/logo/wild balls.png",
             screenshot: "images/Corousel/Wildball.png",
             icon: "images/Corousel/icon/Wild Balls.png",
 
@@ -117,7 +117,7 @@ document.addEventListener("DOMContentLoaded", () => {
              * original game data, so the icon is used as
              * the featured logo.
              */
-            logo: "images/Corousel/Logo/Mtk.png",
+            logo: "images/Corousel/logo/mtk.png",
             screenshot: "images/Preview Edugame/mtk.png",
             icon: "images/Corousel/icon/Mtk.png",
 
@@ -129,7 +129,7 @@ document.addEventListener("DOMContentLoaded", () => {
             name: "Vector Rouge: Petualangan Vektor",
             category: "education",
 
-            logo: "images/Corousel/Logo/Fisika vektor.png",
+            logo: "images/Corousel/logo/fisika vektor.png",
             screenshot: "images/Preview Edugame/Fisika.png",
             icon: "images/Corousel/icon/Fisika vektor.png",
 
@@ -142,7 +142,7 @@ document.addEventListener("DOMContentLoaded", () => {
             name: "Periodium",
             category: "education",
 
-            logo: "images/Corousel/Logo/Kimia kartu.png",
+            logo: "images/Corousel/logo/kimia kartu.png",
             screenshot: "images/Preview Edugame/Kimia Kartu.png",
             icon: "images/Corousel/icon/Kimia kartu.png",
 
@@ -157,7 +157,7 @@ document.addEventListener("DOMContentLoaded", () => {
 
             logo: "images/Corousel/logo/kimia  kesetimbangan.png",
             screenshot: "images/Preview Edugame/Kimia kesetimbangan.png",
-            icon: "images/Corousel/logo/Kimia kesetimbangan.png",
+            icon: "images/Corousel/logo/Kimia  kesetimbangan.png",
 
             description:
                 "An educational puzzle game based on the chemical equilibrium topic in 11th-grade chemistry, where players must manipulate reaction conditions to achieve specific equilibrium objectives.",
