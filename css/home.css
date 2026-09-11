@@ -1366,3 +1366,7 @@
     }
 
 }
+
+.featured-play-button.is-hidden {
+    display: none !important;
+}

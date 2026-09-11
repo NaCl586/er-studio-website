@@ -37,9 +37,9 @@ document.addEventListener("DOMContentLoaded", () => {
             name: "Floodfill",
             category: "mobile",
 
-            logo: "images/Corousel/Logo/FloodFill.png",
+            logo: "images/Corousel/logo/floodfill.png",
             screenshot: "images/Corousel/Floodfill.png",
-            icon: "images/Corousel/icon/Floodfill.png",
+            icon: "images/Corousel/icon/FloodFill.png",
 
             description:
                 "FloodFill is an endless strategic puzzle game where players drag and drop color-coded pieces onto a board. Tiles can be placed on top of other tiles of the same color, transforming them into a higher-tiered new color.",
@@ -51,7 +51,7 @@ document.addEventListener("DOMContentLoaded", () => {
             name: "Block Impact",
             category: "mobile",
 
-            logo: "images/Corousel/Logo/Block impact.png",
+            logo: "images/Corousel/logo/Block impact.png",
             screenshot: "images/Corousel/Block impact.png",
             icon: "images/Corousel/icon/Block impact.png",
 
@@ -65,7 +65,7 @@ document.addEventListener("DOMContentLoaded", () => {
             name: "Boom Castle",
             category: "mobile",
 
-            logo: "images/Corousel/Logo/Boom Castle.png",
+            logo: "images/Corousel/logo/Boom Castle.png",
             screenshot: "images/Corousel/Balon.png",
             icon: "images/Corousel/icon/boom caste.png",
 
@@ -79,9 +79,9 @@ document.addEventListener("DOMContentLoaded", () => {
             name: "Wild Balls",
             category: "mobile",
 
-            logo: "images/Corousel/Logo/Wild Balls.png",
+            logo: "images/Corousel/logo/wild balls.png",
             screenshot: "images/Corousel/Wildball.png",
-            icon: "images/Corousel/icon/Wild balls.png",
+            icon: "images/Corousel/icon/Wild Balls.png",
 
             description:
                 "A puzzle game where you tilt your device to roll ball-shaped animals to their food bowl.",
@@ -93,7 +93,7 @@ document.addEventListener("DOMContentLoaded", () => {
             name: "Witchball Froine",
             category: "mobile",
 
-            logo: "images/Corousel/Logo/witchball.png",
+            logo: "images/Corousel/logo/witchball.png",
             screenshot: "images/Corousel/Witchball.png",
             icon: "images/Corousel/icon/Witchball.png",
 
@@ -117,9 +117,9 @@ document.addEventListener("DOMContentLoaded", () => {
              * original game data, so the icon is used as
              * the featured logo.
              */
-            logo: "images/Corousel/icon/mtk.png",
-            screenshot: "images/Preview Edugame/mtk.png",
-            icon: "images/Corousel/icon/mtk.png",
+            logo: "images/Corousel/logo/mtk.png",
+            screenshot: "images/Preview Edugame/Matematika Ninja.png",
+            icon: "images/Corousel/icon/Mtk.png",
 
             description:
                 "This educational game transforms 12th-grade topics of permutations, combinations, and probability into a ninja-themed adventure filled with puzzles, where you must solve mathematical challenges using strategy and precision to achieve victory.",
@@ -129,9 +129,9 @@ document.addEventListener("DOMContentLoaded", () => {
             name: "Vector Rouge: Petualangan Vektor",
             category: "education",
 
-            logo: "images/Corousel/icon/Fisika Vektor.png",
+            logo: "images/Corousel/logo/fisika vektor.png",
             screenshot: "images/Preview Edugame/Fisika.png",
-            icon: "images/Corousel/icon/Fisika Vektor.png",
+            icon: "images/Corousel/icon/Fisika vektor.png",
 
             description:
                 "This educational roguelike game turns vector addition and subtraction into a fun strategic challenge. Choose and combine vectors to match target vectors, overcome increasingly difficult challenges, and progress through a series of domains with different vector types and enemies. Players must think carefully about direction, magnitude, and combinations to find the right resultant vector.",
@@ -142,9 +142,9 @@ document.addEventListener("DOMContentLoaded", () => {
             name: "Periodium",
             category: "education",
 
-            logo: "images/Corousel/icon/Kimia Kartu.png",
+            logo: "images/Corousel/logo/kimia kartu.png",
             screenshot: "images/Preview Edugame/Kimia Kartu.png",
-            icon: "images/Corousel/icon/Kimia Kartu.png",
+            icon: "images/Corousel/icon/Kimia kartu.png",
 
             description:
                 "This educational card game brings each chemical element to life based on its periodic properties, such as atomic radius, ionization energy, and electronegativity. Test your creativity and logic against the clock to achieve the highest score possible!",
@@ -157,7 +157,7 @@ document.addEventListener("DOMContentLoaded", () => {
 
             logo: "images/Corousel/logo/kimia  kesetimbangan.png",
             screenshot: "images/Preview Edugame/Kimia kesetimbangan.png",
-            icon: "images/Corousel/logo/kimia  kesetimbangan.png",
+            icon: "images/Corousel/logo/Kimia kesetimbangan.png",
 
             description:
                 "An educational puzzle game based on the chemical equilibrium topic in 11th-grade chemistry, where players must manipulate reaction conditions to achieve specific equilibrium objectives.",
@@ -165,12 +165,12 @@ document.addEventListener("DOMContentLoaded", () => {
         },
 
         {
-            name: "Project K",
+            name: "Project TK",
             category: "education",
 
-            logo: "images/Corousel/logo/Project tk.png",
-            screenshot: "images/Preview Edugame/Project tk.png",
-            icon: "images/Corousel/logo/Project tk.png",
+            logo: "images/Corousel/logo/Project TK.png",
+            screenshot: "images/Preview Edugame/Project TK.png",
+            icon: "images/Corousel/logo/Project TK.png",
 
             description:
                 "In this game, players complete simple interactive activities such as tapping the screen, dragging and dropping objects, and drawing lines or shapes to solve various educational puzzles and challenges.",
@@ -423,13 +423,15 @@ document.addEventListener("DOMContentLoaded", () => {
 
 
         if (playElement) {
-            if (game.link) {
-                playElement.style.display = "flex";
+            const canPlay = game.category === "mobile" && !!game.link;
+
+            playElement.classList.toggle("is-hidden", !canPlay);
+
+            if (canPlay) {
                 playElement.href = game.link;
                 playElement.target = "_blank";
                 playElement.rel = "noopener noreferrer";
             } else {
-                playElement.style.display = "none";
                 playElement.removeAttribute("href");
                 playElement.removeAttribute("target");
                 playElement.removeAttribute("rel");
