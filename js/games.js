@@ -118,7 +118,7 @@ const gameDescriptions = {
 and logic against the clock to achieve the highest score possible!
     `,
 
-    "Project K": `
+    "Project TK": `
         In this game, players complete simple interactive activities such as tapping the screen, dragging and dropping objects, and drawing lines or shapes to solve various educational puzzles and challenges.
     `,
 
