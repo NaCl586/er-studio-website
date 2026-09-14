@@ -39,7 +39,7 @@ document.addEventListener("DOMContentLoaded", () => {
 
             logo: "images/Corousel/logo/floodfill.png",
             screenshot: "images/Corousel/Floodfill.png",
-            icon: "images/Corousel/icon/FloodFill.png",
+            icon: "images/Preview/FloodFIll.png",
 
             description:
                 "FloodFill is an endless strategic puzzle game where players drag and drop color-coded pieces onto a board. Tiles can be placed on top of other tiles of the same color, transforming them into a higher-tiered new color.",
@@ -53,7 +53,7 @@ document.addEventListener("DOMContentLoaded", () => {
 
             logo: "images/Corousel/logo/block impact.png",
             screenshot: "images/Corousel/Block impact.png",
-            icon: "images/Corousel/icon/Block impact.png",
+            icon: "images/Preview/Block impact.png",
 
             description:
                 "Block Impact is a fun 3D brick breaker game where you control a paddle to bounce a ball and destroy colorful blocks. Clear every level, keep the ball in play, and chase higher scores with precise timing.",
@@ -67,7 +67,7 @@ document.addEventListener("DOMContentLoaded", () => {
 
             logo: "images/Corousel/logo/boom castle.png",
             screenshot: "images/Corousel/Balon.png",
-            icon: "images/Corousel/icon/Boom Caste.png",
+            icon: "images/Preview/Boom Caste.png",
 
             description:
                 "Boom Castle is a fast-paced arcade game where you control a cannon to defend your castle from waves of incoming balloons.",
@@ -81,7 +81,7 @@ document.addEventListener("DOMContentLoaded", () => {
 
             logo: "images/Corousel/logo/wild balls.png",
             screenshot: "images/Corousel/Wildball.png",
-            icon: "images/Corousel/icon/Wild Balls.png",
+            icon: "images/Preview/Wildball.png",
 
             description:
                 "A puzzle game where you tilt your device to roll ball-shaped animals to their food bowl.",
@@ -95,7 +95,7 @@ document.addEventListener("DOMContentLoaded", () => {
 
             logo: "images/Corousel/logo/witchball.png",
             screenshot: "images/Corousel/Witchball.png",
-            icon: "images/Corousel/icon/Witchball.png",
+            icon: "images/Preview/Witchball.png",
 
             description:
                 "A ball-rolling game controlled by swipe to guide Froine, a magical witch, in her adventure.",
@@ -119,7 +119,7 @@ document.addEventListener("DOMContentLoaded", () => {
              */
             logo: "images/Corousel/logo/mtk.png",
             screenshot: "images/Preview Edugame/mtk.png",
-            icon: "images/Corousel/icon/Mtk.png",
+            icon: "images/Preview/Ninja Math.png",
 
             description:
                 "This educational game transforms 12th-grade topics of permutations, combinations, and probability into a ninja-themed adventure filled with puzzles, where you must solve mathematical challenges using strategy and precision to achieve victory.",
@@ -131,7 +131,7 @@ document.addEventListener("DOMContentLoaded", () => {
 
             logo: "images/Corousel/logo/fisika vektor.png",
             screenshot: "images/Preview Edugame/Fisika.png",
-            icon: "images/Corousel/icon/Fisika vektor.png",
+            icon: "images/Preview/Fisika.png",
 
             description:
                 "This educational roguelike game turns vector addition and subtraction into a fun strategic challenge. Choose and combine vectors to match target vectors, overcome increasingly difficult challenges, and progress through a series of domains with different vector types and enemies. Players must think carefully about direction, magnitude, and combinations to find the right resultant vector.",
@@ -144,7 +144,7 @@ document.addEventListener("DOMContentLoaded", () => {
 
             logo: "images/Corousel/logo/kimia kartu.png",
             screenshot: "images/Preview Edugame/Kimia Kartu.png",
-            icon: "images/Corousel/icon/Kimia kartu.png",
+            icon: "images/Preview/Periodium.png",
 
             description:
                 "This educational card game brings each chemical element to life based on its periodic properties, such as atomic radius, ionization energy, and electronegativity. Test your creativity and logic against the clock to achieve the highest score possible!",
@@ -157,7 +157,7 @@ document.addEventListener("DOMContentLoaded", () => {
 
             logo: "images/Corousel/logo/kimia  kesetimbangan.png",
             screenshot: "images/Preview Edugame/Kimia kesetimbangan.png",
-            icon: "images/Corousel/icon/Kimia kesetimbangan.png",
+            icon: "images/Preview/Kimia kesetimbangan.png",
 
             description:
                 "An educational puzzle game based on the chemical equilibrium topic in 11th-grade chemistry, where players must manipulate reaction conditions to achieve specific equilibrium objectives.",
@@ -170,7 +170,7 @@ document.addEventListener("DOMContentLoaded", () => {
 
             logo: "images/Corousel/logo/project tk.png",
             screenshot: "images/Preview Edugame/Project tk.png",
-            icon: "images/Corousel/logo/project tk.png",
+            icon: "images/Preview/Project TK.png",
 
             description:
                 "In this game, players complete simple interactive activities such as tapping the screen, dragging and dropping objects, and drawing lines or shapes to solve various educational puzzles and challenges.",
@@ -183,7 +183,7 @@ document.addEventListener("DOMContentLoaded", () => {
 
             logo: "images/Corousel/logo/biologi.png",
             screenshot: "images/Preview Edugame/Biologi.png",
-            icon: "images/Corousel/logo/biologi.png",
+            icon: "images/Preview/Biologi.png",
 
             description:
                 "Explore a unique office building where each floor is designed to resemble a human digestive organ, challenging you to visit key locations and discover each stage of the digestive process in an engaging and interactive way.",
@@ -260,7 +260,7 @@ document.addEventListener("DOMContentLoaded", () => {
 
         logo: "images/Corousel/logo/Dice on Delivery.png",
         screenshot: "images/Corousel/Dice on Delivery.png",
-        icon: "images/Corousel/icon/Dice on Delivery.png",
+        icon: "images/Preview/Dice on Delivery.png",
 
         description:
             "Deliver packages through an absurd city while using dice to determine your abilities and overcome unexpected obstacles.",

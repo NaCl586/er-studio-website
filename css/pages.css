@@ -1805,3 +1805,20 @@ body:has(.news-content) {
     }
 
 }
+
+.games-page .games-content {
+  position: relative;
+  width: 100%;
+  max-width: 1200px; /* Constrain max layout width */
+  margin: 0 auto;    /* Center the container */
+  padding: 32px 5% 75px; /* Equal left & right padding */
+  box-sizing: border-box;
+}
+
+@media (max-width: 800px) {
+  .games-page .games-content {
+    width: 100%;
+    padding: 25px 20px 45px; /* Replace 0 horizontal padding with balanced px */
+    box-sizing: border-box;
+  }
+}

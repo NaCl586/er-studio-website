@@ -1,19 +1,90 @@
 /* =========================================================
+   VARIABLES & DESIGN SYSTEM
+   ========================================================= */
+:root {
+    --color-primary: #30485c;
+    --color-accent: #ff9938;
+    --color-accent-dark: #d87518;
+    --color-bg-light: #dff3ff;
+    --color-bg-card: rgba(255, 255, 255, 0.88);
+    --color-dark: #111111;
+    --color-white: #ffffff;
+    
+    --radius-sm: 8px;
+    --radius-md: 18px;
+    --radius-lg: 28px;
+    
+    --shadow-card: 0 12px 35px rgba(0, 0, 0, 0.18);
+    --transition-standard: ease 0.2s;
+}
+
+/* =========================================================
    GLOBAL & BACKGROUND
    ========================================================= */
-
 .home-background {
-    background:
-        url("../images/Background.png") center top / cover fixed no-repeat,
-        #dff3ff;
+    background: url("../images/Background.png") center top / cover fixed no-repeat, var(--color-bg-light);
     overflow: hidden;
 }
 
+/* Base Container Cards */
+.home-section.services-section,
+.home-section.works-section,
+.home-section.team-preview-home {
+    width: 100%;
+    max-width: 1150px;
+    margin: 60px auto 80px;
+    padding: 45px 55px;
+    box-sizing: border-box;
+    background: var(--color-bg-card);
+    border-radius: var(--radius-md);
+    box-shadow: var(--shadow-card);
+}
+
+.home-section {
+    width: min(86%, 1180px);
+    margin: 0 auto;
+    padding: 35px 0 95px;
+}
+
+.home-section > h1,
+.home-news-heading h1 {
+    margin: 0 0 42px;
+    color: var(--color-primary);
+    font-size: clamp(32px, 4vw, 48px);
+    line-height: 1.15;
+    font-weight: 500;
+}
+
+.home-section > h1 span,
+.home-news-heading h1 span {
+    color: var(--color-accent);
+}
+
+.home-action-bar {
+    width: min(86%, 1180px);
+    margin: 0 auto;
+    padding: 45px 0 55px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.home-action-bar .btn {
+    min-width: 150px;
+    padding: 13px 28px;
+    border-radius: 28px;
+    text-align: center;
+    font-size: 15px;
+    box-shadow: 0 6px 0 rgba(48, 72, 92, 0.22);
+}
+
+.home-action-bar .btn-dark {
+    background: var(--color-primary);
+}
 
 /* =========================================================
    FEATURED GAME HERO & CAROUSEL
    ========================================================= */
-
 .featured-games {
     position: relative;
     width: 100%;
@@ -25,11 +96,16 @@
     background: #9edcf5;
 }
 
-.featured-games-background {
+.featured-games-background,
+.featured-game-background {
     position: absolute;
     inset: 0;
-    background: url("../images/Background.png") center center / cover no-repeat;
     z-index: 0;
+    overflow: hidden;
+}
+
+.featured-games-background {
+    background: url("../images/Background.png") center center / cover no-repeat;
 }
 
 .featured-panel {
@@ -38,16 +114,7 @@
     height: 100%;
     overflow: hidden;
     background: #241b3b;
-    border-radius: 0;
-    box-shadow: none;
     z-index: 2;
-}
-
-.featured-game-background {
-    position: absolute;
-    inset: 0;
-    z-index: 0;
-    overflow: hidden;
 }
 
 .featured-game-background img {
@@ -85,7 +152,8 @@
 
 .featured-information {
     max-width: 570px;
-    color: #ffffff;
+    color: var(--color-white);
+    text-align: center;
 }
 
 .featured-game-logo {
@@ -101,7 +169,7 @@
 .featured-game-description {
     max-width: 520px;
     margin: 0 auto 30px;
-    color: #ffffff;
+    color: var(--color-white);
     font-size: 16px;
     line-height: 1.55;
 }
@@ -115,18 +183,22 @@
     padding: 10px 25px;
     margin: 0 auto;
     border-radius: 25px;
-    background: #ff9938;
-    color: #ffffff;
+    background: var(--color-accent);
+    color: var(--color-white);
     font-size: 14px;
     font-weight: 600;
     text-decoration: none;
-    box-shadow: 0 5px 0 #d87518;
-    transition: transform 0.2s ease, box-shadow 0.2s ease;
+    box-shadow: 0 5px 0 var(--color-accent-dark);
+    transition: transform var(--transition-standard), box-shadow var(--transition-standard);
 }
 
 .featured-play-button:hover {
     transform: translateY(-2px);
-    box-shadow: 0 7px 0 #d87518;
+    box-shadow: 0 7px 0 var(--color-accent-dark);
+}
+
+.featured-play-button.is-hidden {
+    display: none !important;
 }
 
 .featured-game-icon-wrapper {
@@ -138,10 +210,10 @@
 }
 
 .featured-game-icon {
-    width: 450px;
+    width: 520px;
     height: auto;
     object-fit: cover;
-    border-radius: 18px;
+    border-radius: var(--radius-md);
     background: rgba(255, 255, 255, 0.08);
     box-shadow: 0 8px 20px rgba(0, 0, 0, 0.28);
 }
@@ -156,25 +228,20 @@
     padding: 0;
     border: 0;
     background: transparent;
-    color: #ffffff;
+    color: var(--color-white);
     font-size: 58px;
     line-height: 45px;
     cursor: pointer;
-    transition: transform 0.2s ease, color 0.2s ease;
+    transition: transform var(--transition-standard), color var(--transition-standard);
 }
 
 .featured-arrow:hover {
     transform: translateY(-50%) scale(1.15);
-    color: #ff9938;
+    color: var(--color-accent);
 }
 
-.featured-prev {
-    left: 25px;
-}
-
-.featured-next {
-    right: 25px;
-}
+.featured-prev { left: 25px; }
+.featured-next { right: 25px; }
 
 .featured-progress {
     position: absolute;
@@ -196,7 +263,7 @@
 .featured-progress-fill {
     width: 0%;
     height: 100%;
-    background: #ff9938;
+    background: var(--color-accent);
     transition: width 0.05s linear;
 }
 
@@ -213,70 +280,17 @@
     border-radius: 50%;
     background: rgba(255, 255, 255, 0.45);
     cursor: pointer;
-    transition: background 0.2s ease, transform 0.2s ease;
+    transition: background var(--transition-standard), transform var(--transition-standard);
 }
 
 .featured-progress-dots span.active {
-    background: #ff9938;
+    background: var(--color-accent);
     transform: scale(1.25);
 }
-
-
-/* =========================================================
-   GENERAL HOME SECTIONS & ACTIONS
-   ========================================================= */
-
-.home-action-bar {
-    width: min(86%, 1180px);
-    margin: 0 auto;
-    padding: 45px 0 55px;
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-}
-
-.home-action-bar .btn {
-    min-width: 150px;
-    padding: 13px 28px;
-    border-radius: 28px;
-    text-align: center;
-    font-size: 15px;
-    box-shadow: 0 6px 0 rgba(48, 72, 92, 0.22);
-}
-
-.home-action-bar .btn-dark {
-    background: #30485c;
-}
-
-.home-section {
-    width: min(86%, 1180px);
-    margin: 0 auto;
-    padding: 35px 0 95px;
-}
-
-.home-section > h1,
-.home-news-heading h1 {
-    margin: 0 0 42px;
-    color: #30485c;
-    font-size: clamp(32px, 4vw, 48px);
-    line-height: 1.15;
-    font-weight: 500;
-}
-
-.home-section > h1 span,
-.home-news-heading h1 span {
-    color: #ff9938;
-}
-
-.home-section-text {
-    text-align: center;
-}
-
 
 /* =========================================================
    SERVICES
    ========================================================= */
-
 .services-section {
     margin-top: 100px;
 }
@@ -286,22 +300,18 @@
     grid-template-columns: repeat(3, 1fr);
     gap: 44px;
     align-items: stretch;
+    width: 100%;
 }
 
-.home-service-card,
-.home-service-card.service-card-right {
+.home-service-card {
     width: 100%;
     min-height: 275px;
     padding: 22px 55px 25px 30px;
     display: flex;
     flex-direction: column;
     align-items: flex-start;
-    justify-self: auto;
-    gap: 0;
-    color: #ffffff;
-    background: #30485c;
-    border-radius: 0;
-    box-shadow: none;
+    color: var(--color-white);
+    background: var(--color-primary);
     clip-path: polygon(0 0, 78% 0, 100% 100%, 0 100%);
 }
 
@@ -310,42 +320,36 @@
     height: 55px;
     flex: 0 0 55px;
     object-fit: contain;
-    margin: 0 0 8px 0;
+    margin-bottom: 8px;
 }
 
 .home-service-card h2 {
-    margin: 0 0 14px 0;
-    color: #ffffff;
+    margin: 0 0 14px;
+    color: var(--color-white);
     font-size: 22px;
     line-height: 1.2;
     font-weight: 500;
-    text-align: left;
 }
 
 .home-service-card p {
     width: 100%;
     margin: 0;
     padding-right: 10px;
-    color: #ffffff;
+    color: var(--color-white);
     font-size: 16px;
     line-height: 1.55;
     text-align: center;
 }
 
-
 /* =========================================================
    OUR WORKS
    ========================================================= */
-
-.works-section {
-    padding-top: 25px;
-}
-
 .home-work-feature {
     display: grid;
     grid-template-columns: 1.15fr 0.85fr;
     gap: 55px;
     align-items: start;
+    width: 100%;
 }
 
 .home-work-left {
@@ -357,15 +361,12 @@
     aspect-ratio: 1.55 / 1;
     overflow: hidden;
     border-radius: 24px 24px 0 0;
-    background: transparent;
-    box-shadow: none;
 }
 
 .home-work-image img {
     display: block;
     width: 100%;
     height: auto;
-    border-radius: 24px 24px 0 0;
     object-fit: cover;
     transition: opacity 0.2s ease, transform 0.3s ease;
 }
@@ -389,7 +390,6 @@
     flex: 0 0 105px;
     overflow: hidden;
     border-radius: 7px;
-    background: transparent;
 }
 
 .home-work-thumbnail img {
@@ -400,25 +400,18 @@
 }
 
 .home-work-copy {
-    color: #30485c;
+    color: var(--color-primary);
     font-size: 15px;
     line-height: 1.8;
     padding-top: 5px;
 }
 
-.home-work-copy p {
-    margin: 0 0 20px;
-}
-
-.home-work-copy .btn {
-    margin-top: 8px;
-}
-
+.home-work-copy p { margin: 0 0 20px; }
+.home-work-copy .btn { margin-top: 8px; }
 
 /* =========================================================
    LOWER GAME CAROUSEL
    ========================================================= */
-
 .home-game-carousel {
     width: 100%;
     margin: 28px auto 0;
@@ -436,29 +429,29 @@
 .carousel-track {
     display: flex;
     justify-content: center;
-    gap: 12px;
+    gap: 14px;
     transition: transform 0.3s ease;
 }
 
 .game-thumb {
-    width: 108px;
-    height: 76px;
-    flex: 0 0 108px;
+    width: 150px;
+    height: 105px;
+    flex: 0 0 150px;
     padding: 0;
     border: 3px solid transparent;
     border-radius: 11px;
     overflow: hidden;
     cursor: pointer;
-    background: #ffffff;
+    background: var(--color-white);
     opacity: 0.72;
-    transition: transform 0.2s ease, opacity 0.2s ease, border-color 0.2s ease;
+    transition: transform var(--transition-standard), opacity var(--transition-standard), border-color var(--transition-standard);
 }
 
 .game-thumb.active,
 .game-thumb:hover {
     opacity: 1;
     transform: translateY(-3px);
-    border-color: #ff9938;
+    border-color: var(--color-accent);
 }
 
 .game-thumb img {
@@ -472,20 +465,19 @@
     width: 45px;
     height: 45px;
     flex: 0 0 45px;
-    padding: 0;
     border: 0;
     border-radius: 50%;
-    background: #30485c;
-    color: #ffffff;
+    background: var(--color-primary);
+    color: var(--color-white);
     font-size: 31px;
     line-height: 1;
     cursor: pointer;
-    transition: transform 0.2s ease, background 0.2s ease;
+    transition: transform var(--transition-standard), background var(--transition-standard);
 }
 
 .carousel-arrow:hover {
     transform: scale(1.08);
-    background: #ff9938;
+    background: var(--color-accent);
 }
 
 .carousel-dots {
@@ -499,60 +491,40 @@
 .carousel-dots span {
     width: 7px;
     height: 7px;
-    padding: 0;
     border-radius: 50%;
-    background: #ffffff;
+    background: var(--color-white);
     opacity: 0.7;
     cursor: pointer;
-    transition: transform 0.2s ease, background 0.2s ease, opacity 0.2s ease;
+    transition: transform var(--transition-standard), background var(--transition-standard), opacity var(--transition-standard);
 }
 
 .carousel-dots span.active {
-    background: #ff9938;
+    background: var(--color-accent);
     opacity: 1;
     transform: scale(1.25);
 }
 
-
 /* =========================================================
-   ABOUT PREVIEW
+   ABOUT PREVIEW & TEAM PREVIEW
    ========================================================= */
-
 .about-preview {
     width: 100%;
-    max-width: none;
     padding: 100px 7%;
-}
-
-.about-preview-inner {
-    width: min(950px, 100%);
-    margin: 0 auto;
 }
 
 .about-preview-copy {
     max-width: 760px;
     margin: 0 auto;
     padding: 38px 42px;
-    color: #ffffff;
+    color: var(--color-white);
     background: rgba(49, 73, 94, 0.88);
-    border-radius: 28px;
+    border-radius: var(--radius-lg);
     line-height: 1.75;
     text-align: center;
     box-shadow: 16px 16px 0 rgba(49, 73, 94, 0.16);
 }
 
-.about-preview-copy p {
-    margin: 0 0 20px;
-}
-
-.about-preview-copy .btn {
-    margin-top: 8px;
-}
-
-
-/* =========================================================
-   TEAM PREVIEW
-   ========================================================= */
+.about-preview-copy p { margin: 0 0 20px; }
 
 .team-preview-home {
     padding-top: 100px;
@@ -560,7 +532,7 @@
 }
 
 .home-team-grid {
-    width: min(930px, 100%);
+    width: 100%;
     margin: 75px auto 0;
     display: grid;
     grid-template-columns: repeat(3, 1fr);
@@ -568,9 +540,7 @@
     text-align: center;
 }
 
-.home-team-member {
-    color: #30485c;
-}
+.home-team-member { color: var(--color-primary); }
 
 .home-team-member img {
     height: 185px;
@@ -592,15 +562,13 @@
     line-height: 1.5;
 }
 
-
 /* =========================================================
-   NEWS SECTION
+   NEWS SECTION & CAROUSEL ANIMATIONS
    ========================================================= */
-
 .home-news-section {
     width: 100%;
     padding: 80px 7% 95px;
-    color: #ffffff;
+    color: var(--color-white);
     background: rgba(49, 73, 94, 0.94);
 }
 
@@ -613,24 +581,34 @@
     gap: 25px;
 }
 
-.home-news-heading h1 {
-    color: #ffffff;
-    margin-bottom: 0;
+.home-news-heading h1 { color: var(--color-white); margin-bottom: 0; }
+.home-news-heading a { color: var(--color-white); font-weight: 600; white-space: nowrap; }
+
+#home-news {
+    position: relative;
+    overflow: hidden;
 }
 
-.home-news-heading a {
-    color: #ffffff;
-    font-weight: 600;
-    white-space: nowrap;
+#home-news .home-news-track {
+    display: flex;
+    width: 100%;
+    transition: transform 350ms ease;
 }
 
-.home-news-grid {
-    width: min(900px, 100%);
-    margin: 35px auto 0;
+#home-news .home-news-page {
+    flex: 0 0 100%;
+    width: 100%;
     display: grid;
-    grid-template-columns: repeat(2, 1fr);
+    grid-template-columns: repeat(2, minmax(0, 1fr));
     gap: 28px;
+    box-sizing: border-box;
+    transition: transform 350ms ease;
 }
+
+#home-news .home-news-page.slide-out-left { transform: translateX(-100%); }
+#home-news .home-news-page.slide-out-right { transform: translateX(100%); }
+#home-news .home-news-page.slide-in-right { transform: translateX(100%); }
+#home-news .home-news-page.slide-in-left { transform: translateX(-100%); }
 
 .news-image {
     width: 100%;
@@ -658,26 +636,34 @@
     height: 45px;
     border: 0;
     border-radius: 50%;
-    background: #ffffff;
-    color: #30485c;
+    background: var(--color-white);
+    color: var(--color-primary);
     font-size: 31px;
     cursor: pointer;
 }
 
+.home-news-section .news-card,
+.home-news-section .news-card .news-content,
+.home-news-section .news-card small,
+.home-news-section .news-card h3,
+.home-news-section .news-card p {
+    color: var(--color-dark);
+}
+
+.home-news-section .news-card .read-more {
+    color: var(--color-accent);
+}
 
 /* =========================================================
    FOOTER & FLOATING CONTACT
    ========================================================= */
-
 .site-footer {
-    background: #ff9938;
-    color: #ffffff;
+    background: var(--color-accent);
+    color: var(--color-white);
     padding: 55px 7% 22px;
 }
 
-.footer-contact h2 {
-    color: #111111;
-}
+.footer-contact h2 { color: var(--color-dark); }
 
 .footer-logo {
     width: 190px;
@@ -720,780 +706,236 @@
 }
 
 .floating-contact {
-    background: #111111;
-    color: #ff9938;
+    background: var(--color-dark);
+    color: var(--color-accent);
     box-shadow: 0 6px 18px rgba(0, 0, 0, 0.2);
 }
-
 
 /* =========================================================
    RESPONSIVE MEDIA QUERIES
    ========================================================= */
 
-/* Desktop Small / Tablet Landscape */
+@media (prefers-reduced-motion: reduce) {
+    #home-news .home-news-page,
+    #home-news .home-news-track {
+        transition: none;
+    }
+}
+
+/* Tablet Landscape / Small Desktop */
 @media (max-width: 1000px) {
-    .featured-games {
-        height: 540px;
-    }
+    .featured-games { height: 540px; }
+    .featured-content { grid-template-columns: minmax(0, 1fr) minmax(260px, 42%); padding: 35px 7%; }
+    .featured-game-logo { max-width: 320px; height: 115px; }
+    .featured-game-icon { width: 270px; height: 210px; }
+    .featured-game-description { font-size: 13px; }
 
-    .featured-content {
-        grid-template-columns: minmax(0, 1fr) minmax(260px, 42%);
-        padding: 35px 7%;
-    }
-
-    .featured-game-logo {
-        max-width: 320px;
-        height: 115px;
-    }
-
-    .featured-game-icon {
-        width: 270px;
-        height: 210px;
-    }
-
-    .featured-game-description {
-        font-size: 13px;
-    }
-
-    .home-services-grid {
-        grid-template-columns: repeat(3, 1fr);
-        gap: 25px;
-    }
-
-    .home-service-card,
-    .home-service-card.service-card-right {
-        min-height: 260px;
-        padding: 20px 45px 22px 25px;
-    }
-
-    .home-service-icon {
-        width: 50px;
-        height: 50px;
-    }
-
-    .home-service-card h2 {
-        font-size: 19px;
-    }
-
-    .home-service-card p {
-        font-size: 14px;
-    }
+    .home-services-grid { gap: 25px; }
+    .home-service-card { min-height: 260px; padding: 20px 45px 22px 25px; }
+    .home-service-icon { width: 50px; height: 50px; }
+    .home-service-card h2 { font-size: 19px; }
+    .home-service-card p { font-size: 14px; }
 }
 
 /* Tablet Portrait */
 @media (max-width: 800px) {
-    .featured-games {
-        height: 520px;
+    .home-section.services-section,
+    .home-section.works-section,
+    .home-section.team-preview-home {
+        width: 92%;
+        margin: 40px auto 60px;
+        padding: 35px 30px;
     }
 
-    .featured-content {
-        grid-template-columns: 1fr;
-        grid-template-rows: 1fr 1fr;
-        padding: 25px 8% 10px;
-        text-align: center;
-    }
+    .featured-games { height: 520px; }
+    .featured-content { grid-template-columns: 1fr; grid-template-rows: 1fr 1fr; padding: 25px 8% 10px; }
+    .featured-information { max-width: 100%; }
+    .featured-game-logo { height: 90px; max-width: 280px; margin-bottom: 12px; }
+    .featured-game-description { max-width: 500px; margin-bottom: 18px; }
+    .featured-game-icon-wrapper { height: 175px; }
+    .featured-game-icon { width: 260px; height: 170px; }
+    .featured-arrow { width: 35px; height: 45px; font-size: 45px; }
+    .featured-prev { left: 8px; }
+    .featured-next { right: 8px; }
 
-    .featured-information {
-        max-width: 100%;
-    }
+    .home-action-bar, .home-section { width: 90%; }
+    .home-action-bar { padding-top: 30px; }
 
-    .featured-game-logo {
-        height: 90px;
-        max-width: 280px;
-        margin: 0 auto 12px;
-    }
+    .home-services-grid { grid-template-columns: 1fr; gap: 30px; }
+    .home-service-card { min-height: 220px; padding: 25px 70px 25px 30px; clip-path: polygon(0 0, 88% 0, 100% 100%, 0 100%); }
+    .home-service-icon { width: 55px; height: 55px; }
+    .home-service-card h2 { font-size: 22px; }
+    .home-service-card p { max-width: 500px; font-size: 15px; }
 
-    .featured-game-description {
-        max-width: 500px;
-        margin: 0 auto 18px;
-    }
-
-    .featured-game-icon-wrapper {
-        height: 175px;
-    }
-
-    .featured-game-icon {
-        width: 260px;
-        height: 170px;
-    }
-
-    .featured-arrow {
-        width: 35px;
-        height: 45px;
-        font-size: 45px;
-    }
-
-    .featured-prev {
-        left: 8px;
-    }
-
-    .featured-next {
-        right: 8px;
-    }
-
-    .home-action-bar {
-        width: 90%;
-        padding-top: 30px;
-    }
-
-    .home-section {
-        width: 90%;
-    }
-
-    .home-services-grid {
-        grid-template-columns: 1fr;
-        gap: 30px;
-    }
-
-    .home-service-card,
-    .home-service-card.service-card-right {
-        width: 100%;
-        min-height: 220px;
-        padding: 25px 70px 25px 30px;
-        clip-path: polygon(0 0, 88% 0, 100% 100%, 0 100%);
-    }
-
-    .home-service-icon {
-        width: 55px;
-        height: 55px;
-    }
-
-    .home-service-card h2 {
-        font-size: 22px;
-    }
-
-    .home-service-card p {
-        max-width: 500px;
-        font-size: 15px;
-    }
-
-    .home-work-feature {
-        grid-template-columns: 1fr;
-        gap: 30px;
-    }
-
-    .home-work-copy {
-        text-align: center;
-    }
-
-    .home-work-copy .btn {
-        display: inline-flex;
-    }
-
+    .home-work-feature { grid-template-columns: 1fr; gap: 30px; }
+    .home-work-image { aspect-ratio: 1.55 / 1; border-radius: 18px 18px 0 0; }
     .home-work-thumbnails {
-        gap: 6px;
-    }
-
-    .home-work-thumbnail {
-        width: 110px;
-        height: 75px;
-        flex-basis: 110px;
-    }
-
-    .carousel-track {
         justify-content: flex-start;
+        overflow-x: auto;
+        gap: 8px;
+        margin-top: -10px;
+        padding-bottom: 8px;
+        scrollbar-width: thin;
     }
+    .home-work-thumbnail { width: 90px; height: 62px; flex: 0 0 90px; }
+    .home-work-copy { text-align: center; font-size: 15px; }
+    .home-work-copy .btn { display: inline-flex; margin: 8px auto 0; }
 
-    .game-thumb {
-        width: 120px;
-        height: 84px;
-        flex-basis: 120px;
-    }
+    .carousel-track { justify-content: flex-start; }
+    .game-thumb { width: 150px; height: 105px; flex-basis: 150px; }
 
-    .home-team-grid {
-        grid-template-columns: 1fr;
-        margin-top: 45px;
-    }
+    .home-team-grid { grid-template-columns: 1fr; margin-top: 45px; }
+    .home-team-member img { height: 170px; }
 
-    .home-team-member img {
-        height: 170px;
-    }
-
-    .home-news-heading {
-        align-items: flex-start;
-    }
-
-    .home-news-grid {
-        grid-template-columns: 1fr;
-    }
+    .home-news-heading { align-items: flex-start; }
+    #home-news .home-news-page { grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 14px; }
 }
 
 /* Mobile */
 @media (max-width: 560px) {
-    .featured-games {
-        height: 500px;
+    .home-section.services-section,
+    .home-section.works-section,
+    .home-section.team-preview-home {
+        width: 94%;
+        margin: 30px auto 50px;
+        padding: 28px 20px;
+        border-radius: 14px;
     }
 
-    .featured-content {
-        padding: 20px 15% 10px;
-    }
+    .home-section.works-section > h1 { margin-bottom: 28px; font-size: 32px; }
 
-    .featured-game-logo {
-        height: 75px;
-        max-width: 230px;
-    }
+    .featured-games { height: 500px; }
+    .featured-content { padding: 20px 15% 10px; }
+    .featured-game-logo { height: 75px; max-width: 230px; }
+    .featured-game-description { font-size: 11px; line-height: 1.45; margin-bottom: 12px; }
+    .featured-game-icon-wrapper { height: 145px; }
+    .featured-game-icon { width: 220px; height: 140px; }
+    .featured-progress { width: 70%; }
 
-    .featured-game-description {
-        font-size: 11px;
-        line-height: 1.45;
-        margin-bottom: 12px;
-    }
+    .home-action-bar { gap: 12px; }
+    .home-action-bar .btn { min-width: 0; flex: 1; padding: 11px 12px; font-size: 13px; }
 
-    .featured-game-icon-wrapper {
-        height: 145px;
-    }
+    .home-service-card { min-height: 215px; padding: 20px 45px 20px 25px; clip-path: polygon(0 0, 85% 0, 100% 100%, 0 100%); }
+    .home-service-icon { width: 48px; height: 48px; }
+    .home-service-card h2 { font-size: 20px; }
+    .home-service-card p { font-size: 14px; }
 
+    .home-work-feature { gap: 26px; }
+    .home-work-image { border-radius: 16px 16px 0 0; }
+    .home-work-thumbnails { gap: 6px; margin-top: -8px; }
+    .home-work-thumbnail { width: 82px; height: 58px; flex-basis: 82px; border-radius: 6px; }
+    .home-work-copy { font-size: 14px; }
+    .home-work-copy .btn { width: fit-content; min-width: 150px; }
+
+    .home-game-carousel { gap: 8px; }
+    .carousel-arrow { width: 38px; height: 38px; flex-basis: 38px; font-size: 26px; }
+    .game-thumb { width: 130px; height: 91px; flex-basis: 130px; }
+
+    .about-preview { padding-left: 5%; padding-right: 5%; }
+    .about-preview-copy { padding: 28px 22px; }
+
+    .home-news-heading { flex-direction: column; }
+    .home-news-heading a { align-self: flex-end; }
+    #home-news .home-news-page { grid-template-columns: 1fr; }
+}
+
+/* =========================================================
+   1. HERO FEATURED PREVIEW ICON (Larger Desktop & Mobile)
+   ========================================================= */
+
+/* Bump default desktop size from 520px to 620px (or auto width/height) */
+.featured-game-icon {
+    width: min(620px, 100%);
+    height: auto;
+    max-height: 340px; /* Gives it a bolder, larger presence */
+    object-fit: contain; /* Prevents awkward cropping */
+    border-radius: var(--radius-md, 18px);
+    background: rgba(255, 255, 255, 0.08);
+    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.28);
+}
+
+
+/* =========================================================
+   2. LOWER GAME CAROUSEL THUMBNAILS (Bigger Previews)
+   ========================================================= */
+
+/* Increased width from 150px -> 180px and height from 105px -> 126px */
+.game-thumb {
+    width: 180px;
+    height: 126px;
+    flex: 0 0 180px;
+    padding: 0;
+    border: 3px solid transparent;
+    border-radius: 11px;
+    overflow: hidden;
+    cursor: pointer;
+    background: var(--color-white, #ffffff);
+    opacity: 0.72;
+    transition: transform 0.2s ease, opacity 0.2s ease, border-color 0.2s ease;
+}
+
+.game-thumb img {
+    display: block;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+/* =========================================================
+   RESPONSIVE MEDIA OVERRIDES (Keep mobile clean)
+   ========================================================= */
+
+@media (max-width: 1000px) {
     .featured-game-icon {
-        width: 220px;
-        height: 140px;
-    }
-
-    .featured-progress {
-        width: 70%;
-    }
-
-    .home-action-bar {
-        gap: 12px;
-    }
-
-    .home-action-bar .btn {
-        min-width: 0;
-        flex: 1;
-        padding: 11px 12px;
-        font-size: 13px;
-    }
-
-    .home-services-grid {
-        gap: 25px;
-    }
-
-    .home-service-card,
-    .home-service-card.service-card-right {
-        min-height: 215px;
-        padding: 20px 45px 20px 25px;
-        clip-path: polygon(0 0, 85% 0, 100% 100%, 0 100%);
-    }
-
-    .home-service-icon {
-        width: 48px;
-        height: 48px;
-    }
-
-    .home-service-card h2 {
-        font-size: 20px;
-    }
-
-    .home-service-card p {
-        font-size: 14px;
-        line-height: 1.5;
-    }
-
-    .home-work-thumbnails {
-        gap: 4px;
-    }
-
-    .home-work-thumbnail {
-        width: 70px;
-        height: 48px;
-        flex-basis: 70px;
-        border-radius: 5px;
-    }
-
-    .home-game-carousel {
-        gap: 8px;
-    }
-
-    .carousel-arrow {
-        width: 38px;
-        height: 38px;
-        flex-basis: 38px;
-        font-size: 26px;
-    }
-
-    .game-thumb {
-        width: 105px;
-        height: 74px;
-        flex-basis: 105px;
-    }
-
-    .about-preview {
-        padding-left: 5%;
-        padding-right: 5%;
-    }
-
-    .about-preview-copy {
-        padding: 28px 22px;
-    }
-
-    .home-news-heading {
-        flex-direction: column;
-    }
-
-    .home-news-heading a {
-        align-self: flex-end;
+        width: 340px;
+        height: 250px;
     }
 }
-
-/* =========================================================
-   HOME NEWS CARD TEXT
-   ========================================================= */
-
-.home-news-section .news-card {
-    color: #111111;
-}
-
-.home-news-section .news-card .news-content {
-    color: #111111;
-}
-
-.home-news-section .news-card small {
-    color: #111111;
-}
-
-.home-news-section .news-card h3 {
-    color: #111111;
-}
-
-.home-news-section .news-card p {
-    color: #111111;
-}
-
-.home-news-section .news-card .read-more {
-    color: var(--orange);
-}
-
-/* =========================================================
-   OUR WORKS - WHITE CONTENT WINDOW
-   ========================================================= */
-
-.works-section {
-    width: 1150;
-    max-width: 1150px;
-
-    margin: 60px auto 80px;
-    padding: 45px 55px;
-
-    box-sizing: border-box;
-
-    background: rgba(255, 255, 255, 0.88);
-
-    border-radius: 18px;
-
-    box-shadow: 0 12px 35px rgba(0, 0, 0, 0.18);
-}
-
-
-/* Keep the heading and content inside the window */
-
-.works-section > h1 {
-    margin-top: 0;
-}
-
-.works-section .home-work-feature {
-    width: 100%;
-}
-
-
-/* =========================================================
-   RESPONSIVE
-   ========================================================= */
 
 @media (max-width: 800px) {
-
-    .works-section {
-        width: 92%;
-        margin: 40px auto 60px;
-        padding: 35px 30px;
+    .featured-game-icon {
+        width: 300px;
+        height: 200px;
     }
-
 }
-
 
 @media (max-width: 560px) {
-
-    .works-section {
-        width: 94%;
-        margin: 30px auto 50px;
-        padding: 28px 20px;
-    }
-
-}
-
-/* =========================================================
-   HOME CONTENT WINDOWS
-   ========================================================= */
-
-/* Our Services */
-.home-section.services-section,
-
-/* Our Works */
-.home-section.works-section,
-
-/* Meet the Team */
-.home-section.team-preview-home {
-    width: 1150;
-    max-width: 1150px;
-
-    margin: 60px auto 80px;
-    padding: 45px 55px;
-
-    box-sizing: border-box;
-
-    background: rgba(255, 255, 255, 0.88);
-
-    border-radius: 18px;
-
-    box-shadow:
-        0 12px 35px rgba(0, 0, 0, 0.18);
-}
-
-
-/* =========================================================
-   SERVICES
-   ========================================================= */
-
-.home-section.services-section .home-services-grid {
-    width: 100%;
-}
-
-
-/* =========================================================
-   WORKS
-   ========================================================= */
-
-.home-section.works-section .home-work-feature {
-    width: 100%;
-}
-
-
-/* =========================================================
-   TEAM
-   ========================================================= */
-
-.home-section.team-preview-home .home-team-grid {
-    width: 100%;
-}
-
-
-/* =========================================================
-   TABLET
-   ========================================================= */
-
-@media (max-width: 800px) {
-
-    .home-section.services-section,
-    .home-section.works-section,
-    .home-section.team-preview-home {
-        width: 92%;
-
-        margin: 40px auto 60px;
-
-        padding: 35px 30px;
-    }
-
-}
-
-
-/* =========================================================
-   MOBILE
-   ========================================================= */
-
-@media (max-width: 560px) {
-
-    .home-section.services-section,
-    .home-section.works-section,
-    .home-section.team-preview-home {
-        width: 94%;
-
-        margin: 30px auto 50px;
-
-        padding: 28px 20px;
-
-        border-radius: 14px;
+    .featured-game-icon {
+        width: 260px;
+        height: 165px;
     }
 }
 
-/* =========================================================
-   FEATURED PLAY NOW BUTTON
-   ========================================================= */
-
-.featured-information {
-    text-align: center;
+.featured-game-icon {
+    width: min(620px, 100%);
+    height: auto;
+    max-height: 340px;
+    object-fit: contain;
+    border-radius: 0;
+    background: transparent;
+    box-shadow: none;
 }
 
-.featured-play-button {
-    display: flex !important;
-    width: fit-content !important;
-    margin: 0 auto !important;
-}
-
-/* =========================================================
-   HOME NEWS SLIDE ANIMATION
-   ========================================================= */
-
-#home-news {
-    position: relative;
-    overflow: hidden;
-}
-
-
-/*
- * Each page contains up to two news cards.
- */
-#home-news .home-news-page {
-    display: grid;
-    grid-template-columns: repeat(2, minmax(0, 1fr));
-    gap: 20px;
-    width: 100%;
-    transform: translateX(0);
-    transition: transform 350ms ease;
-}
-
-
-/*
- * Slide current page to the left.
- */
-#home-news .home-news-page.slide-out-left {
-    transform: translateX(-100%);
-}
-
-
-/*
- * Slide current page to the right.
- */
-#home-news .home-news-page.slide-out-right {
-    transform: translateX(100%);
-}
-
-
-/*
- * New page starts from the right.
- */
-#home-news .home-news-page.slide-in-right {
-    transform: translateX(100%);
-}
-
-
-/*
- * New page starts from the left.
- */
-#home-news .home-news-page.slide-in-left {
-    transform: translateX(-100%);
-}
-
-
-/*
- * Mobile:
- * One card per row.
- */
-@media (max-width: 700px) {
-
-    #home-news .home-news-page {
-        grid-template-columns: 1fr;
-    }
-
-}
-
-
-/*
- * Respect reduced-motion preferences.
- */
-@media (prefers-reduced-motion: reduce) {
-
-    #home-news .home-news-page {
-        transition: none;
-    }
-
-}
-
-/* =========================================================
-   HOME NEWS CAROUSEL ANIMATION
-   ========================================================= */
-
-#home-news {
-    position: relative;
-    overflow: hidden;
-}
-
-
-/*
- * Sliding track.
- */
-#home-news .home-news-track {
+/* Center the main container flex/grid alignment */
+.about-preview {
     display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
     width: 100%;
-    transition: transform 350ms ease;
 }
 
+/* Ensure the heading itself is centered */
+.about-preview .home-section-text {
+    text-align: center;
+    margin-left: auto;
+    margin-right: auto;
+}
 
-/*
- * Each page occupies the full original
- * news grid width.
- */
-#home-news .home-news-page {
-    flex: 0 0 100%;
+/* Center the dark card wrapper */
+.about-preview-inner {
+    margin-left: auto;
+    margin-right: auto;
     width: 100%;
-    min-width: 100%;
-    display: grid;
-    grid-template-columns: repeat(2, minmax(0, 1fr));
-    gap: 28px;
-    box-sizing: border-box;
-}
-
-
-/*
- * Reduced motion.
- */
-@media (prefers-reduced-motion: reduce) {
-
-    #home-news .home-news-track {
-        transition: none;
-    }
-
-}
-
-
-/*
- * On mobile, keep the two news cards
- * side-by-side just like the original
- * Home News layout.
- */
-@media (max-width: 800px) {
-
-    #home-news .home-news-page {
-        grid-template-columns: repeat(2, minmax(0, 1fr));
-        gap: 14px;
-    }
-
-}
-
-.featured-play-button.is-hidden {
-    display: none !important;
-}
-
-/* =========================================================
-   OUR WORKS - MOBILE RESPONSIVE
-   ========================================================= */
-
-@media (max-width: 800px) {
-
-    .home-section.works-section {
-        width: 92%;
-        margin: 40px auto 60px;
-        padding: 35px 30px;
-        box-sizing: border-box;
-    }
-
-    .home-work-feature {
-        grid-template-columns: 1fr;
-        gap: 30px;
-        width: 100%;
-    }
-
-    .home-work-left {
-        width: 100%;
-        min-width: 0;
-    }
-
-    .home-work-image {
-        width: 100%;
-        aspect-ratio: 1.55 / 1;
-        border-radius: 18px 18px 0 0;
-    }
-
-    .home-work-image img {
-        width: 100%;
-        height: 100%;
-        object-fit: cover;
-    }
-
-    .home-work-thumbnails {
-        width: 100%;
-        justify-content: flex-start;
-        overflow-x: auto;
-        overflow-y: hidden;
-        gap: 8px;
-        margin-top: -10px;
-        padding: 0 2px 8px;
-        box-sizing: border-box;
-
-        scrollbar-width: thin;
-        -webkit-overflow-scrolling: touch;
-    }
-
-    .home-work-thumbnail {
-        width: 90px;
-        height: 62px;
-        flex: 0 0 90px;
-    }
-
-    .home-work-copy {
-        width: 100%;
-        min-width: 0;
-        padding-top: 0;
-        font-size: 15px;
-        line-height: 1.7;
-        text-align: center;
-        box-sizing: border-box;
-    }
-
-    .home-work-copy p {
-        margin: 0 0 20px;
-    }
-
-    .home-work-copy .btn {
-        display: inline-flex;
-        margin: 8px auto 0;
-    }
-}
-
-
-@media (max-width: 560px) {
-
-    .home-section.works-section {
-        width: 94%;
-        margin: 30px auto 50px;
-        padding: 28px 20px;
-        border-radius: 14px;
-    }
-
-    .home-section.works-section > h1 {
-        margin-bottom: 28px;
-        font-size: 32px;
-    }
-
-    .home-work-feature {
-        gap: 26px;
-    }
-
-    .home-work-image {
-        border-radius: 16px 16px 0 0;
-    }
-
-    .home-work-thumbnails {
-        gap: 6px;
-        margin-top: -8px;
-    }
-
-    .home-work-thumbnail {
-        width: 82px;
-        height: 58px;
-        flex: 0 0 82px;
-        border-radius: 6px;
-    }
-
-    .home-work-copy {
-        font-size: 14px;
-        line-height: 1.75;
-    }
-
-    .home-work-copy p {
-        margin-bottom: 18px;
-    }
-
-    .home-work-copy .btn {
-        width: fit-content;
-        min-width: 150px;
-        justify-content: center;
-    }
+    max-width: 800px; /* Adjust to fit design */
 }
