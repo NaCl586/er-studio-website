@@ -939,3 +939,52 @@
     width: 100%;
     max-width: 800px; /* Adjust to fit design */
 }
+
+/* =========================================================
+   RESPONSIVE OVERRIDES FOR FEATURED HERO MOCKUP
+   ========================================================= */
+
+@media (max-width: 800px) {
+  .featured-games {
+    height: auto;
+    min-height: 540px;
+  }
+
+  .featured-content {
+    grid-template-columns: 1fr;
+    grid-template-rows: auto auto;
+    gap: 15px;
+    padding: 25px 5% 40px;
+  }
+
+  .featured-game-icon-wrapper {
+    height: auto;
+    max-height: 240px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+
+  .featured-game-icon {
+    width: auto !important;
+    max-width: 85% !important;
+    height: auto !important;
+    max-height: 220px !important;
+    object-fit: contain !important;
+  }
+}
+
+@media (max-width: 560px) {
+  .featured-content {
+    padding: 20px 4% 40px;
+  }
+
+  .featured-game-icon-wrapper {
+    max-height: 180px;
+  }
+
+  .featured-game-icon {
+    max-width: 80% !important;
+    max-height: 160px !important;
+  }
+}
