@@ -62,19 +62,19 @@ const educationGames = [
     {
         name: "Equilibrium Shift",
         screenshot: "images/Preview Edugame/Kimia kesetimbangan.png",
-        icon: "images/Corousel/logo/kimia  kesetimbangan.png"
+        icon: "images/Corousel/icon/Kimia kesetimbangan.png"
     },
 
     {
         name: "Project TK",
         screenshot: "images/Preview Edugame/Project tk.png",
-        icon: "images/Corousel/logo/project tk.png"
+        icon: "images/Corousel/icon/Projek TK.png"
     },
 
     {
         name: "Digestive Inside Out",
         screenshot: "images/Preview Edugame/Biologi.png",
-        icon: "images/Corousel/logo/biologi.png"
+        icon: "images/Corousel/icon/Biologi.png"
     }
 ];
 
