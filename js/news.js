@@ -16,6 +16,39 @@
 
 const news = [
     /* =========================================================
+        PnG Vol 4 GDJ
+    ========================================================= */
+    {
+        id: "png-gdj-sep-2026",
+
+        title:
+            "ER Studio Showcases Vector Rouge for the First Time at Game Dev Jakarta Playtest & Gathering Vol. 4",
+
+        date:
+            "2026-09-26",
+
+        paragraphs: [
+            'On September 26, 2026, ER Studio participated in Game Dev Jakarta’s Playtest & Gathering Vol. 4, held at FX Sudirman, Jakarta. The event marked an exciting milestone for us as we showcased Vector Rouge to the public for the very first time.',
+            'Vector Rouge is an educational game that combines engaging gameplay with concepts from high school physics, particularly vectors. Through the game, players can put their understanding of vectors into practice while facing challenges designed to make learning feel more interactive and enjoyable.',
+            'We were thrilled to see the enthusiasm of players trying Vector Rouge during the event. Watching people engage with the game, experiment with its mechanics, and challenge their knowledge gave us valuable insight and encouragement as we continue developing the project.',
+            'The showcase was also an opportunity for us to introduce more people to what ER Studio is all about. We specialize in creating educational games and game-based learning experiences, with the belief that learning does not have to feel separate from play. Games can provide a fun and engaging way to explore educational concepts, practice existing knowledge, and challenge yourself in new ways.',
+            'Beyond showcasing Vector Rouge, Playtest & Gathering Vol. 4 gave us the chance to experience games created by other developers and studios. We enjoyed discovering their projects, exchanging ideas, and connecting with fellow members of the game development community.',
+            'We are grateful to everyone who stopped by, played Vector Rouge, and shared their thoughts with us. We also appreciate Game Dev Jakarta for bringing developers and players together through the event.',
+            'This first public showcase is only the beginning for Vector Rouge, and we look forward to sharing more about the game as development continues.',
+            'Thank you for playing, and see you at the next event!',
+            '-Gerson, ER Studio'
+        ],
+
+        images: [
+            "images/News/png-gdj-sep-2026/1.jpg",
+            "images/News/png-gdj-sep-2026/2.jpg",
+            "images/News/png-gdj-sep-2026/3.jpg"
+        ],
+
+        imageLayout: "row"
+    },
+
+    /* =========================================================
         main-main-fest-2026
     ========================================================= */
     {
