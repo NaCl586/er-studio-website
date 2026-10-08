@@ -44,37 +44,43 @@ const educationGames = [
     {
         name: "Ninja Math Quest",
         screenshot: "images/Preview Edugame/mtk.png",
-        icon: "images/Corousel/icon/Mtk.png"
+        icon: "images/Corousel/icon/Mtk.png",
+        link: "games/ninja-math-quest.html"
     },
 
     {
         name: "Vector Rouge: Petualangan Vektor",
         screenshot: "images/Preview Edugame/Fisika.png",
-        icon: "images/Corousel/icon/Fisika vektor.png"
+        icon: "images/Corousel/icon/Fisika vektor.png",
+        link: "games/vector-rouge.html"
     },
 
     {
         name: "Periodium",
         screenshot: "images/Preview Edugame/Kimia Kartu.png",
-        icon: "images/Corousel/icon/Kimia kartu.png"
+        icon: "images/Corousel/icon/Kimia kartu.png",
+        link: "games/periodium.html"
     },
 
     {
         name: "Equilibrium Shift",
         screenshot: "images/Preview Edugame/Kimia kesetimbangan.png",
-        icon: "images/Corousel/icon/Kimia kesetimbangan.png"
+        icon: "images/Corousel/icon/Kimia kesetimbangan.png",
+        link: "games/equilibrium-shift.html"
     },
 
     {
         name: "Project TK",
         screenshot: "images/Preview Edugame/Project tk.png",
-        icon: "images/Corousel/icon/Projek TK.png"
+        icon: "images/Corousel/icon/Projek TK.png",
+        link: "games/project-tk.html"
     },
 
     {
         name: "Digestive Inside Out",
         screenshot: "images/Preview Edugame/Biologi.png",
-        icon: "images/Corousel/icon/Biologi.png"
+        icon: "images/Corousel/icon/Biologi.png",
+        link: "games/digestive-inside-out.html"
     }
 ];
 
@@ -86,7 +92,7 @@ const educationGames = [
 const gameDescriptions = {
 
     "Floodfill": `
-        FloodFill is an endless strategic puzzle game where players drag and drop color-coded pieces onto a board. Tiles can be placed on top of other tiles of the same color, transforming them into a higher-tiered new color. 
+        FloodFill is an endless strategic puzzle game where players drag and drop color-coded pieces onto a board. Tiles can be placed on top of other tiles of the same color, transforming them into a higher-tiered new color.
     `,
 
     "Witchball Froine": `
@@ -98,7 +104,7 @@ const gameDescriptions = {
     `,
 
     "Boom Castle": `
-        Boom Castle is a fast-paced arcade game where you control a cannon to defend your castle from waves of incoming balloons. 
+        Boom Castle is a fast-paced arcade game where you control a cannon to defend your castle from waves of incoming balloons.
     `,
 
     "Wild Balls": `
@@ -114,8 +120,7 @@ const gameDescriptions = {
     `,
 
     "Periodium": `
-        This educational card game brings each chemical element to life based on its periodic properties, such as atomic radius, ionization energy, and electronegativity. Test your creativity 
-and logic against the clock to achieve the highest score possible!
+        This educational card game brings each chemical element to life based on its periodic properties, such as atomic radius, ionization energy, and electronegativity. Test your creativity and logic against the clock to achieve the highest score possible!
     `,
 
     "Project TK": `
@@ -128,7 +133,7 @@ and logic against the clock to achieve the highest score possible!
 
     "Vector Rouge: Petualangan Vektor": `
         This educational roguelike game that turns vector addition and subtraction into a fun strategic challenge. Choose and combine vectors to match target vectors, overcome increasingly difficult challenges, and progress through a series of domains with different vector types and enemies. Players must think carefully about direction, magnitude, and combinations to find the right resultant vector.
-    `,
+    `
 };
 
 
@@ -136,9 +141,6 @@ and logic against the clock to achieve the highest score possible!
    GALLERY SETTINGS
    ========================================================= */
 
-/*
- * Maximum number of games on one page.
- */
 const GAMES_PER_PAGE = 4;
 
 
@@ -153,7 +155,6 @@ const galleryStates = {};
    ========================================================= */
 
 function getGameDescription(game) {
-
     return gameDescriptions[game.name] ||
         "Explore this game from Education Reinvented Studio.";
 }
@@ -199,6 +200,7 @@ function createPaginationButtons(id, games) {
      * 8 games -> 2 pages
      * 9 games -> 3 pages
      */
+
     const pageCount = Math.ceil(
         games.length / GAMES_PER_PAGE
     );
@@ -250,6 +252,7 @@ function renderGallery(id) {
     /*
      * Get the correct game array.
      */
+
     const games =
         id === "mobile-games"
             ? mobileGames
@@ -264,6 +267,7 @@ function renderGallery(id) {
      * Calculate which games belong to
      * the current page.
      */
+
     const startIndex =
         state.page * GAMES_PER_PAGE;
 
@@ -278,6 +282,7 @@ function renderGallery(id) {
     /*
      * Safety check.
      */
+
     if (pageGames.length === 0) {
         return;
     }
@@ -287,6 +292,7 @@ function renderGallery(id) {
      * Make sure the selected index is
      * valid for this page.
      */
+
     if (
         state.featuredIndex < 0 ||
         state.featuredIndex >= pageGames.length
@@ -299,6 +305,7 @@ function renderGallery(id) {
     /*
      * Get the featured game.
      */
+
     const featured =
         pageGames[state.featuredIndex];
 
@@ -312,6 +319,7 @@ function renderGallery(id) {
      * All games on the page remain visible
      * as icons.
      */
+
     const thumbnails =
         pageGames;
 
@@ -320,11 +328,33 @@ function renderGallery(id) {
        BUILD HTML
        ===================================================== */
 
+    const playButton = featured.link
+        ? `
+            <a
+                href="${featured.link}"
+                class="games-play-button"
+                ${
+                    id === "mobile-games"
+                        ? 'target="_blank" rel="noopener noreferrer"'
+                        : ""
+                }
+            >
+                ${
+                    id === "education-games"
+                        ? "Play Demo"
+                        : "Play Now"
+                }
+            </a>
+        `
+        : "";
+
+
     container.innerHTML = `
 
         <div class="game-gallery-feature">
 
             <div class="game-gallery-feature-image">
+
                 <article class="game-tile">
 
                     <img
@@ -333,6 +363,7 @@ function renderGallery(id) {
                     >
 
                 </article>
+
             </div>
 
 
@@ -346,20 +377,7 @@ function renderGallery(id) {
                     ${getGameDescription(featured)}
                 </p>
 
-                ${
-                    featured.link
-                        ? `
-                            <a
-                                href="${featured.link}"
-                                class="games-play-button"
-                                target="_blank"
-                                rel="noopener noreferrer"
-                            >
-                                Play Now
-                            </a>
-                        `
-                        : ""
-                }
+                ${playButton}
 
             </div>
 
@@ -421,6 +439,7 @@ function renderGallery(id) {
                  * Find the selected game inside
                  * the CURRENT page.
                  */
+
                 const selectedIndex =
                     pageGames.findIndex(
                         game =>
@@ -436,6 +455,7 @@ function renderGallery(id) {
                 /*
                  * Change featured game.
                  */
+
                 galleryStates[id].featuredIndex =
                     selectedIndex;
 
@@ -447,6 +467,7 @@ function renderGallery(id) {
                  * but the selected game's icon
                  * remains there.
                  */
+
                 renderGallery(id);
             }
         );
@@ -455,6 +476,7 @@ function renderGallery(id) {
         /*
          * Keyboard support.
          */
+
         tile.addEventListener(
             "keydown",
             event => {
@@ -499,6 +521,7 @@ function renderGallery(id) {
                 /*
                  * Change page.
                  */
+
                 galleryStates[id].page =
                     page;
 
@@ -507,6 +530,7 @@ function renderGallery(id) {
                  * Start the new page with
                  * its first game featured.
                  */
+
                 galleryStates[id].featuredIndex =
                     0;
 
@@ -516,6 +540,7 @@ function renderGallery(id) {
         );
 
     });
+
 }
 
 

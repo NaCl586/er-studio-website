@@ -123,6 +123,8 @@ document.addEventListener("DOMContentLoaded", () => {
 
             description:
                 "This educational game transforms 12th-grade topics of permutations, combinations, and probability into a ninja-themed adventure filled with puzzles, where you must solve mathematical challenges using strategy and precision to achieve victory.",
+
+            link: "games/ninja-math-quest.html"
         },
 
         {
@@ -136,6 +138,7 @@ document.addEventListener("DOMContentLoaded", () => {
             description:
                 "This educational roguelike game turns vector addition and subtraction into a fun strategic challenge. Choose and combine vectors to match target vectors, overcome increasingly difficult challenges, and progress through a series of domains with different vector types and enemies. Players must think carefully about direction, magnitude, and combinations to find the right resultant vector.",
 
+            link: "games/vector-rouge.html"
         },
 
         {
@@ -149,6 +152,7 @@ document.addEventListener("DOMContentLoaded", () => {
             description:
                 "This educational card game brings each chemical element to life based on its periodic properties, such as atomic radius, ionization energy, and electronegativity. Test your creativity and logic against the clock to achieve the highest score possible!",
 
+            link: "games/periodium.html"
         },
 
         {
@@ -162,6 +166,7 @@ document.addEventListener("DOMContentLoaded", () => {
             description:
                 "An educational puzzle game based on the chemical equilibrium topic in 11th-grade chemistry, where players must manipulate reaction conditions to achieve specific equilibrium objectives.",
 
+            link: "games/equilibrium-shift.html"
         },
 
         {
@@ -175,6 +180,7 @@ document.addEventListener("DOMContentLoaded", () => {
             description:
                 "In this game, players complete simple interactive activities such as tapping the screen, dragging and dropping objects, and drawing lines or shapes to solve various educational puzzles and challenges.",
 
+            link: "games/project-tk.html"
         },
 
         {
@@ -188,6 +194,7 @@ document.addEventListener("DOMContentLoaded", () => {
             description:
                 "Explore a unique office building where each floor is designed to resemble a human digestive organ, challenging you to visit key locations and discover each stage of the digestive process in an engaging and interactive way.",
 
+            link: "games/digestive-inside-out.html"
         }
 
     ];
@@ -251,7 +258,7 @@ document.addEventListener("DOMContentLoaded", () => {
 
     /*
      * Dice on Delivery is not part of the regular
-     * mobileGames array above, so define it here.
+     * gameData array above, so define it here.
      */
 
     const diceOnDelivery = {
@@ -422,39 +429,43 @@ document.addEventListener("DOMContentLoaded", () => {
         }
 
 
+        /*
+         * Play Now
+         *
+         * Mobile games:
+         *   Open their external game link in a new tab.
+         *
+         * Education games:
+         *   Open their local game detail page in the
+         *   current tab.
+         */
+
         if (playElement) {
-            const canPlay =
-                game.category === "mobile" &&
-                !!game.link;
+    const canPlay = !!game.link;
 
-            playElement.classList.toggle(
-                "is-hidden",
-                !canPlay
-            );
+    playElement.classList.toggle(
+        "is-hidden",
+        !canPlay
+    );
 
-            if (canPlay) {
-                playElement.href =
-                    game.link;
+    if (canPlay) {
+        playElement.href = game.link;
 
-                playElement.target =
-                    "_blank";
-
-                playElement.rel =
-                    "noopener noreferrer";
-            } else {
-                playElement.removeAttribute(
-                    "href"
-                );
-
-                playElement.removeAttribute(
-                    "target"
-                );
-
-                playElement.removeAttribute(
-                    "rel"
-                );
-            }
+        if (game.category === "education") {
+            playElement.textContent = "Play Demo";
+            playElement.removeAttribute("target");
+            playElement.removeAttribute("rel");
+        } else if (game.category === "mobile") {
+            playElement.textContent = "Play Now";
+            playElement.target = "_blank";
+            playElement.rel = "noopener noreferrer";
         }
+    } else {
+        playElement.removeAttribute("href");
+        playElement.removeAttribute("target");
+        playElement.removeAttribute("rel");
+    }
+}
 
 
         updateDots();
@@ -605,6 +616,7 @@ document.addEventListener("DOMContentLoaded", () => {
                     showFeaturedGame(index);
 
                 }
+
             }
         );
     }
@@ -638,117 +650,232 @@ document.addEventListener("DOMContentLoaded", () => {
     if (featuredGames.length > 0) {
 
         showFeaturedGame(0);
+
     }
 
 
     /* =====================================================
-       LOWER GAME CAROUSEL
+       LOWER WORKS CAROUSEL
        ===================================================== */
 
-    /* =====================================================
-   LOWER WORKS CAROUSEL
-   ===================================================== */
+    const carousel =
+        document.querySelector("[data-carousel]");
 
-const carousel = document.querySelector("[data-carousel]");
+    if (carousel) {
 
-if (carousel) {
+        const track =
+            carousel.querySelector(".carousel-track");
 
-    const track = carousel.querySelector(".carousel-track");
-    const previous = carousel.querySelector(".carousel-arrow.prev");
-    const next = carousel.querySelector(".carousel-arrow.next");
+        const previous =
+            carousel.querySelector(".carousel-arrow.prev");
 
-    if (track) {
+        const next =
+            carousel.querySelector(".carousel-arrow.next");
 
-        const lowerCarouselGames = gameData;
 
-        track.innerHTML = "";
+        if (track) {
 
-        lowerCarouselGames.forEach((game, index) => {
+            const lowerCarouselGames =
+                gameData;
 
-            const thumbnail = document.createElement("button");
-            thumbnail.type = "button";
-            thumbnail.className = "game-thumb";
-            thumbnail.dataset.index = index;
+            track.innerHTML = "";
 
-            if (index === 0) {
-                thumbnail.classList.add("active");
-            }
 
-            thumbnail.innerHTML = `
-                <img src="${game.icon}" alt="${game.name}" loading="lazy">
-            `;
+            lowerCarouselGames.forEach(
+                (game, index) => {
 
-            track.appendChild(thumbnail);
-        });
+                    const thumbnail =
+                        document.createElement("button");
 
-        const thumbnails = track.querySelectorAll(".game-thumb");
+                    thumbnail.type =
+                        "button";
 
-        let lowerCurrent = 0;
+                    thumbnail.className =
+                        "game-thumb";
 
-        function updateLowerCarousel() {
-            thumbnails.forEach((thumb, index) => {
-                thumb.classList.toggle("active", index === lowerCurrent);
-            });
+                    thumbnail.dataset.index =
+                        index;
 
-            thumbnails[lowerCurrent]?.scrollIntoView({
-                behavior: "smooth",
-                block: "nearest",
-                inline: "center"
-            });
-        }
+                    if (index === 0) {
 
-        thumbnails.forEach((thumb, index) => {
-            thumb.addEventListener("click", () => {
-                lowerCurrent = index;
-                updateLowerCarousel();
+                        thumbnail.classList.add(
+                            "active"
+                        );
+                    }
 
-                const game = lowerCarouselGames[index];
-                const featuredIndex = featuredGames.findIndex(
-                    g => g.name === game.name
+
+                    thumbnail.innerHTML = `
+                        <img
+                            src="${game.icon}"
+                            alt="${game.name}"
+                            loading="lazy"
+                        >
+                    `;
+
+                    track.appendChild(
+                        thumbnail
+                    );
+                }
+            );
+
+
+            const thumbnails =
+                track.querySelectorAll(
+                    ".game-thumb"
                 );
 
-                if (featuredIndex !== -1) {
-                    showFeaturedGame(featuredIndex);
+
+            let lowerCurrent = 0;
+
+
+            function updateLowerCarousel() {
+
+                thumbnails.forEach(
+                    (thumb, index) => {
+
+                        thumb.classList.toggle(
+                            "active",
+                            index === lowerCurrent
+                        );
+
+                    }
+                );
+
+
+                thumbnails[
+                    lowerCurrent
+                ]?.scrollIntoView({
+
+                    behavior: "smooth",
+                    block: "nearest",
+                    inline: "center"
+
+                });
+            }
+
+
+            thumbnails.forEach(
+                (thumb, index) => {
+
+                    thumb.addEventListener(
+                        "click",
+                        () => {
+
+                            lowerCurrent =
+                                index;
+
+                            updateLowerCarousel();
+
+
+                            const game =
+                                lowerCarouselGames[
+                                    lowerCurrent
+                                ];
+
+
+                            const featuredIndex =
+                                featuredGames.findIndex(
+                                    g =>
+                                        g.name ===
+                                        game.name
+                                );
+
+
+                            if (featuredIndex !== -1) {
+
+                                showFeaturedGame(
+                                    featuredIndex
+                                );
+
+                            }
+
+                        }
+                    );
+
                 }
-            });
-        });
+            );
 
-        previous?.addEventListener("click", () => {
-            lowerCurrent =
-                (lowerCurrent - 1 + thumbnails.length) %
-                thumbnails.length;
+
+            previous?.addEventListener(
+                "click",
+                () => {
+
+                    lowerCurrent =
+                        (
+                            lowerCurrent - 1 +
+                            thumbnails.length
+                        ) %
+                        thumbnails.length;
+
+                    updateLowerCarousel();
+
+
+                    const featuredIndex =
+                        featuredGames.findIndex(
+                            g =>
+                                g.name ===
+                                lowerCarouselGames[
+                                    lowerCurrent
+                                ].name
+                        );
+
+
+                    if (featuredIndex !== -1) {
+
+                        showFeaturedGame(
+                            featuredIndex
+                        );
+
+                    }
+
+                }
+            );
+
+
+            next?.addEventListener(
+                "click",
+                () => {
+
+                    lowerCurrent =
+                        (
+                            lowerCurrent + 1
+                        ) %
+                        thumbnails.length;
+
+                    updateLowerCarousel();
+
+
+                    const featuredIndex =
+                        featuredGames.findIndex(
+                            g =>
+                                g.name ===
+                                lowerCarouselGames[
+                                    lowerCurrent
+                                ].name
+                        );
+
+
+                    if (featuredIndex !== -1) {
+
+                        showFeaturedGame(
+                            featuredIndex
+                        );
+
+                    }
+
+                }
+            );
+
 
             updateLowerCarousel();
 
-            const featuredIndex = featuredGames.findIndex(
-                g => g.name === lowerCarouselGames[lowerCurrent].name
-            );
-
-            if (featuredIndex !== -1) {
-                showFeaturedGame(featuredIndex);
-            }
-        });
-
-        next?.addEventListener("click", () => {
-            lowerCurrent =
-                (lowerCurrent + 1) %
-                thumbnails.length;
-
-            updateLowerCarousel();
-
-            const featuredIndex = featuredGames.findIndex(
-                g => g.name === lowerCarouselGames[lowerCurrent].name
-            );
-
-            if (featuredIndex !== -1) {
-                showFeaturedGame(featuredIndex);
-            }
-        });
-
-        updateLowerCarousel();
+        }
     }
-}
 
+
+    /* =====================================================
+       LOWER CAROUSEL
+       ===================================================== */
 
     /*
      * Determine which games should appear in the
@@ -768,7 +895,34 @@ if (carousel) {
        CREATE LOWER CAROUSEL
        ===================================================== */
 
-    track.innerHTML = "";
+    const lowerCarousel =
+        document.querySelector("[data-carousel]");
+
+    if (!lowerCarousel) {
+        return;
+    }
+
+    const lowerTrack =
+        lowerCarousel.querySelector(
+            ".carousel-track"
+        );
+
+    const lowerPrevious =
+        lowerCarousel.querySelector(
+            ".carousel-arrow.prev"
+        );
+
+    const lowerNext =
+        lowerCarousel.querySelector(
+            ".carousel-arrow.next"
+        );
+
+    if (!lowerTrack) {
+        return;
+    }
+
+
+    lowerTrack.innerHTML = "";
 
 
     lowerCarouselGames.forEach(
@@ -816,7 +970,7 @@ if (carousel) {
             );
 
 
-            track.appendChild(
+            lowerTrack.appendChild(
                 thumbnail
             );
 
@@ -824,18 +978,19 @@ if (carousel) {
     );
 
 
-    const thumbnails =
-        track.querySelectorAll(
+    const lowerThumbnails =
+        lowerTrack.querySelectorAll(
             ".game-thumb"
         );
 
 
-    if (thumbnails.length === 0) {
+    if (lowerThumbnails.length === 0) {
         return;
     }
 
 
-    let lowerCurrent = 0;
+    let lowerCurrent =
+        0;
 
 
     /* =====================================================
@@ -844,7 +999,7 @@ if (carousel) {
 
     function updateLowerCarousel() {
 
-        thumbnails.forEach(
+        lowerThumbnails.forEach(
             (thumbnail, index) => {
 
                 thumbnail.classList.toggle(
@@ -857,15 +1012,19 @@ if (carousel) {
 
 
         const active =
-            thumbnails[lowerCurrent];
+            lowerThumbnails[
+                lowerCurrent
+            ];
 
 
         if (active) {
 
             active.scrollIntoView({
+
                 behavior: "smooth",
                 block: "nearest",
                 inline: "center"
+
             });
 
         }
@@ -876,7 +1035,7 @@ if (carousel) {
        LOWER CAROUSEL GAME SELECTION
        ===================================================== */
 
-    thumbnails.forEach(
+    lowerThumbnails.forEach(
         (thumbnail, index) => {
 
             thumbnail.addEventListener(
@@ -928,18 +1087,19 @@ if (carousel) {
        LOWER CAROUSEL PREVIOUS
        ===================================================== */
 
-    if (previous) {
+    if (lowerPrevious) {
 
-        previous.addEventListener(
+        lowerPrevious.addEventListener(
             "click",
             () => {
 
                 lowerCurrent =
                     (
                         lowerCurrent - 1 +
-                        thumbnails.length
+                        lowerThumbnails.length
                     ) %
-                    thumbnails.length;
+                    lowerThumbnails.length;
+
 
                 updateLowerCarousel();
 
@@ -975,9 +1135,9 @@ if (carousel) {
        LOWER CAROUSEL NEXT
        ===================================================== */
 
-    if (next) {
+    if (lowerNext) {
 
-        next.addEventListener(
+        lowerNext.addEventListener(
             "click",
             () => {
 
@@ -985,7 +1145,8 @@ if (carousel) {
                     (
                         lowerCurrent + 1
                     ) %
-                    thumbnails.length;
+                    lowerThumbnails.length;
+
 
                 updateLowerCarousel();
 
