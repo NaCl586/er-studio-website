@@ -1822,3 +1822,1852 @@ body:has(.news-content) {
     box-sizing: border-box;
   }
 }
+
+/* =========================================================
+   12. OUR FEEDBACK
+   ========================================================= */
+
+.services-feedback {
+    position: relative;
+    z-index: 5;
+    width: 100%;
+    max-width: 1120px;
+    margin: 90px auto 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+/* ---------------------------------------------------------
+   Heading
+   --------------------------------------------------------- */
+
+.services-feedback-heading {
+    width: 100%;
+    margin: 0 0 45px;
+    text-align: center;
+}
+
+.services-feedback-heading h2 {
+    margin: 0;
+    color: #111111;
+    font-family: "Poppins", sans-serif;
+    font-size: 30px;
+    font-weight: 700;
+    line-height: 1.2;
+}
+
+.services-feedback-heading h2 span {
+    color: var(--orange);
+}
+
+/* ---------------------------------------------------------
+   Columns
+   --------------------------------------------------------- */
+
+.feedback-columns {
+    position: relative;
+    display: grid;
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    width: 100%;
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+.feedback-columns::after {
+    content: "";
+    position: absolute;
+    top: -10px;
+    bottom: -10px;
+    left: 50%;
+    width: 0;
+    border-left: 3px dashed #111111;
+    transform: translateX(-50%);
+    pointer-events: none;
+    z-index: 100;
+}
+
+/* ---------------------------------------------------------
+   Feedback Group
+   --------------------------------------------------------- */
+
+.feedback-group {
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    width: 100%;
+    min-width: 0;
+    padding: 0 25px;
+    box-sizing: border-box;
+    text-align: center;
+}
+
+.feedback-group h3 {
+    position: relative;
+    z-index: 10;
+    margin: 0 0 20px;
+    color: #111111;
+    font-family: "Poppins", sans-serif;
+    font-size: 20px;
+    font-weight: 700;
+    line-height: 1.2;
+}
+
+/* ---------------------------------------------------------
+   Carousel
+   --------------------------------------------------------- */
+
+.feedback-carousel {
+    position: relative;
+    width: 100%;
+    max-width: 500px;
+    height: 320px;
+    margin: 0 auto;
+    box-sizing: border-box;
+    overflow: visible;
+}
+
+.feedback-card-container {
+    position: absolute;
+    top: 0;
+    left: 50%;
+    width: 100%;
+    height: 100%;
+    transform: translateX(-50%);
+    overflow: visible;
+    pointer-events: none;
+    z-index: 10;
+}
+
+/* ---------------------------------------------------------
+   Cards
+   --------------------------------------------------------- */
+
+.feedback-card-stack-item {
+    position: absolute;
+    top: 30px;
+    left: 50%;
+    width: 320px;
+    height: 245px;
+    margin: 0;
+    box-sizing: border-box;
+    transform-origin: center center;
+    transition:
+        transform 0.55s cubic-bezier(.22, .61, .36, 1),
+        opacity 0.55s ease;
+    pointer-events: none;
+}
+
+.feedback-card-inner {
+    position: relative;
+    width: 100%;
+    height: 100%;
+    padding: 62px 38px 28px;
+    box-sizing: border-box;
+    background: #ffffff;
+    border-radius: 28px;
+    box-shadow: 0 14px 35px rgba(0, 0, 0, 0.18);
+    overflow: visible;
+    text-align: left;
+}
+
+/* Front */
+
+.feedback-position-front {
+    transform: translateX(-50%) translateY(0) scale(1);
+    opacity: 1;
+    z-index: 30;
+}
+
+.feedback-position-front .feedback-card-inner {
+    background: #ffffff;
+}
+
+/* Back cards */
+
+.feedback-position-left,
+.feedback-position-right {
+    opacity: 0.72;
+    z-index: 15;
+}
+
+.feedback-position-left {
+    transform: translateX(calc(-50% - 105px)) translateY(-5px) scale(0.88);
+}
+
+.feedback-position-right {
+    transform: translateX(calc(-50% + 105px)) translateY(-5px) scale(0.88);
+}
+
+.feedback-position-left .feedback-card-inner,
+.feedback-position-right .feedback-card-inner {
+    background: #bcbcbc;
+}
+
+/* Hidden */
+
+.feedback-position-hidden {
+    transform: translateX(-50%) translateY(0) scale(0.7);
+    opacity: 0;
+    z-index: 1;
+}
+
+/* ---------------------------------------------------------
+   Avatar
+   --------------------------------------------------------- */
+
+.feedback-avatar {
+    position: absolute;
+    top: -32px;
+    left: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 72px;
+    height: 72px;
+    margin: 0;
+    transform: translateX(-50%);
+    background: #56b7ad;
+    border-radius: 50%;
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.12);
+    color: #ffffff;
+    z-index: 5;
+}
+
+.feedback-avatar span {
+    display: block;
+    width: 20px;
+    height: 20px;
+    border-radius: 50%;
+    background: #ffffff;
+    color: transparent;
+}
+
+/* ---------------------------------------------------------
+   Card Header
+   --------------------------------------------------------- */
+
+.feedback-card-header {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 6px;
+    width: 100%;
+    margin: 0 0 18px;
+    text-align: center;
+}
+
+.feedback-card-header strong,
+.feedback-card-header span {
+    display: block;
+    box-sizing: border-box;
+    background: #4ca99f;
+    border-radius: 999px;
+    color: #ffffff;
+    font-family: "Poppins", sans-serif;
+    font-weight: 700;
+    line-height: 1.2;
+    white-space: nowrap;
+    text-align: center;
+}
+
+.feedback-card-header strong {
+    width: 185px;
+    max-width: 100%;
+    padding: 6px 18px;
+    font-size: 10px;
+}
+
+.feedback-card-header span {
+    width: fit-content;
+    max-width: 100%;
+    padding: 6px 18px;
+    font-size: 8px;
+}
+
+/* ---------------------------------------------------------
+   Card Text
+   --------------------------------------------------------- */
+
+.feedback-card-body {
+    width: 100%;
+    height: 125px;
+    min-height: 0;
+    max-height: 125px;
+    box-sizing: border-box;
+    overflow: hidden;
+}
+
+.feedback-card-body p {
+    width: 100%;
+    margin: 0;
+    color: #222222;
+    font-family: "DM Sans", sans-serif;
+    font-size: 13px;
+    font-weight: 400;
+    line-height: 1.45;
+    text-align: left;
+    overflow: hidden;
+    word-wrap: break-word;
+    overflow-wrap: break-word;
+    box-sizing: border-box;
+}
+
+/* ---------------------------------------------------------
+   Arrows
+   --------------------------------------------------------- */
+
+.feedback-arrow {
+    position: absolute;
+    top: 50%;
+    z-index: 200;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 50px;
+    height: 80px;
+    margin: 0;
+    padding: 0;
+    border: 0;
+    background: transparent;
+    color: #ffffff;
+    font-family: Arial, sans-serif;
+    font-size: 68px;
+    font-weight: 300;
+    line-height: 1;
+    transform: translateY(-50%);
+    cursor: pointer;
+    pointer-events: auto;
+    text-shadow: 0 2px 5px rgba(0, 0, 0, 0.15);
+    transition: transform 0.2s ease, opacity 0.2s ease;
+}
+
+.feedback-prev {
+    left: 0;
+}
+
+.feedback-next {
+    right: 0;
+}
+
+.feedback-arrow:hover {
+    opacity: 0.85;
+    transform: translateY(-50%) scale(1.1);
+}
+
+/* ---------------------------------------------------------
+   Tablet
+   --------------------------------------------------------- */
+
+@media (max-width: 1000px) {
+
+    .services-feedback {
+        padding: 0 20px;
+    }
+
+    .feedback-group {
+        padding: 0 10px;
+    }
+
+    .feedback-card-stack-item {
+        width: 300px;
+    }
+
+    .feedback-position-left {
+        transform: translateX(calc(-50% - 85px)) translateY(-5px) scale(0.86);
+    }
+
+    .feedback-position-right {
+        transform: translateX(calc(-50% + 85px)) translateY(-5px) scale(0.86);
+    }
+
+    .feedback-arrow {
+        font-size: 60px;
+    }
+}
+
+/* ---------------------------------------------------------
+   Mobile
+   --------------------------------------------------------- */
+
+@media (max-width: 800px) {
+
+    .services-feedback {
+        width: 94%;
+        margin-top: 70px;
+        padding: 0;
+    }
+
+    .services-feedback-heading {
+        margin-bottom: 40px;
+    }
+
+    .services-feedback-heading h2 {
+        font-size: 27px;
+    }
+
+    .feedback-columns {
+        grid-template-columns: 1fr;
+        gap: 90px;
+    }
+
+    .feedback-columns::after {
+        display: none;
+    }
+
+    .feedback-group {
+        padding: 0;
+    }
+
+    .feedback-carousel {
+        max-width: 440px;
+    }
+
+    .feedback-card-stack-item {
+        width: 300px;
+    }
+
+    .feedback-position-left {
+        transform: translateX(calc(-50% - 85px)) translateY(-5px) scale(0.86);
+    }
+
+    .feedback-position-right {
+        transform: translateX(calc(-50% + 85px)) translateY(-5px) scale(0.86);
+    }
+
+    .feedback-prev {
+        left: 0;
+    }
+
+    .feedback-next {
+        right: 0;
+    }
+}
+
+/* ---------------------------------------------------------
+   Small Mobile
+   --------------------------------------------------------- */
+
+@media (max-width: 480px) {
+
+    .services-feedback {
+        width: 92%;
+    }
+
+    .services-feedback-heading h2 {
+        font-size: 25px;
+    }
+
+    .feedback-carousel {
+        height: 300px;
+    }
+
+    .feedback-card-stack-item {
+        width: 270px;
+        height: 235px;
+    }
+
+    .feedback-card-inner {
+        padding: 60px 25px 25px;
+    }
+
+    .feedback-position-left {
+        transform: translateX(calc(-50% - 60px)) translateY(-5px) scale(0.82);
+    }
+
+    .feedback-position-right {
+        transform: translateX(calc(-50% + 60px)) translateY(-5px) scale(0.82);
+    }
+
+    .feedback-avatar {
+        top: -28px;
+        width: 62px;
+        height: 62px;
+    }
+
+    .feedback-card-header strong {
+        width: 155px;
+        font-size: 9px;
+    }
+
+    .feedback-card-header span {
+        font-size: 7px;
+    }
+
+    .feedback-arrow {
+        width: 40px;
+        height: 60px;
+        font-size: 52px;
+    }
+}
+
+/* =========================================================
+   OUR FEEDBACK - FINAL OVERRIDE
+   ========================================================= */
+
+.services-feedback {
+    position: relative;
+    z-index: 5;
+    width: 100%;
+    max-width: 1120px;
+    margin: 90px auto 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+
+/* =========================================================
+   SECTION TITLE
+   ========================================================= */
+
+.services-feedback-heading {
+    width: 100%;
+    margin: 0 0 45px;
+    text-align: center;
+}
+
+.services-feedback-heading h2 {
+    margin: 0;
+    color: #111111;
+    font-family: "Poppins", sans-serif;
+    font-size: 30px;
+    font-weight: 700;
+    line-height: 1.2;
+}
+
+.services-feedback-heading h2 span {
+    color: var(--orange);
+}
+
+
+/* =========================================================
+   TWO COLUMNS
+   ========================================================= */
+
+.feedback-columns {
+    position: relative;
+
+    display: grid;
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+
+    width: 100%;
+    margin: 0;
+    padding: 0;
+
+    box-sizing: border-box;
+}
+
+
+/* =========================================================
+   CENTER DASHED DIVIDER
+   ========================================================= */
+
+.feedback-columns::after {
+    content: "";
+
+    position: absolute;
+
+    top: -10px;
+    bottom: -10px;
+
+    left: 50%;
+
+    width: 0;
+
+    border-left: 3px dashed #111111;
+
+    transform: translateX(-50%);
+
+    pointer-events: none;
+    z-index: 100;
+}
+
+
+/* =========================================================
+   FEEDBACK GROUP
+   ========================================================= */
+
+.feedback-group {
+    position: relative;
+
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+
+    width: 100%;
+    min-width: 0;
+
+    padding: 0 25px;
+
+    box-sizing: border-box;
+
+    text-align: center;
+}
+
+.feedback-group h3 {
+    position: relative;
+    z-index: 10;
+
+    margin: 0 0 20px;
+
+    color: #111111;
+
+    font-family: "Poppins", sans-serif;
+    font-size: 20px;
+    font-weight: 700;
+
+    line-height: 1.2;
+}
+
+
+/* =========================================================
+   CAROUSEL
+   ========================================================= */
+
+.feedback-carousel {
+    position: relative;
+
+    width: 100%;
+    max-width: 500px;
+
+    height: 320px;
+
+    margin: 0 auto;
+
+    box-sizing: border-box;
+
+    overflow: visible;
+}
+
+
+/* =========================================================
+   CARD CONTAINER
+   ========================================================= */
+
+.feedback-card-container {
+    position: absolute;
+
+    top: 0;
+    left: 50%;
+
+    width: 100%;
+    height: 100%;
+
+    transform: translateX(-50%);
+
+    overflow: visible;
+
+    pointer-events: none;
+
+    z-index: 10;
+}
+
+
+/* =========================================================
+   CARD STACK ITEM
+   ========================================================= */
+
+.feedback-card-stack-item {
+    position: absolute;
+
+    top: 30px;
+    left: 50%;
+
+    width: 320px;
+    height: 245px;
+
+    margin: 0;
+
+    box-sizing: border-box;
+
+    transform-origin: center center;
+
+    transition:
+        transform 0.55s cubic-bezier(.22, .61, .36, 1),
+        opacity 0.55s ease;
+
+    pointer-events: none;
+}
+
+
+/* =========================================================
+   CARD
+   ========================================================= */
+
+.feedback-card-inner {
+    position: relative;
+
+    display: flex;
+    flex-direction: column;
+
+    width: 100%;
+    height: 100%;
+
+    padding: 62px 38px 28px;
+
+    box-sizing: border-box;
+
+    background: #ffffff;
+
+    border-radius: 28px;
+
+    box-shadow:
+        0 14px 35px rgba(0, 0, 0, 0.18);
+
+    overflow: hidden;
+
+    text-align: left;
+}
+
+
+/* =========================================================
+   CARD POSITIONS
+   ========================================================= */
+
+.feedback-position-front {
+    transform:
+        translateX(-50%)
+        translateY(0)
+        scale(1);
+
+    opacity: 1;
+
+    z-index: 30;
+}
+
+
+.feedback-position-left {
+    transform:
+        translateX(calc(-50% - 105px))
+        translateY(-5px)
+        scale(.88);
+
+    opacity: .72;
+
+    z-index: 15;
+}
+
+
+.feedback-position-right {
+    transform:
+        translateX(calc(-50% + 105px))
+        translateY(-5px)
+        scale(.88);
+
+    opacity: .72;
+
+    z-index: 15;
+}
+
+
+.feedback-position-left .feedback-card-inner,
+.feedback-position-right .feedback-card-inner {
+    background: #bcbcbc;
+}
+
+
+.feedback-position-hidden {
+    transform:
+        translateX(-50%)
+        translateY(0)
+        scale(.7);
+
+    opacity: 0;
+
+    z-index: 1;
+}
+
+
+/* =========================================================
+   AVATAR
+   ========================================================= */
+
+.feedback-avatar {
+    position: absolute;
+
+    top: -32px;
+    left: 50%;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    width: 72px;
+    height: 72px;
+
+    margin: 0;
+
+    transform: translateX(-50%);
+
+    background: #56b7ad;
+
+    border-radius: 50%;
+
+    box-shadow:
+        0 5px 15px rgba(0, 0, 0, 0.12);
+
+    color: #ffffff;
+
+    z-index: 5;
+}
+
+
+.feedback-avatar span {
+    display: block;
+
+    width: 20px;
+    height: 20px;
+
+    border-radius: 50%;
+
+    background: #ffffff;
+
+    color: transparent;
+}
+
+
+/* =========================================================
+   CARD HEADER
+   ========================================================= */
+
+.feedback-card-header {
+    flex: 0 0 auto;
+
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+
+    gap: 6px;
+
+    width: 100%;
+
+    margin: 0 0 15px;
+
+    text-align: center;
+}
+
+
+.feedback-card-header strong,
+.feedback-card-header span {
+    display: block;
+
+    box-sizing: border-box;
+
+    background: #4ca99f;
+
+    border-radius: 999px;
+
+    color: #ffffff;
+
+    font-family: "Poppins", sans-serif;
+    font-weight: 700;
+
+    line-height: 1.2;
+
+    white-space: nowrap;
+
+    text-align: center;
+}
+
+
+.feedback-card-header strong {
+    width: 185px;
+    max-width: 100%;
+
+    padding: 6px 18px;
+
+    font-size: 10px;
+}
+
+
+.feedback-card-header span {
+    width: fit-content;
+    max-width: 100%;
+
+    padding: 6px 18px;
+
+    font-size: 8px;
+}
+
+
+/* =========================================================
+   CARD BODY
+   ========================================================= */
+
+/*
+ * THIS IS IMPORTANT FOR AUTO-SIZING.
+ *
+ * The body gets the remaining vertical space inside
+ * the card. The paragraph itself is allowed to grow,
+ * so JavaScript can measure its real rendered height.
+ */
+
+.feedback-card-body {
+    flex: 1 1 auto;
+
+    width: 100%;
+    min-width: 0;
+    min-height: 0;
+
+    margin: 0;
+
+    box-sizing: border-box;
+
+    overflow: hidden;
+}
+
+
+/*
+ * The paragraph has no fixed height.
+ *
+ * JavaScript changes font-size until the entire
+ * rendered paragraph fits inside .feedback-card-body.
+ */
+
+.feedback-card-body p {
+    width: 100%;
+
+    margin: 0;
+    padding: 0;
+
+    color: #222222;
+
+    font-family: "DM Sans", sans-serif;
+    font-size: 13px;
+    font-weight: 400;
+
+    line-height: 1.45;
+
+    text-align: left;
+
+    overflow: visible;
+
+    word-wrap: break-word;
+    overflow-wrap: break-word;
+
+    box-sizing: border-box;
+}
+
+
+/* =========================================================
+   ARROWS
+   ========================================================= */
+
+.feedback-arrow {
+    position: absolute;
+
+    top: 50%;
+
+    z-index: 200;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    width: 50px;
+    height: 80px;
+
+    margin: 0;
+    padding: 0;
+
+    border: 0;
+
+    background: transparent;
+
+    color: #ffffff;
+
+    font-family: Arial, sans-serif;
+    font-size: 68px;
+    font-weight: 300;
+
+    line-height: 1;
+
+    transform: translateY(-50%);
+
+    cursor: pointer;
+
+    pointer-events: auto;
+
+    text-shadow:
+        0 2px 5px rgba(0, 0, 0, 0.15);
+
+    transition:
+        transform 0.2s ease,
+        opacity 0.2s ease;
+}
+
+
+.feedback-prev {
+    left: 0;
+}
+
+
+.feedback-next {
+    right: 0;
+}
+
+
+.feedback-arrow:hover {
+    opacity: .85;
+
+    transform:
+        translateY(-50%)
+        scale(1.1);
+}
+
+
+/* =========================================================
+   TABLET
+   ========================================================= */
+
+@media (max-width: 1000px) {
+
+    .services-feedback {
+        padding: 0 20px;
+    }
+
+    .feedback-group {
+        padding: 0 10px;
+    }
+
+    .feedback-card-stack-item {
+        width: 300px;
+    }
+
+    .feedback-position-left {
+        transform:
+            translateX(calc(-50% - 85px))
+            translateY(-5px)
+            scale(.86);
+    }
+
+    .feedback-position-right {
+        transform:
+            translateX(calc(-50% + 85px))
+            translateY(-5px)
+            scale(.86);
+    }
+
+    .feedback-arrow {
+        font-size: 60px;
+    }
+}
+
+
+/* =========================================================
+   MOBILE
+   ========================================================= */
+
+@media (max-width: 800px) {
+
+    .services-feedback {
+        width: 94%;
+
+        margin-top: 70px;
+
+        padding: 0;
+    }
+
+    .services-feedback-heading {
+        margin-bottom: 40px;
+    }
+
+    .services-feedback-heading h2 {
+        font-size: 27px;
+    }
+
+    .feedback-columns {
+        grid-template-columns: 1fr;
+
+        gap: 90px;
+    }
+
+    .feedback-columns::after {
+        display: none;
+    }
+
+    .feedback-group {
+        padding: 0;
+    }
+
+    .feedback-carousel {
+        max-width: 440px;
+    }
+
+    .feedback-card-stack-item {
+        width: 300px;
+    }
+
+    .feedback-position-left {
+        transform:
+            translateX(calc(-50% - 85px))
+            translateY(-5px)
+            scale(.86);
+    }
+
+    .feedback-position-right {
+        transform:
+            translateX(calc(-50% + 85px))
+            translateY(-5px)
+            scale(.86);
+    }
+
+    .feedback-prev {
+        left: 0;
+    }
+
+    .feedback-next {
+        right: 0;
+    }
+}
+
+
+/* =========================================================
+   SMALL MOBILE
+   ========================================================= */
+
+@media (max-width: 480px) {
+
+    .services-feedback {
+        width: 92%;
+    }
+
+    .services-feedback-heading h2 {
+        font-size: 25px;
+    }
+
+    .feedback-carousel {
+        height: 300px;
+    }
+
+    .feedback-card-stack-item {
+        width: 270px;
+        height: 235px;
+    }
+
+    .feedback-card-inner {
+        padding: 60px 25px 25px;
+    }
+
+    .feedback-position-left {
+        transform:
+            translateX(calc(-50% - 60px))
+            translateY(-5px)
+            scale(.82);
+    }
+
+    .feedback-position-right {
+        transform:
+            translateX(calc(-50% + 60px))
+            translateY(-5px)
+            scale(.82);
+    }
+
+    .feedback-avatar {
+        top: -28px;
+
+        width: 62px;
+        height: 62px;
+    }
+
+    .feedback-card-header strong {
+        width: 155px;
+
+        font-size: 9px;
+    }
+
+    .feedback-card-header span {
+        font-size: 7px;
+    }
+
+    .feedback-arrow {
+        width: 40px;
+        height: 60px;
+
+        font-size: 52px;
+    }
+}
+
+/* =========================================================
+   OUR FEEDBACK - FINAL
+   ========================================================= */
+
+.services-feedback {
+    position: relative;
+    z-index: 5;
+    width: 100%;
+    max-width: 1120px;
+    margin: 90px auto 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+
+/* =========================================================
+   TITLE
+   ========================================================= */
+
+.services-feedback-heading {
+    width: 100%;
+    margin: 0 0 45px;
+    text-align: center;
+}
+
+.services-feedback-heading h2 {
+    margin: 0;
+    color: #111111;
+    font-family: "Poppins", sans-serif;
+    font-size: 30px;
+    font-weight: 700;
+    line-height: 1.2;
+}
+
+.services-feedback-heading h2 span {
+    color: var(--orange);
+}
+
+
+/* =========================================================
+   COLUMNS
+   ========================================================= */
+
+.feedback-columns {
+    position: relative;
+
+    display: grid;
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+
+    width: 100%;
+    margin: 0;
+    padding: 0;
+
+    box-sizing: border-box;
+}
+
+
+/* =========================================================
+   CENTER DIVIDER
+   ========================================================= */
+
+.feedback-columns::after {
+    content: "";
+
+    position: absolute;
+
+    top: -10px;
+    bottom: -10px;
+    left: 50%;
+
+    width: 0;
+
+    border-left: 3px dashed #111111;
+
+    transform: translateX(-50%);
+
+    pointer-events: none;
+    z-index: 100;
+}
+
+
+/* =========================================================
+   GROUP
+   ========================================================= */
+
+.feedback-group {
+    position: relative;
+
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+
+    width: 100%;
+    min-width: 0;
+
+    padding: 0 25px;
+
+    box-sizing: border-box;
+
+    text-align: center;
+}
+
+.feedback-group h3 {
+    position: relative;
+    z-index: 10;
+
+    margin: 0 0 20px;
+
+    color: #111111;
+
+    font-family: "Poppins", sans-serif;
+    font-size: 20px;
+    font-weight: 700;
+
+    line-height: 1.2;
+}
+
+
+/* =========================================================
+   CAROUSEL
+   ========================================================= */
+
+.feedback-carousel {
+    position: relative;
+
+    width: 100%;
+    max-width: 500px;
+
+    height: 320px;
+
+    margin: 0 auto;
+
+    box-sizing: border-box;
+
+    overflow: visible;
+}
+
+
+/* =========================================================
+   CARD CONTAINER
+   ========================================================= */
+
+.feedback-card-container {
+    position: absolute;
+
+    top: 0;
+    left: 50%;
+
+    width: 100%;
+    height: 100%;
+
+    transform: translateX(-50%);
+
+    overflow: visible;
+
+    pointer-events: none;
+
+    z-index: 10;
+}
+
+
+/* =========================================================
+   CARD
+   ========================================================= */
+
+.feedback-card-stack-item {
+    position: absolute;
+
+    top: 30px;
+    left: 50%;
+
+    width: 320px;
+    height: 245px;
+
+    margin: 0;
+
+    box-sizing: border-box;
+
+    transform-origin: center center;
+
+    transition:
+        transform 0.55s cubic-bezier(.22, .61, .36, 1),
+        opacity 0.55s ease;
+
+    pointer-events: none;
+}
+
+
+/* =========================================================
+   CARD INNER
+   ========================================================= */
+
+.feedback-card-inner {
+    position: relative;
+
+    display: flex;
+    flex-direction: column;
+
+    width: 100%;
+    height: 100%;
+
+    padding: 62px 38px 25px;
+
+    box-sizing: border-box;
+
+    background: #ffffff;
+
+    border-radius: 28px;
+
+    box-shadow:
+        0 14px 35px rgba(0, 0, 0, 0.18);
+
+    /*
+     * IMPORTANT:
+     * Must be visible because the avatar extends
+     * above the card.
+     */
+    overflow: visible;
+
+    text-align: left;
+}
+
+
+/* =========================================================
+   POSITIONS
+   ========================================================= */
+
+.feedback-position-front {
+    transform:
+        translateX(-50%)
+        translateY(0)
+        scale(1);
+
+    opacity: 1;
+
+    z-index: 30;
+}
+
+
+.feedback-position-left {
+    transform:
+        translateX(calc(-50% - 105px))
+        translateY(-5px)
+        scale(.88);
+
+    opacity: .72;
+
+    z-index: 15;
+}
+
+
+.feedback-position-right {
+    transform:
+        translateX(calc(-50% + 105px))
+        translateY(-5px)
+        scale(.88);
+
+    opacity: .72;
+
+    z-index: 15;
+}
+
+
+.feedback-position-left .feedback-card-inner,
+.feedback-position-right .feedback-card-inner {
+    background: #bcbcbc;
+}
+
+
+.feedback-position-hidden {
+    transform:
+        translateX(-50%)
+        translateY(0)
+        scale(.7);
+
+    opacity: 0;
+
+    z-index: 1;
+}
+
+
+/* =========================================================
+   AVATAR
+   ========================================================= */
+
+.feedback-avatar {
+    position: absolute;
+
+    top: -32px;
+    left: 50%;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    width: 72px;
+    height: 72px;
+
+    margin: 0;
+
+    transform: translateX(-50%);
+
+    background: #56b7ad;
+
+    border-radius: 50%;
+
+    box-shadow:
+        0 5px 15px rgba(0, 0, 0, 0.12);
+
+    color: #ffffff;
+
+    z-index: 5;
+}
+
+.feedback-avatar span {
+    display: block;
+
+    width: 20px;
+    height: 20px;
+
+    border-radius: 50%;
+
+    background: #ffffff;
+
+    color: transparent;
+}
+
+
+/* =========================================================
+   HEADER
+   ========================================================= */
+
+.feedback-card-header {
+    flex: 0 0 auto;
+
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+
+    gap: 6px;
+
+    width: 100%;
+
+    margin: 0 0 14px;
+
+    text-align: center;
+}
+
+.feedback-card-header strong,
+.feedback-card-header span {
+    display: block;
+
+    box-sizing: border-box;
+
+    background: #4ca99f;
+
+    border-radius: 999px;
+
+    color: #ffffff;
+
+    font-family: "Poppins", sans-serif;
+    font-weight: 700;
+
+    line-height: 1.2;
+
+    white-space: nowrap;
+
+    text-align: center;
+}
+
+.feedback-card-header strong {
+    width: 185px;
+    max-width: 100%;
+
+    padding: 6px 18px;
+
+    font-size: 10px;
+}
+
+.feedback-card-header span {
+    width: fit-content;
+    max-width: 100%;
+
+    padding: 6px 18px;
+
+    font-size: 8px;
+}
+
+
+/* =========================================================
+   TESTIMONIAL BODY
+   ========================================================= */
+
+.feedback-card-body {
+    /*
+     * Fixed available space for the text.
+     */
+    flex: 0 0 125px;
+
+    width: 100%;
+    height: 125px;
+    min-height: 125px;
+    max-height: 125px;
+
+    margin: 0;
+    padding: 0;
+
+    box-sizing: border-box;
+
+    /*
+     * ONLY the text area clips.
+     */
+    overflow: hidden;
+}
+
+.feedback-card-body p {
+    width: 100%;
+
+    margin: 0;
+    padding: 0;
+
+    color: #222222;
+
+    font-family: "DM Sans", sans-serif;
+    font-size: 13px;
+    font-weight: 400;
+
+    line-height: 1.35;
+
+    text-align: left;
+
+    /*
+     * Do NOT clip the paragraph itself.
+     * JS needs to measure its real height.
+     */
+    overflow: visible;
+
+    word-wrap: break-word;
+    overflow-wrap: break-word;
+
+    box-sizing: border-box;
+}
+
+
+/* =========================================================
+   ARROWS
+   ========================================================= */
+
+.feedback-arrow {
+    position: absolute;
+
+    top: 50%;
+
+    z-index: 200;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    width: 50px;
+    height: 80px;
+
+    margin: 0;
+    padding: 0;
+
+    border: 0;
+
+    background: transparent;
+
+    color: #ffffff;
+
+    font-family: Arial, sans-serif;
+    font-size: 68px;
+    font-weight: 300;
+
+    line-height: 1;
+
+    transform: translateY(-50%);
+
+    cursor: pointer;
+
+    pointer-events: auto;
+
+    text-shadow:
+        0 2px 5px rgba(0, 0, 0, 0.15);
+
+    transition:
+        transform 0.2s ease,
+        opacity 0.2s ease;
+}
+
+.feedback-prev {
+    left: 0;
+}
+
+.feedback-next {
+    right: 0;
+}
+
+.feedback-arrow:hover {
+    opacity: .85;
+
+    transform:
+        translateY(-50%)
+        scale(1.1);
+}
+
+
+/* =========================================================
+   TABLET
+   ========================================================= */
+
+@media (max-width: 1000px) {
+
+    .services-feedback {
+        padding: 0 20px;
+    }
+
+    .feedback-group {
+        padding: 0 10px;
+    }
+
+    .feedback-card-stack-item {
+        width: 300px;
+    }
+
+    .feedback-position-left {
+        transform:
+            translateX(calc(-50% - 85px))
+            translateY(-5px)
+            scale(.86);
+    }
+
+    .feedback-position-right {
+        transform:
+            translateX(calc(-50% + 85px))
+            translateY(-5px)
+            scale(.86);
+    }
+
+    .feedback-arrow {
+        font-size: 60px;
+    }
+}
+
+
+/* =========================================================
+   MOBILE
+   ========================================================= */
+
+@media (max-width: 800px) {
+
+    .services-feedback {
+        width: 94%;
+        margin-top: 70px;
+        padding: 0;
+    }
+
+    .services-feedback-heading {
+        margin-bottom: 40px;
+    }
+
+    .services-feedback-heading h2 {
+        font-size: 27px;
+    }
+
+    .feedback-columns {
+        grid-template-columns: 1fr;
+        gap: 90px;
+    }
+
+    .feedback-columns::after {
+        display: none;
+    }
+
+    .feedback-group {
+        padding: 0;
+    }
+
+    .feedback-carousel {
+        max-width: 440px;
+    }
+
+    .feedback-card-stack-item {
+        width: 300px;
+    }
+
+    .feedback-position-left {
+        transform:
+            translateX(calc(-50% - 85px))
+            translateY(-5px)
+            scale(.86);
+    }
+
+    .feedback-position-right {
+        transform:
+            translateX(calc(-50% + 85px))
+            translateY(-5px)
+            scale(.86);
+    }
+
+    .feedback-prev {
+        left: 0;
+    }
+
+    .feedback-next {
+        right: 0;
+    }
+}
+
+
+/* =========================================================
+   SMALL MOBILE
+   ========================================================= */
+
+@media (max-width: 480px) {
+
+    .services-feedback {
+        width: 92%;
+    }
+
+    .services-feedback-heading h2 {
+        font-size: 25px;
+    }
+
+    .feedback-carousel {
+        height: 300px;
+    }
+
+    .feedback-card-stack-item {
+        width: 270px;
+        height: 235px;
+    }
+
+    .feedback-card-inner {
+        padding: 58px 25px 22px;
+    }
+
+    .feedback-card-body {
+        flex-basis: 125px;
+        height: 125px;
+        min-height: 125px;
+        max-height: 125px;
+    }
+
+    .feedback-position-left {
+        transform:
+            translateX(calc(-50% - 60px))
+            translateY(-5px)
+            scale(.82);
+    }
+
+    .feedback-position-right {
+        transform:
+            translateX(calc(-50% + 60px))
+            translateY(-5px)
+            scale(.82);
+    }
+
+    .feedback-avatar {
+        top: -28px;
+
+        width: 62px;
+        height: 62px;
+    }
+
+    .feedback-card-header strong {
+        width: 155px;
+        font-size: 9px;
+    }
+
+    .feedback-card-header span {
+        font-size: 7px;
+    }
+
+    .feedback-arrow {
+        width: 40px;
+        height: 60px;
+
+        font-size: 52px;
+    }
+}
