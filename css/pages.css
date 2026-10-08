@@ -4507,3 +4507,21 @@ body:has(.game-detail-page) {
     width: 100%;
     aspect-ratio: 16 / 9;
 }
+
+.game-detail-webgl {
+    width: min(1282px, 100%);
+    aspect-ratio: 1282 / 765;
+    margin: 0 auto;
+    position: relative;
+    overflow: hidden;
+}
+
+.game-detail-webgl iframe {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 1282px;
+    height: 765px;
+    border: none;
+    transform-origin: top left;
+}

@@ -113,14 +113,13 @@
         <section class="game-detail-video-section">
 
     <div class="game-detail-webgl">
-
-        <iframe
-            src="equilibrium-shift-demo/index.html"
-            title="Equilibrium Shift"
-            allowfullscreen
-        ></iframe>
-
-    </div>
+    <iframe
+        src="equilibrium-shift-demo/index.html"
+        title="Equilibrium Shift"
+        allowfullscreen
+        scrolling="no">
+    </iframe>
+</div>
 
 </section>
 
@@ -388,7 +387,21 @@
          ===================================================== -->
 
     <script src="../js/main.js"></script>
+<script>
+    function resizeGameIframe() {
+        const container = document.querySelector('.game-detail-webgl');
+        const iframe = container?.querySelector('iframe');
 
+        if (!container || !iframe) return;
+
+        const scale = container.clientWidth / 1282;
+
+        iframe.style.transform = `scale(${scale})`;
+    }
+
+    window.addEventListener('load', resizeGameIframe);
+    window.addEventListener('resize', resizeGameIframe);
+</script>
 </body>
 
 </html>
