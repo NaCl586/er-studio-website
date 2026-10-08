@@ -1,0 +1,30 @@
+{
+  "project_info": {
+    "project_number": "300311978169",
+    "firebase_url": "https://project-tk-ff590-default-rtdb.asia-southeast1.firebasedatabase.app",
+    "project_id": "project-tk-ff590",
+    "storage_bucket": "project-tk-ff590.firebasestorage.app"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:300311978169:android:4e2cbfa59a9e62faaa7b68",
+        "android_client_info": {
+          "package_name": "com.ExtraLifeEntertainment.ProjectTK"
+        }
+      },
+      "oauth_client": [],
+      "api_key": [
+        {
+          "current_key": "AIzaSyCx4mmdRgApAGpZLr1hnuBrH65A-LU535s"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": []
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
