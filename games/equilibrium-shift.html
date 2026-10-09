@@ -119,6 +119,12 @@
         allowfullscreen
         scrolling="no">
     </iframe>
+    <button class="game-fullscreen-btn"
+            type="button"
+            aria-label="Toggle fullscreen"
+            title="Toggle fullscreen">
+        ⛶
+    </button>
 </div>
 
 </section>
@@ -175,14 +181,14 @@
 
                         <div class="game-detail-screenshot">
                             <img
-                                src="../images/Preview Edugame/Kimia kesetimbangan.png"
+                                src="../images/Edugame screenshots/Kimia_1.png"
                                 alt="Equilibrium Shift gameplay screenshot"
                             >
                         </div>
 
                         <div class="game-detail-screenshot">
                             <img
-                                src="../images/Preview Edugame/Kimia kesetimbangan.png"
+                                src="../images/Edugame screenshots/Kimia_2.png"
                                 alt="Equilibrium Shift gameplay screenshot"
                             >
                         </div>
@@ -212,7 +218,7 @@
                         class="game-detail-other-item"
                     >
                         <img
-                            src="../images/Corousel/logo/mtk.png"
+                            src="../images/Corousel/icon/Mtk.png"
                             alt="Ninja Math Quest"
                         >
                     </a>
@@ -223,7 +229,7 @@
                         class="game-detail-other-item"
                     >
                         <img
-                            src="../images/Corousel/logo/project tk.png"
+                            src="../images/Corousel/icon/Projek TK.png"
                             alt="Project TK"
                         >
                     </a>
@@ -234,7 +240,7 @@
                         class="game-detail-other-item"
                     >
                         <img
-                            src="../images/Corousel/logo/biologi.png"
+                            src="../images/Corousel/icon/Biologi.png"
                             alt="Digestive Inside Out"
                         >
                     </a>
@@ -245,7 +251,7 @@
                         class="game-detail-other-item"
                     >
                         <img
-                            src="../images/Corousel/logo/kimia kartu.png"
+                            src="../images/Corousel/icon/Kimia kartu.png"
                             alt="Periodium"
                         >
                     </a>
@@ -256,7 +262,7 @@
                         class="game-detail-other-item"
                     >
                         <img
-                            src="../images/Corousel/logo/fisika vektor.png"
+                            src="../images/Corousel/icon/Fisika vektor.png"
                             alt="Vector Rouge"
                         >
                     </a>
@@ -388,19 +394,65 @@
 
     <script src="../js/main.js"></script>
 <script>
+(function () {
+    const container = document.querySelector('.game-detail-webgl');
+    if (!container) return;
+
+    const iframe = container.querySelector('iframe');
+    const button = container.querySelector('.game-fullscreen-btn');
+    if (!iframe || !button) return;
+
+    const GAME_WIDTH = 1282;
+    const GAME_HEIGHT = 765;
+
     function resizeGameIframe() {
         const container = document.querySelector('.game-detail-webgl');
         const iframe = container?.querySelector('iframe');
-
         if (!container || !iframe) return;
 
-        const scale = container.clientWidth / 1282;
+        const GAME_WIDTH = 1280;
+        const GAME_HEIGHT = 720;
+        const crop = 40;
+        const scale = container.clientWidth / GAME_WIDTH;
 
+        iframe.style.width = `${GAME_WIDTH}px`;
+        iframe.style.height = `${GAME_HEIGHT + crop}px`;
+        iframe.style.left = '0';
+        iframe.style.top = '0';
+        iframe.style.transformOrigin = 'top left';
         iframe.style.transform = `scale(${scale})`;
     }
 
-    window.addEventListener('load', resizeGameIframe);
+    async function toggleFullscreen() {
+        try {
+            if (document.fullscreenElement === container) {
+                await document.exitFullscreen();
+                if (screen.orientation?.unlock) {
+                    screen.orientation.unlock();
+                }
+                return;
+            }
+
+            await container.requestFullscreen();
+
+            if (screen.orientation?.lock) {
+                try {
+                    await screen.orientation.lock('landscape');
+                } catch (error) {
+                    console.info('Landscape orientation is not supported here.');
+                }
+            }
+        } catch (error) {
+            console.error('Could not toggle fullscreen:', error);
+        }
+    }
+
+    button.addEventListener('click', toggleFullscreen);
     window.addEventListener('resize', resizeGameIframe);
+    document.addEventListener('fullscreenchange', resizeGameIframe);
+
+    resizeGameIframe();
+})();
 </script>
 </body>
 

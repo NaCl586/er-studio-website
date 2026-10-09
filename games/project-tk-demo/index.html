@@ -9,7 +9,7 @@
   </head>
   <body>
     <div id="unity-container" class="unity-desktop">
-      <canvas id="unity-canvas" width=960 height=600 tabindex="-1"></canvas>
+      <canvas id="unity-canvas" width=1280 height=720 tabindex="-1"></canvas>
       <div id="unity-loading-bar">
         <div id="unity-logo"></div>
         <div id="unity-progress-bar-empty">
@@ -57,11 +57,11 @@
       }
 
       var buildUrl = "Build";
-      var loaderUrl = buildUrl + "/Project TK Demo.loader.js";
+      var loaderUrl = buildUrl + "/Project TK DEMO.loader.js";
       var config = {
-        dataUrl: buildUrl + "/Project TK Demo.data",
-        frameworkUrl: buildUrl + "/Project TK Demo.framework.js",
-        codeUrl: buildUrl + "/Project TK Demo.wasm",
+        dataUrl: buildUrl + "/Project TK DEMO.data",
+        frameworkUrl: buildUrl + "/Project TK DEMO.framework.js",
+        codeUrl: buildUrl + "/Project TK DEMO.wasm",
         streamingAssetsUrl: "StreamingAssets",
         companyName: "Education Reinvented Studio",
         productName: "Project TK DEMO",
@@ -94,8 +94,8 @@
       } else {
         // Desktop style: Render the game canvas in a window that can be maximized to fullscreen:
 
-        canvas.style.width = "960px";
-        canvas.style.height = "600px";
+        canvas.style.width = "1280px";
+        canvas.style.height = "720px";
       }
 
       loadingBar.style.display = "block";
