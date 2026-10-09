@@ -397,59 +397,54 @@
 
     const GAME_WIDTH = 1280;
     const GAME_HEIGHT = 720;
+    const FOOTER_HEIGHT = 38;
 
-function resizeGameIframe() {
-    const container = document.querySelector('.game-detail-webgl');
-    const iframe = container?.querySelector('iframe');
-    if (!container || !iframe) return;
+    function resizeGameIframe() {
+        const isFullscreen = document.fullscreenElement === container;
+        const isMobile = window.matchMedia('(max-width: 768px)').matches;
 
-    const GAME_WIDTH = 1280;
-    const GAME_HEIGHT = 720;
+        const width = container.clientWidth;
+        const height = container.clientHeight;
 
-    const width = container.clientWidth;
-    const height = container.clientHeight;
+        if (!width || !height) return;
 
-    if (!width || !height) return;
+        // The desktop Unity template has a footer; mobile hides it.
+        const iframeHeight = GAME_HEIGHT + (isMobile ? 0 : FOOTER_HEIGHT);
 
-    // Scale the complete 1280 × 720 game without cropping.
-    const scale = Math.min(
-        width / GAME_WIDTH,
-        height / GAME_HEIGHT
-    );
+        // Keep the actual game canvas at 16:9.
+        const scale = Math.min(
+            width / GAME_WIDTH,
+            height / GAME_HEIGHT
+        );
 
-    const scaledWidth = GAME_WIDTH * scale;
-    const scaledHeight = GAME_HEIGHT * scale;
+        const scaledWidth = GAME_WIDTH * scale;
 
-    iframe.style.width = `${GAME_WIDTH}px`;
-    iframe.style.height = `${GAME_HEIGHT}px`;
-    iframe.style.left = `${(width - scaledWidth) / 2}px`;
-    iframe.style.top = `${(height - scaledHeight) / 2}px`;
-    iframe.style.transformOrigin = 'top left';
-    iframe.style.transform = `scale(${scale})`;
-}
-
-window.addEventListener('load', resizeGameIframe);
-window.addEventListener('resize', resizeGameIframe);
-window.addEventListener('orientationchange', resizeGameIframe);
-document.addEventListener('fullscreenchange', resizeGameIframe);
+        iframe.style.position = 'absolute';
+        iframe.style.width = `${GAME_WIDTH}px`;
+        iframe.style.height = `${iframeHeight}px`;
+        iframe.style.left = `${(width - scaledWidth) / 2}px`;
+        iframe.style.top = '0';
+        iframe.style.transformOrigin = 'top left';
+        iframe.style.transform = `scale(${scale})`;
+    }
 
     async function toggleFullscreen() {
         try {
             if (document.fullscreenElement === container) {
                 await document.exitFullscreen();
+
                 if (screen.orientation?.unlock) {
                     screen.orientation.unlock();
                 }
-                return;
-            }
+            } else {
+                await container.requestFullscreen();
 
-            await container.requestFullscreen();
-
-            if (screen.orientation?.lock) {
-                try {
-                    await screen.orientation.lock('landscape');
-                } catch (error) {
-                    console.info('Landscape orientation is not supported here.');
+                if (screen.orientation?.lock) {
+                    try {
+                        await screen.orientation.lock('landscape');
+                    } catch (error) {
+                        console.info('Landscape orientation is not supported.');
+                    }
                 }
             }
         } catch (error) {
@@ -458,7 +453,9 @@ document.addEventListener('fullscreenchange', resizeGameIframe);
     }
 
     button.addEventListener('click', toggleFullscreen);
+
     window.addEventListener('resize', resizeGameIframe);
+    window.addEventListener('orientationchange', resizeGameIframe);
     document.addEventListener('fullscreenchange', resizeGameIframe);
 
     resizeGameIframe();

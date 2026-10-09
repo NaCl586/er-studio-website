@@ -2993,3 +2993,56 @@ body:has(.game-detail-page) {
     right: 10px;
     z-index: 100;
 }
+
+.game-detail-webgl {
+    position: relative;
+    width: min(1280px, 100%);
+    aspect-ratio: 16 / 9;
+    margin: 0 auto;
+    overflow: hidden;
+    background: #000;
+    border-radius: 16px;
+}
+
+.game-detail-webgl iframe {
+    position: absolute;
+    top: 0;
+    left: 0;
+    border: none;
+    transform-origin: top left;
+}
+
+.game-detail-webgl {
+    position: relative;
+    width: min(1280px, 100%);
+    aspect-ratio: 16 / 9;
+    margin: 0 auto;
+    overflow: hidden;
+    background: #000;
+}
+
+.game-detail-webgl iframe {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 1280px;
+    height: 758px;
+    border: none;
+    transform-origin: top left;
+}
+
+.game-detail-webgl:fullscreen {
+    position: fixed;
+    inset: 0;
+    width: 100vw;
+    height: 100vh;
+    height: 100dvh;
+    max-width: none;
+    max-height: none;
+    aspect-ratio: auto;
+    margin: 0;
+    padding: 0;
+    overflow: hidden;
+    background: #000 !important;
+    border-radius: 0;
+}
