@@ -405,24 +405,40 @@
     const GAME_WIDTH = 1280;
     const GAME_HEIGHT = 720;
 
-    function resizeGameIframe() {
-        const container = document.querySelector('.game-detail-webgl');
-        const iframe = container?.querySelector('iframe');
-        if (!container || !iframe) return;
+function resizeGameIframe() {
+    const container = document.querySelector('.game-detail-webgl');
+    const iframe = container?.querySelector('iframe');
+    if (!container || !iframe) return;
 
-        const GAME_WIDTH = 1280;
-        const GAME_HEIGHT = 720;
-        const crop = 40;
-        const scale = container.clientWidth / GAME_WIDTH;
+    const GAME_WIDTH = 1280;
+    const GAME_HEIGHT = 720;
 
-        iframe.style.width = `${GAME_WIDTH}px`;
-        iframe.style.height = `${GAME_HEIGHT + crop}px`;
-        iframe.style.left = '0';
-        iframe.style.top = '0';
-        iframe.style.transformOrigin = 'top left';
-        iframe.style.transform = `scale(${scale})`;
-    }
+    const width = container.clientWidth;
+    const height = container.clientHeight;
 
+    if (!width || !height) return;
+
+    // Scale the complete 1280 × 720 game without cropping.
+    const scale = Math.min(
+        width / GAME_WIDTH,
+        height / GAME_HEIGHT
+    );
+
+    const scaledWidth = GAME_WIDTH * scale;
+    const scaledHeight = GAME_HEIGHT * scale;
+
+    iframe.style.width = `${GAME_WIDTH}px`;
+    iframe.style.height = `${GAME_HEIGHT}px`;
+    iframe.style.left = `${(width - scaledWidth) / 2}px`;
+    iframe.style.top = `${(height - scaledHeight) / 2}px`;
+    iframe.style.transformOrigin = 'top left';
+    iframe.style.transform = `scale(${scale})`;
+}
+
+window.addEventListener('load', resizeGameIframe);
+window.addEventListener('resize', resizeGameIframe);
+window.addEventListener('orientationchange', resizeGameIframe);
+document.addEventListener('fullscreenchange', resizeGameIframe);
     async function toggleFullscreen() {
         try {
             if (document.fullscreenElement === container) {
