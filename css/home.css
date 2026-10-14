@@ -988,3 +988,10 @@
     max-height: 160px !important;
   }
 }
+
+@media screen and (max-width: 560px) {
+    .home-work-thumbnails {
+        gap: 6px;
+        margin-top: 16px;
+    }
+}
