@@ -15,6 +15,35 @@
  */
 
 const news = [
+/* =========================================================
+        IGDX 2026
+    ========================================================= */
+    {
+        id: "igdx-2026",
+
+        title:
+            "ER Studio Goes To Indonesia Game Developer Exchange (IGDX) 2026",
+
+        date:
+            "2026-09-26",
+
+        paragraphs: [
+            'Indonesia Game Developer Exchange (IGDX) 2026 officially opened on October 21 at the Bali Beach Convention, Sanur, Bali. This annual event brings together hundreds of game studios, publishers, and industry players from various countries to expand networking opportunities and drive the growth of Indonesia’s gaming industry in the global market.',
+            'This year, IGDX 2026 carries the theme "Building a Thriving Ecosystem with Creative Resilience." The forum serves as a space for local game developers to build partnerships, attract investment, and navigate their path toward the global market.',
+            'Held as part of Bali Tech Week 2026 by the Ministry of Communication and Digital (Kemkomdigi) in collaboration with the Indonesian Game Association (AGI) from October 21 to 23, IGDX 2026 saw participation from 339 game studios and 66 publishers across 31 countries exploring business partnerships, publishing, and distribution. A total of 543 Business Pass holders attended the business forum, alongside 1,037 Public Pass holders.',
+            'Through IGDX 2026, the government hopes that direct interaction between developers and international industry players will yield concrete collaborations. These opportunities encompass investments, game publishing, distribution, and local game project development. Furthermore, the presence of international publishers and investors opens doors to introduce locally developed projects, serving as a primary stepping stone for securing funding, publishing partners, and reaching players beyond Indonesia.',
+            '-Okta, ER Studio'
+        ],
+
+        images: [
+            "images/News/igdx-2026/1.png",
+            "images/News/igdx-2026/2.png",
+            "images/News/igdx-2026/3.png"
+        ],
+
+        imageLayout: "row"
+    },
+
     /* =========================================================
         PnG Vol 4 GDJ
     ========================================================= */
@@ -55,7 +84,7 @@ const news = [
         id: "main-main-fest-2026",
 
         title:
-            "ER Studio participated in Main Main Fest 2026",
+            "ER Studio Participated in Main Main Fest 2026",
 
         date:
             "2026-05-21",
