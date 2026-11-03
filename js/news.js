@@ -25,7 +25,7 @@ const news = [
             "ER Studio Goes To Indonesia Game Developer Exchange (IGDX) 2026",
 
         date:
-            "2026-09-26",
+            "2026-10-24",
 
         paragraphs: [
             'Indonesia Game Developer Exchange (IGDX) 2026 officially opened on October 21 at the Bali Beach Convention, Sanur, Bali. This annual event brings together hundreds of game studios, publishers, and industry players from various countries to expand networking opportunities and drive the growth of Indonesia’s gaming industry in the global market.',
